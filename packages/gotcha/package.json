@@ -1,0 +1,18 @@
+{
+  "name": "@thebrownguy/gotcha",
+  "version": ".1.0",
+  "main": "dist/gotcha.umd.cjs",
+	"module": "dist/gotcha.es.js",
+	"files": ["dist"],
+  "scripts": {
+		"build": "vite build"
+  },
+  "peerDependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.3",
+    "vite": "^7.1.6"
+  }
+}
