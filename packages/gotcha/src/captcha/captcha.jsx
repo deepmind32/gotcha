@@ -2,11 +2,12 @@ import { useState } from "react";
 import { RiCheckboxLine, RiErrorWarningFill } from "react-icons/ri";
 
 import styles from "./captcha.module.css";
-import LoadingIcon from "../loading/loading";
+import LoadingIcon from "../components/loading/loading";
+import PinGame from "./games/select-pin/pin";
 
 export function Captcha() {
 	// initial, progress, success, error
-	const [captcha_state, set_captcha_state] = useState("initial");
+	const [captcha_state, set_captcha_state] = useState("progress");
 
 	const handle_captcha_clicked = () => {
 		set_captcha_state((prev) => {
@@ -52,8 +53,7 @@ export function Captcha() {
 			</button>
 			{captcha_state === "progress" && (
 				<div className={styles["captcha__content"]}>
-					<header>Solve this captcha to prove that you are a human</header>
-					<main>THis is a content</main>
+					<PinGame />
 				</div>
 			)}
 		</div>

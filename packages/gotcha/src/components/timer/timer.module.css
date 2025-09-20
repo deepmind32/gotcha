@@ -1,0 +1,28 @@
+.timer__wrapper {
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	color: #000;
+	font-weight: 600;
+	font-size: 22px;
+	border-radius: 50%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid #b0b0b0;
+	animation: alarm 0.5s infinite alternate;
+}
+
+.timer--last {
+	border-color: #a81818;
+}
+
+@keyframes alarm {
+	from {
+		transform: scale(0.9);
+	}
+	to {
+		transform: scale(1.1);
+	}
+}
