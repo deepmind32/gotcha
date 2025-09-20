@@ -1,0 +1,71 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.header__info {
+	flex-grow: 1;
+	width: 90%;
+}
+
+.form__pin {
+	margin-top: 40px;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+}
+
+.form__pin input[type="number"] {
+	display: block;
+	font-size: 40px;
+	width: 40px;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #000;
+	text-align: center;
+	box-sizing: border-box;
+	--moz-apperance: textfield;
+	caret-color: transparent;
+}
+
+.form__pin input[type="number"]::-webkit-outer-spin-button,
+.form__pin input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.form__pin input[type="number"]:focus {
+	outline: none;
+	border-color: #578fdc;
+	border-width: 4px;
+}
+
+.form__pin input[type="number"]:focus::placeholder {
+	visibility: hidden;
+}
+
+.form__btn button {
+	background-color: #578fdc;
+	border: none;
+	color: white;
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 24px;
+	margin-bottom: 16px;
+	font-size: 16px;
+	padding: 8px 16px;
+	border-radius: 4px;
+}
+
+.form__btn button:focus {
+	outline: none;
+}
+.form__btn button:disabled {
+	background-color: #b0b0b0;
+}
