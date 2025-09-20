@@ -7,7 +7,7 @@ import PinGame from "./games/select-pin/pin";
 
 export function Captcha() {
 	// initial, progress, success, error
-	const [captcha_state, set_captcha_state] = useState("progress");
+	const [captcha_state, set_captcha_state] = useState("initial");
 
 	const handle_captcha_clicked = () => {
 		set_captcha_state((prev) => {

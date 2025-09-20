@@ -57,8 +57,13 @@ export default function PinGame() {
 			!event.ctrlKey &&
 			!event.metaKey
 		) {
-			// prevents from typing more than 1 digit
+			// if already there is a digit and the user is writing then overwrite it
+			pin_refs.current[position].value = String(event.key);
 			event.preventDefault();
+			
+			if (position < 3) {
+				pin_refs.current[position+1].focus();
+			}
 		}
 	};
 

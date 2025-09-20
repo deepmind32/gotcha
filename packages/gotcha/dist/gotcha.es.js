@@ -1,4 +1,4 @@
-import b, { useState as k, useEffect as ee, useRef as he } from "react";
+import b, { useState as T, useEffect as ee, useRef as he } from "react";
 import './index.css';const Ce = "_captcha__wrapper_1pyfx_1", be = "_captcha__btn_1pyfx_23", ve = "_captcha__btn__main_1pyfx_47", ge = "_captcha__btn__footer_1pyfx_71", xe = "_captcha__unchecked_1pyfx_81", ye = "_captcha__content_1pyfx_97", x = {
   captcha__wrapper: Ce,
   captcha__btn: be,
@@ -22,19 +22,19 @@ function Ee() {
   if (G) return j;
   G = 1;
   var e = Symbol.for("react.transitional.element"), n = Symbol.for("react.fragment");
-  function t(a, i, u) {
+  function t(a, i, f) {
     var h = null;
-    if (u !== void 0 && (h = "" + u), i.key !== void 0 && (h = "" + i.key), "key" in i) {
-      u = {};
+    if (f !== void 0 && (h = "" + f), i.key !== void 0 && (h = "" + i.key), "key" in i) {
+      f = {};
       for (var s in i)
-        s !== "key" && (u[s] = i[s]);
-    } else u = i;
-    return i = u.ref, {
+        s !== "key" && (f[s] = i[s]);
+    } else f = i;
+    return i = f.ref, {
       $$typeof: e,
       type: a,
       key: h,
       ref: i !== void 0 ? i : null,
-      props: u
+      props: f
     };
   }
   return j.Fragment = n, j.jsx = t, j.jsxs = t, j;
@@ -58,7 +58,7 @@ function je() {
         return r.$$typeof === de ? null : r.displayName || r.name || null;
       if (typeof r == "string") return r;
       switch (r) {
-        case N:
+        case S:
           return "Fragment";
         case oe:
           return "Profiler";
@@ -116,7 +116,7 @@ function je() {
       }
     }
     function a(r) {
-      if (r === N) return "<>";
+      if (r === S) return "<>";
       if (typeof r == "object" && r !== null && r.$$typeof === Y)
         return "<...>";
       try {
@@ -127,10 +127,10 @@ function je() {
       }
     }
     function i() {
-      var r = S.A;
+      var r = N.A;
       return r === null ? null : r.getOwner();
     }
-    function u() {
+    function f() {
       return Error("react-stack-top-frame");
     }
     function h(r) {
@@ -152,7 +152,7 @@ function je() {
         configurable: !0
       });
     }
-    function f() {
+    function u() {
       var r = e(this.type);
       return F[r] || (F[r] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
@@ -167,7 +167,7 @@ function je() {
         _owner: C
       }, (l !== void 0 ? l : null) !== null ? Object.defineProperty(r, "ref", {
         enumerable: !1,
-        get: f
+        get: u
       }) : Object.defineProperty(r, "ref", { enumerable: !1, value: null }), r._store = {}, Object.defineProperty(r._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -243,7 +243,7 @@ React keys must be passed directly to JSX without using spread:
     function D(r) {
       typeof r == "object" && r !== null && r.$$typeof === V && r._store && (r._store.validated = 1);
     }
-    var R = b, V = Symbol.for("react.transitional.element"), ne = Symbol.for("react.portal"), N = Symbol.for("react.fragment"), ae = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), ce = Symbol.for("react.consumer"), ie = Symbol.for("react.context"), se = Symbol.for("react.forward_ref"), le = Symbol.for("react.suspense"), ue = Symbol.for("react.suspense_list"), fe = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), _e = Symbol.for("react.activity"), de = Symbol.for("react.client.reference"), S = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, $ = Object.prototype.hasOwnProperty, me = Array.isArray, A = console.createTask ? console.createTask : function() {
+    var R = b, V = Symbol.for("react.transitional.element"), ne = Symbol.for("react.portal"), S = Symbol.for("react.fragment"), ae = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), ce = Symbol.for("react.consumer"), ie = Symbol.for("react.context"), se = Symbol.for("react.forward_ref"), le = Symbol.for("react.suspense"), ue = Symbol.for("react.suspense_list"), fe = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), _e = Symbol.for("react.activity"), de = Symbol.for("react.client.reference"), N = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, $ = Object.prototype.hasOwnProperty, me = Array.isArray, A = console.createTask ? console.createTask : function() {
       return null;
     };
     R = {
@@ -253,10 +253,10 @@ React keys must be passed directly to JSX without using spread:
     };
     var B, F = {}, z = R.react_stack_bottom_frame.bind(
       R,
-      u
-    )(), W = A(a(u)), H = {};
-    w.Fragment = N, w.jsx = function(r, o, l, _, C) {
-      var m = 1e4 > S.recentlyCreatedOwnerStacks++;
+      f
+    )(), W = A(a(f)), H = {};
+    w.Fragment = S, w.jsx = function(r, o, l, _, C) {
+      var m = 1e4 > N.recentlyCreatedOwnerStacks++;
       return E(
         r,
         o,
@@ -268,7 +268,7 @@ React keys must be passed directly to JSX without using spread:
         m ? A(a(r)) : W
       );
     }, w.jsxs = function(r, o, l, _, C) {
-      var m = 1e4 > S.recentlyCreatedOwnerStacks++;
+      var m = 1e4 > N.recentlyCreatedOwnerStacks++;
       return E(
         r,
         o,
@@ -297,9 +297,9 @@ function Oe(e, n) {
   if (e == null) return {};
   var t = Pe(e, n), a, i;
   if (Object.getOwnPropertySymbols) {
-    var u = Object.getOwnPropertySymbols(e);
-    for (i = 0; i < u.length; i++)
-      a = u[i], !(n.indexOf(a) >= 0) && Object.prototype.propertyIsEnumerable.call(e, a) && (t[a] = e[a]);
+    var f = Object.getOwnPropertySymbols(e);
+    for (i = 0; i < f.length; i++)
+      a = f[i], !(n.indexOf(a) >= 0) && Object.prototype.propertyIsEnumerable.call(e, a) && (t[a] = e[a]);
   }
   return t;
 }
@@ -333,25 +333,25 @@ function X(e, n) {
   }
   return t;
 }
-function T(e) {
+function k(e) {
   for (var n = 1; n < arguments.length; n++) {
     var t = arguments[n] != null ? arguments[n] : {};
     n % 2 ? X(Object(t), !0).forEach(function(a) {
-      Te(e, a, t[a]);
+      ke(e, a, t[a]);
     }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : X(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function Te(e, n, t) {
-  return n = ke(n), n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e;
+function ke(e, n, t) {
+  return n = Te(n), n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e;
 }
-function ke(e) {
-  var n = Ne(e, "string");
+function Te(e) {
+  var n = Se(e, "string");
   return typeof n == "symbol" ? n : n + "";
 }
-function Ne(e, n) {
+function Se(e, n) {
   if (typeof e != "object" || !e) return e;
   var t = e[Symbol.toPrimitive];
   if (t !== void 0) {
@@ -362,35 +362,35 @@ function Ne(e, n) {
   return (n === "string" ? String : Number)(e);
 }
 function te(e) {
-  return e && e.map((n, t) => /* @__PURE__ */ b.createElement(n.tag, T({
+  return e && e.map((n, t) => /* @__PURE__ */ b.createElement(n.tag, k({
     key: t
   }, n.attr), te(n.child)));
 }
 function p(e) {
-  return (n) => /* @__PURE__ */ b.createElement(Se, P({
-    attr: T({}, e.attr)
+  return (n) => /* @__PURE__ */ b.createElement(Ne, P({
+    attr: k({}, e.attr)
   }, n), te(e.child));
 }
-function Se(e) {
+function Ne(e) {
   var n = (t) => {
     var {
       attr: a,
       size: i,
-      title: u
-    } = e, h = Oe(e, Re), s = i || t.size || "1em", f;
-    return t.className && (f = t.className), e.className && (f = (f ? f + " " : "") + e.className), /* @__PURE__ */ b.createElement("svg", P({
+      title: f
+    } = e, h = Oe(e, Re), s = i || t.size || "1em", u;
+    return t.className && (u = t.className), e.className && (u = (u ? u + " " : "") + e.className), /* @__PURE__ */ b.createElement("svg", P({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
     }, t.attr, a, h, {
-      className: f,
-      style: T(T({
+      className: u,
+      style: k(k({
         color: e.color || t.color
       }, t.style), e.style),
       height: s,
       width: s,
       xmlns: "http://www.w3.org/2000/svg"
-    }), u && /* @__PURE__ */ b.createElement("title", null, u), e.children);
+    }), f && /* @__PURE__ */ b.createElement("title", null, f), e.children);
   };
   return q !== void 0 ? /* @__PURE__ */ b.createElement(q.Consumer, null, (t) => n(t)) : n(re);
 }
@@ -435,7 +435,7 @@ const K = [
   Be
 ];
 function Fe() {
-  const [e, n] = k(7);
+  const [e, n] = T(7);
   ee(() => {
     const a = setInterval(() => {
       n((i) => (i + 1) % K.length);
@@ -455,10 +455,10 @@ function We(e) {
   return e < 10;
 }
 function He({ start: e = 60, on_time_finished: n }) {
-  const [t, a] = k(e);
+  const [t, a] = T(e);
   return ee(() => {
     const i = setInterval(() => {
-      a((u) => u > 0 ? u - 1 : (n(), clearInterval(i), 0));
+      a((f) => f > 0 ? f - 1 : (n(), clearInterval(i), 0));
     }, 1e3);
     return () => {
       clearInterval(i);
@@ -483,16 +483,16 @@ function Q(e) {
   return n.map((t) => t.length > 0).every(Boolean) ? n.reduce((t, a) => `${t}${a}`) : !1;
 }
 function Xe() {
-  const e = he([]), [n, t] = k(void 0), a = () => {
+  const e = he([]), [n, t] = T(void 0), a = () => {
     console.log("Oops, you failed");
-  }, i = (s, f) => {
-    const v = f.target.value;
+  }, i = (s, u) => {
+    const v = u.target.value;
     s <= 2 && v.length === 1 && e.current[s + 1].focus();
     const E = Q(e);
     t(E || void 0);
-  }, u = (s, f) => {
-    const v = f.target.value;
-    v.length > 0 && f.key === "Backspace" ? (e.current[s].value = null, Q(e) || t(void 0)) : s !== 0 && (f.key === "Backspace" || f.key === "ArrowLeft") ? e.current[s - 1].focus() : s !== 3 && f.key === "ArrowRight" ? e.current[s + 1].focus() : v.length === 1 && f.key.length == 1 && !f.ctrlKey && !f.metaKey && f.preventDefault();
+  }, f = (s, u) => {
+    const v = u.target.value;
+    v.length > 0 && u.key === "Backspace" ? (e.current[s].value = null, Q(e) || t(void 0)) : s !== 0 && (u.key === "Backspace" || u.key === "ArrowLeft") ? e.current[s - 1].focus() : s !== 3 && u.key === "ArrowRight" ? e.current[s + 1].focus() : v.length === 1 && u.key.length == 1 && !u.ctrlKey && !u.metaKey && (e.current[s].value = String(u.key), u.preventDefault(), s < 3 && e.current[s + 1].focus());
   }, h = (s) => {
     s.preventDefault();
   };
@@ -511,8 +511,8 @@ function Xe() {
           type: "number",
           placeholder: "x",
           onInput: i.bind(null, s),
-          onKeyDown: u.bind(null, s),
-          ref: (f) => e.current[s] = f
+          onKeyDown: f.bind(null, s),
+          ref: (u) => e.current[s] = u
         },
         s
       )) }),
@@ -521,7 +521,7 @@ function Xe() {
   ] });
 }
 function Qe() {
-  const [e, n] = k("progress"), t = () => {
+  const [e, n] = T("initial"), t = () => {
     n((a) => a === "initial" ? "progress" : a);
   };
   return /* @__PURE__ */ c.jsxs("div", { className: x.captcha__wrapper, children: [
