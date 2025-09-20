@@ -1,17 +1,8 @@
 import { useState } from "react";
 import { RiCheckboxLine, RiErrorWarningFill } from "react-icons/ri";
-import {
-	RiProgress1Line,
-	RiProgress2Line,
-	RiProgress3Line,
-	RiProgress4Line,
-	RiProgress5Line,
-	RiProgress6Line,
-	RiProgress7Line,
-	RiProgress8Line,
-} from "react-icons/ri";
 
 import styles from "./captcha.module.css";
+import LoadingIcon from "../loading/loading";
 
 export function Captcha() {
 	// initial, progress, success, error
@@ -20,9 +11,9 @@ export function Captcha() {
 	const handle_captcha_clicked = () => {
 		set_captcha_state((prev) => {
 			if (prev === "initial") {
-				return "error";
+				return "progress";
 			} else {
-				return "initial";
+				return prev
 			}
 		});
 	};
@@ -38,11 +29,16 @@ export function Captcha() {
 						<div className={styles["captcha__unchecked"]} />
 					)}
 					{captcha_state === "success" && (
-						<RiCheckboxLine style={{ margin: -8 }} size={46} color="#41A818"/>
+						<RiCheckboxLine style={{ margin: -8 }} size={46} color="#41A818" />
 					)}
 					{captcha_state === "error" && (
-						<RiErrorWarningFill style={{ margin: -8 }} size={46} color="#A81818"/>
+						<RiErrorWarningFill
+							style={{ margin: -8 }}
+							size={46}
+							color="#A81818"
+						/>
 					)}
+					{captcha_state === "progress" && <LoadingIcon />}
 					<p>Are you a human?</p>
 				</div>
 				<div className={styles["captcha__btn__footer"]}>
@@ -54,7 +50,12 @@ export function Captcha() {
 					</p>
 				</div>
 			</button>
-			<div className={styles["captcha__content"]}></div>
+			{captcha_state === "progress" && (
+				<div className={styles["captcha__content"]}>
+					<header>Solve this captcha to prove that you are a human</header>
+					<main>THis is a content</main>
+				</div>
+			)}
 		</div>
 	);
 }

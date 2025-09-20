@@ -5,6 +5,10 @@
 	text-align: initial;
 }
 
+.captcha__wrapper {
+	position: relative;
+}
+
 .captcha__btn {
 	background-color: #f9f9f9;
 	border: 2px solid #d8d8d8;
@@ -39,4 +43,25 @@
 	height: 32px;
 	background-color: #fff;
 	border: 3px solid #b0b0b0;
+}
+
+/*header color can be #578fdc*/
+.captcha__content {
+	position: absolute;
+	top: calc(100% + 8px);
+	padding: 4px;
+	border-radius: 2px;
+	border: 1px solid #b0b0b0;
+	width: 300px;
+	background-color: #f9f9f9;
+}
+
+.captcha__content header {
+	background-color: #578fdc;
+	color: white;
+	padding: 8px 16px;
+	margin-bottom: 8px;
+}
+
+.captcha__content main {
 }
