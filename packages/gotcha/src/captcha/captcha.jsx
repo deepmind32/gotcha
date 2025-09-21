@@ -79,7 +79,10 @@ export function Captcha() {
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/> */}
-					<WASDReflexGame />
+					<WASDReflexGame
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/>
 					{message && (
 						<div className={styles["captcha__failed"]}>
 							<div className={styles["captcha__failed__content"]}>

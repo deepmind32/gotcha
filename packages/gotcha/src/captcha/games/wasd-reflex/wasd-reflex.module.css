@@ -5,6 +5,7 @@
 .wasd__display__row {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 8px;
 }
 
@@ -19,8 +20,10 @@
 	font-size: 22px;
 	width: 50px;
 	height: 50px;
-	background-color: #b0b0b0;
+	background-color: var(--color-grey);
 	border-radius: 4px;
+	transform: scale(1);
+	transition: transform 0.2s ease-in;
 }
 
 .wasd__key.active {
@@ -33,4 +36,10 @@
 
 .wasd__key.correct {
 	background-color: var(--color-green);
+}
+
+.wasd__key.pressed {
+	background-color: var(--color-dark-grey);
+	transform: scale(0.9);
+	transition: transform 0.2s ease-out;
 }
