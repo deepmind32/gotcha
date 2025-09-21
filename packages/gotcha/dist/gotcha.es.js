@@ -119,7 +119,7 @@ function Ce() {
       }
     }
     function s() {
-      var r = Z.A;
+      var r = V.A;
       return r === null ? null : r.getOwner();
     }
     function c() {
@@ -215,8 +215,8 @@ React keys must be passed directly to JSX without using spread:
       }
       if (h = null, _ !== void 0 && (t(_), h = "" + _), l(o) && (t(o.key), h = "" + o.key), "key" in o) {
         _ = {};
-        for (var B in o)
-          B !== "key" && (_[B] = o[B]);
+        for (var D in o)
+          D !== "key" && (_[D] = o[D]);
       } else _ = o;
       return h && u(
         _,
@@ -235,7 +235,7 @@ React keys must be passed directly to JSX without using spread:
     function T(r) {
       typeof r == "object" && r !== null && r.$$typeof === E && r._store && (r._store.validated = 1);
     }
-    var j = x, E = Symbol.for("react.transitional.element"), I = Symbol.for("react.portal"), v = Symbol.for("react.fragment"), R = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), se = Symbol.for("react.consumer"), le = Symbol.for("react.context"), ue = Symbol.for("react.forward_ref"), _e = Symbol.for("react.suspense"), fe = Symbol.for("react.suspense_list"), de = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), he = Symbol.for("react.activity"), pe = Symbol.for("react.client.reference"), Z = j.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, W = Object.prototype.hasOwnProperty, me = Array.isArray, V = console.createTask ? console.createTask : function() {
+    var j = x, E = Symbol.for("react.transitional.element"), I = Symbol.for("react.portal"), v = Symbol.for("react.fragment"), R = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), se = Symbol.for("react.consumer"), le = Symbol.for("react.context"), ue = Symbol.for("react.forward_ref"), _e = Symbol.for("react.suspense"), fe = Symbol.for("react.suspense_list"), de = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), he = Symbol.for("react.activity"), pe = Symbol.for("react.client.reference"), V = j.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, W = Object.prototype.hasOwnProperty, me = Array.isArray, Z = console.createTask ? console.createTask : function() {
       return null;
     };
     j = {
@@ -246,9 +246,9 @@ React keys must be passed directly to JSX without using spread:
     var F, G = {}, U = j.react_stack_bottom_frame.bind(
       j,
       c
-    )(), J = V(a(c)), q = {};
+    )(), J = Z(a(c)), q = {};
     O.Fragment = v, O.jsx = function(r, o, _, d, C) {
-      var m = 1e4 > Z.recentlyCreatedOwnerStacks++;
+      var m = 1e4 > V.recentlyCreatedOwnerStacks++;
       return N(
         r,
         o,
@@ -257,10 +257,10 @@ React keys must be passed directly to JSX without using spread:
         d,
         C,
         m ? Error("react-stack-top-frame") : U,
-        m ? V(a(r)) : J
+        m ? Z(a(r)) : J
       );
     }, O.jsxs = function(r, o, _, d, C) {
-      var m = 1e4 > Z.recentlyCreatedOwnerStacks++;
+      var m = 1e4 > V.recentlyCreatedOwnerStacks++;
       return N(
         r,
         o,
@@ -269,7 +269,7 @@ React keys must be passed directly to JSX without using spread:
         d,
         C,
         m ? Error("react-stack-top-frame") : U,
-        m ? V(a(r)) : J
+        m ? Z(a(r)) : J
       );
     };
   })()), O;
@@ -413,10 +413,10 @@ function Le(e) {
 function Ie(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 10.3431 6.67157 8.84315 7.75736 7.75736L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
-function Ze(e) {
+function Ve(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" }, child: [] }] })(e);
 }
-function Ve(e) {
+function Ze(e) {
   return p({ attr: { viewBox: "0 0 24 24" }, child: [{ tag: "path", attr: { d: "M12.884 2.532c-.346-.654-1.422-.654-1.768 0l-9 17A.999.999 0 0 0 3 21h18a.998.998 0 0 0 .883-1.467L12.884 2.532zM13 18h-2v-2h2v2zm-2-4V9h2l.001 5H11z" }, child: [] }] })(e);
 }
 function ze(e) {
@@ -425,9 +425,9 @@ function ze(e) {
 function $e(e) {
   return p({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeMiterlimit: "10", strokeWidth: "28", d: "M288 193s12.18-6-32-6a80 80 0 1 0 80 80" }, child: [] }, { tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "28", d: "m256 149 40 40-40 40" }, child: [] }, { tag: "path", attr: { fill: "none", strokeMiterlimit: "10", strokeWidth: "32", d: "M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" }, child: [] }] })(e);
 }
-const Be = "_captcha__wrapper_w8022_5", De = "_captcha__failed_w8022_71", He = "_captcha__failed__content_w8022_101", Ye = "_captcha__btn_w8022_129", We = "_captcha__btn__main_w8022_153", Fe = "_captcha__btn__footer_w8022_177", Ge = "_captcha__unchecked_w8022_187", Ue = "_captcha__content_w8022_203", g = {
-  captcha__wrapper: Be,
-  captcha__failed: De,
+const De = "_captcha__wrapper_w8022_5", Be = "_captcha__failed_w8022_71", He = "_captcha__failed__content_w8022_101", Ye = "_captcha__btn_w8022_129", We = "_captcha__btn__main_w8022_153", Fe = "_captcha__btn__footer_w8022_177", Ge = "_captcha__unchecked_w8022_187", Ue = "_captcha__content_w8022_203", g = {
+  captcha__wrapper: De,
+  captcha__failed: Be,
   captcha__failed__content: He,
   captcha__btn: Ye,
   captcha__btn__main: We,
@@ -442,7 +442,7 @@ const Be = "_captcha__wrapper_w8022_5", De = "_captcha__failed_w8022_71", He = "
   Ae,
   Le,
   Ie,
-  Ze
+  Ve
 ];
 function Je() {
   const [e, n] = w(7);
@@ -493,7 +493,7 @@ function Qe({ digits: e = 4, onChange: n }) {
     c
   )) });
 }
-const er = "_timer__wrapper_17tk4_1", D = {
+const er = "_timer__wrapper_17tk4_1", B = {
   timer__wrapper: er,
   "timer--last": "_timer--last_17tk4_33"
 };
@@ -514,7 +514,7 @@ function tr({ start: e = 60, on_time_finished: n }) {
   }, [e]), /* @__PURE__ */ i.jsx(
     "div",
     {
-      className: `${D.timer__wrapper} ${rr(t) ? D["timer--last"] : D["timer--normal"]}
+      className: `${B.timer__wrapper} ${rr(t) ? B["timer--last"] : B["timer--normal"]}
 		`,
       children: /* @__PURE__ */ i.jsx("span", { children: t })
     }
@@ -586,7 +586,9 @@ function ur({ onFail: e, onSuccess: n }) {
   ] });
 }
 function fr() {
-  const [e, n] = w("progress"), [t, a] = w(null), s = () => {
+  const [e, n] = w(
+    process.env.NODE_ENV === "development" ? "progress" : "initial"
+  ), [t, a] = w(null), s = () => {
     n((u) => u === "initial" ? "progress" : u);
   }, c = ({ score: u, message: f }) => {
     a({
@@ -639,7 +641,7 @@ function fr() {
         }
       ),
       t && /* @__PURE__ */ i.jsx("div", { className: g.captcha__failed, children: /* @__PURE__ */ i.jsxs("div", { className: g.captcha__failed__content, children: [
-        t.type === "failure" ? /* @__PURE__ */ i.jsx(Ve, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ i.jsx(ze, { color: "#b0b0b0", size: "32px" }),
+        t.type === "failure" ? /* @__PURE__ */ i.jsx(Ze, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ i.jsx(ze, { color: "#b0b0b0", size: "32px" }),
         /* @__PURE__ */ i.jsx("p", { children: t.message }),
         /* @__PURE__ */ i.jsx("button", { style: { marginTop: 16 }, children: /* @__PURE__ */ i.jsx($e, { size: "32px" }) })
       ] }) })
