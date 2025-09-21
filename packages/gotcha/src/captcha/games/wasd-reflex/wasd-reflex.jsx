@@ -48,6 +48,7 @@ export default function WASDReflexGame({
 	const word = generate_wasd_words(100);
 	const game_ref = useRef({
 		active: false,
+		first_stage_done: false,
 		word,
 		corrects: Array(word.length).fill(undefined),
 		index: 0,
@@ -58,6 +59,22 @@ export default function WASDReflexGame({
 
 	const handle_time_over = () => {
 		game_ref.current.active = true;
+		game_ref.current.first_stage_done = true;
+		set_time(times[1]);
+	};
+
+	const handle_game_finish = () => {
+		if (game_ref.current.max_streak >= target) {
+			onSuccess({
+				score: game_ref.current.max_streak / target,
+				message: "As quick as a Crane.",
+			});
+		} else {
+			onFail({
+				score: 0,
+				message: "Didn't knew you were such a loser.",
+			});
+		}
 	};
 
 	// glowing keys loop
@@ -69,22 +86,6 @@ export default function WASDReflexGame({
 			if (game_ref.current.index >= game_ref.current.word.length) {
 				game_ref.current.active = false;
 				clearInterval(glow_interval);
-
-				const corrects = game_ref.current.corrects;
-				const correct = corrects.filter((x) => x === true).length;
-
-				if (correct > 0) {
-					onSuccess({
-						score: correct / corrects.length,
-						streak: game_ref.current.max_streak,
-						message: `Score: ${correct}/${corrects.length}, Best streak: ${game_ref.current.max_streak}`,
-					});
-				} else {
-					onFail({
-						score: 0,
-						message: "You failed!",
-					});
-				}
 				return;
 			}
 
@@ -102,7 +103,7 @@ export default function WASDReflexGame({
 		}, 600 * speed_factor);
 
 		return () => clearInterval(glow_interval);
-	}, [speed_factor, onSuccess, onFail]);
+	}, [speed_factor]);
 
 	// keyboard input
 	useEffect(() => {
@@ -164,7 +165,14 @@ export default function WASDReflexGame({
 					<h3>Show off your reflexes</h3>
 					<p>Use WASD or arrow keys to hit the glowing key (yellow).</p>
 				</div>
-				<Timer start={time} on_time_finished={handle_time_over} />
+				<Timer
+					start={time}
+					on_time_finished={() => {
+						game_ref.current.first_stage_done
+							? handle_game_finish()
+							: handle_time_over();
+					}}
+				/>
 			</header>
 			<main style={{ position: "relative" }}>
 				<div className={styles["streaks"]}>
