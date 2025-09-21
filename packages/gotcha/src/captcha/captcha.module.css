@@ -70,6 +70,10 @@ button {
 	padding: 16px 48px 8px 16px;
 }
 
+.captcha__wrapper .captcha__btn:hover {
+	transform: scale(1.02)
+}
+
 .captcha__btn:focus {
 	outline: none;
 }

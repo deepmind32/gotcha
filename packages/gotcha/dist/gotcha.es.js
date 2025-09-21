@@ -1,4 +1,4 @@
-import x, { useState as w, useEffect as H, useRef as ae } from "react";
+import x, { useState as j, useEffect as H, useRef as ae } from "react";
 import './index.css';var S = { exports: {} }, k = {};
 /**
  * @license React
@@ -52,7 +52,7 @@ function Ce() {
       switch (r) {
         case v:
           return "Fragment";
-        case oe:
+        case ie:
           return "Profiler";
         case R:
           return "StrictMode";
@@ -74,14 +74,14 @@ function Ce() {
           case se:
             return (r._context.displayName || "Context") + ".Consumer";
           case ue:
-            var o = r.render;
-            return r = r.displayName, r || (r = o.displayName || o.name || "", r = r !== "" ? "ForwardRef(" + r + ")" : "ForwardRef"), r;
+            var i = r.render;
+            return r = r.displayName, r || (r = i.displayName || i.name || "", r = r !== "" ? "ForwardRef(" + r + ")" : "ForwardRef"), r;
           case de:
-            return o = r.displayName || null, o !== null ? o : e(r.type) || "Memo";
+            return i = r.displayName || null, i !== null ? i : e(r.type) || "Memo";
           case Y:
-            o = r._payload, r = r._init;
+            i = r._payload, r = r._init;
             try {
-              return e(r(o));
+              return e(r(i));
             } catch {
             }
         }
@@ -93,15 +93,15 @@ function Ce() {
     function t(r) {
       try {
         n(r);
-        var o = !1;
+        var i = !1;
       } catch {
-        o = !0;
+        i = !0;
       }
-      if (o) {
-        o = console;
-        var _ = o.error, d = typeof Symbol == "function" && Symbol.toStringTag && r[Symbol.toStringTag] || r.constructor.name || "Object";
+      if (i) {
+        i = console;
+        var _ = i.error, d = typeof Symbol == "function" && Symbol.toStringTag && r[Symbol.toStringTag] || r.constructor.name || "Object";
         return _.call(
-          o,
+          i,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           d
         ), n(r);
@@ -112,8 +112,8 @@ function Ce() {
       if (typeof r == "object" && r !== null && r.$$typeof === Y)
         return "<...>";
       try {
-        var o = e(r);
-        return o ? "<" + o + ">" : "<...>";
+        var i = e(r);
+        return i ? "<" + i + ">" : "<...>";
       } catch {
         return "<...>";
       }
@@ -127,16 +127,16 @@ function Ce() {
     }
     function l(r) {
       if (W.call(r, "key")) {
-        var o = Object.getOwnPropertyDescriptor(r, "key").get;
-        if (o && o.isReactWarning) return !1;
+        var i = Object.getOwnPropertyDescriptor(r, "key").get;
+        if (i && i.isReactWarning) return !1;
       }
       return r.key !== void 0;
     }
-    function u(r, o) {
+    function u(r, i) {
       function _() {
         F || (F = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
-          o
+          i
         ));
       }
       _.isReactWarning = !0, Object.defineProperty(r, "key", {
@@ -150,11 +150,11 @@ function Ce() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), r = this.props.ref, r !== void 0 ? r : null;
     }
-    function P(r, o, _, d, C, m, z, $) {
+    function P(r, i, _, d, C, m, z, $) {
       return _ = m.ref, r = {
         $$typeof: E,
         type: r,
-        key: o,
+        key: i,
         props: m,
         _owner: C
       }, (_ !== void 0 ? _ : null) !== null ? Object.defineProperty(r, "ref", {
@@ -182,8 +182,8 @@ function Ce() {
         value: $
       }), Object.freeze && (Object.freeze(r.props), Object.freeze(r)), r;
     }
-    function N(r, o, _, d, C, m, z, $) {
-      var h = o.children;
+    function N(r, i, _, d, C, m, z, $) {
+      var h = i.children;
       if (h !== void 0)
         if (d)
           if (me(h)) {
@@ -195,12 +195,12 @@ function Ce() {
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
         else T(h);
-      if (W.call(o, "key")) {
+      if (W.call(i, "key")) {
         h = e(r);
-        var y = Object.keys(o).filter(function(ve) {
+        var w = Object.keys(i).filter(function(ve) {
           return ve !== "key";
         });
-        d = 0 < y.length ? "{key: someKey, " + y.join(": ..., ") + ": ...}" : "{key: someKey}", q[h + d] || (y = 0 < y.length ? "{" + y.join(": ..., ") + ": ...}" : "{}", console.error(
+        d = 0 < w.length ? "{key: someKey, " + w.join(": ..., ") + ": ...}" : "{key: someKey}", q[h + d] || (w = 0 < w.length ? "{" + w.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -209,15 +209,15 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`,
           d,
           h,
-          y,
+          w,
           h
         ), q[h + d] = !0);
       }
-      if (h = null, _ !== void 0 && (t(_), h = "" + _), l(o) && (t(o.key), h = "" + o.key), "key" in o) {
+      if (h = null, _ !== void 0 && (t(_), h = "" + _), l(i) && (t(i.key), h = "" + i.key), "key" in i) {
         _ = {};
-        for (var D in o)
-          D !== "key" && (_[D] = o[D]);
-      } else _ = o;
+        for (var D in i)
+          D !== "key" && (_[D] = i[D]);
+      } else _ = i;
       return h && u(
         _,
         typeof r == "function" ? r.displayName || r.name || "Unknown" : r
@@ -235,23 +235,23 @@ React keys must be passed directly to JSX without using spread:
     function T(r) {
       typeof r == "object" && r !== null && r.$$typeof === E && r._store && (r._store.validated = 1);
     }
-    var j = x, E = Symbol.for("react.transitional.element"), I = Symbol.for("react.portal"), v = Symbol.for("react.fragment"), R = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), se = Symbol.for("react.consumer"), le = Symbol.for("react.context"), ue = Symbol.for("react.forward_ref"), _e = Symbol.for("react.suspense"), fe = Symbol.for("react.suspense_list"), de = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), he = Symbol.for("react.activity"), pe = Symbol.for("react.client.reference"), V = j.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, W = Object.prototype.hasOwnProperty, me = Array.isArray, Z = console.createTask ? console.createTask : function() {
+    var y = x, E = Symbol.for("react.transitional.element"), I = Symbol.for("react.portal"), v = Symbol.for("react.fragment"), R = Symbol.for("react.strict_mode"), ie = Symbol.for("react.profiler"), se = Symbol.for("react.consumer"), le = Symbol.for("react.context"), ue = Symbol.for("react.forward_ref"), _e = Symbol.for("react.suspense"), fe = Symbol.for("react.suspense_list"), de = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), he = Symbol.for("react.activity"), pe = Symbol.for("react.client.reference"), V = y.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, W = Object.prototype.hasOwnProperty, me = Array.isArray, Z = console.createTask ? console.createTask : function() {
       return null;
     };
-    j = {
+    y = {
       react_stack_bottom_frame: function(r) {
         return r();
       }
     };
-    var F, G = {}, U = j.react_stack_bottom_frame.bind(
-      j,
+    var F, G = {}, U = y.react_stack_bottom_frame.bind(
+      y,
       c
     )(), J = Z(a(c)), q = {};
-    O.Fragment = v, O.jsx = function(r, o, _, d, C) {
+    O.Fragment = v, O.jsx = function(r, i, _, d, C) {
       var m = 1e4 > V.recentlyCreatedOwnerStacks++;
       return N(
         r,
-        o,
+        i,
         _,
         !1,
         d,
@@ -259,11 +259,11 @@ React keys must be passed directly to JSX without using spread:
         m ? Error("react-stack-top-frame") : U,
         m ? Z(a(r)) : J
       );
-    }, O.jsxs = function(r, o, _, d, C) {
+    }, O.jsxs = function(r, i, _, d, C) {
       var m = 1e4 > V.recentlyCreatedOwnerStacks++;
       return N(
         r,
-        o,
+        i,
         _,
         !0,
         d,
@@ -278,16 +278,16 @@ var Q;
 function ge() {
   return Q || (Q = 1, process.env.NODE_ENV === "production" ? S.exports = be() : S.exports = Ce()), S.exports;
 }
-var i = ge(), ce = {
+var o = ge(), ce = {
   color: void 0,
   size: void 0,
   className: void 0,
   style: void 0,
   attr: void 0
 }, ee = x.createContext && /* @__PURE__ */ x.createContext(ce), xe = ["attr", "size", "title"];
-function we(e, n) {
+function je(e, n) {
   if (e == null) return {};
-  var t = je(e, n), a, s;
+  var t = ye(e, n), a, s;
   if (Object.getOwnPropertySymbols) {
     var c = Object.getOwnPropertySymbols(e);
     for (s = 0; s < c.length; s++)
@@ -295,7 +295,7 @@ function we(e, n) {
   }
   return t;
 }
-function je(e, n) {
+function ye(e, n) {
   if (e == null) return {};
   var t = {};
   for (var a in e)
@@ -329,14 +329,14 @@ function L(e) {
   for (var n = 1; n < arguments.length; n++) {
     var t = arguments[n] != null ? arguments[n] : {};
     n % 2 ? re(Object(t), !0).forEach(function(a) {
-      ye(e, a, t[a]);
+      we(e, a, t[a]);
     }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : re(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function ye(e, n, t) {
+function we(e, n, t) {
   return n = Ee(n), n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e;
 }
 function Ee(e) {
@@ -353,15 +353,15 @@ function Re(e, n) {
   }
   return (n === "string" ? String : Number)(e);
 }
-function ie(e) {
+function oe(e) {
   return e && e.map((n, t) => /* @__PURE__ */ x.createElement(n.tag, L({
     key: t
-  }, n.attr), ie(n.child)));
+  }, n.attr), oe(n.child)));
 }
 function p(e) {
   return (n) => /* @__PURE__ */ x.createElement(ke, A({
     attr: L({}, e.attr)
-  }, n), ie(e.child));
+  }, n), oe(e.child));
 }
 function ke(e) {
   var n = (t) => {
@@ -369,7 +369,7 @@ function ke(e) {
       attr: a,
       size: s,
       title: c
-    } = e, l = we(e, xe), u = s || t.size || "1em", f;
+    } = e, l = je(e, xe), u = s || t.size || "1em", f;
     return t.className && (f = t.className), e.className && (f = (f ? f + " " : "") + e.className), /* @__PURE__ */ x.createElement("svg", A({
       stroke: "currentColor",
       fill: "currentColor",
@@ -425,7 +425,7 @@ function ze(e) {
 function $e(e) {
   return p({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeMiterlimit: "10", strokeWidth: "28", d: "M288 193s12.18-6-32-6a80 80 0 1 0 80 80" }, child: [] }, { tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "28", d: "m256 149 40 40-40 40" }, child: [] }, { tag: "path", attr: { fill: "none", strokeMiterlimit: "10", strokeWidth: "32", d: "M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" }, child: [] }] })(e);
 }
-const De = "_captcha__wrapper_w8022_5", Be = "_captcha__failed_w8022_71", He = "_captcha__failed__content_w8022_101", Ye = "_captcha__btn_w8022_129", We = "_captcha__btn__main_w8022_153", Fe = "_captcha__btn__footer_w8022_177", Ge = "_captcha__unchecked_w8022_187", Ue = "_captcha__content_w8022_203", g = {
+const De = "_captcha__wrapper_cvlpo_5", Be = "_captcha__failed_cvlpo_71", He = "_captcha__failed__content_cvlpo_101", Ye = "_captcha__btn_cvlpo_129", We = "_captcha__btn__main_cvlpo_161", Fe = "_captcha__btn__footer_cvlpo_185", Ge = "_captcha__unchecked_cvlpo_195", Ue = "_captcha__content_cvlpo_211", g = {
   captcha__wrapper: De,
   captcha__failed: Be,
   captcha__failed__content: He,
@@ -445,7 +445,7 @@ const De = "_captcha__wrapper_w8022_5", Be = "_captcha__failed_w8022_71", He = "
   Ve
 ];
 function Je() {
-  const [e, n] = w(7);
+  const [e, n] = j(7);
   H(() => {
     const a = setInterval(() => {
       n((s) => (s + 1) % te.length);
@@ -455,7 +455,7 @@ function Je() {
     };
   }, []);
   const t = te[e];
-  return /* @__PURE__ */ i.jsx(t, { style: { margin: -8 }, size: 46 });
+  return /* @__PURE__ */ o.jsx(t, { style: { margin: -8 }, size: 46 });
 }
 function qe(e, n, t = 1) {
   const s = e, c = [];
@@ -481,7 +481,7 @@ function Qe({ digits: e = 4, onChange: n }) {
     const u = l.target.value;
     u.length > 0 && l.key === "Backspace" ? (t.current[c].value = null, ne(t, e) || n(void 0)) : c !== 0 && (l.key === "Backspace" || l.key === "ArrowLeft") ? t.current[c - 1].focus() : c !== e - 1 && l.key === "ArrowRight" ? t.current[c + 1].focus() : u.length === 1 && l.key.length == 1 && !l.ctrlKey && !l.metaKey && (t.current[c].value = String(l.key), l.preventDefault(), c < e - 1 && t.current[c + 1].focus());
   };
-  return /* @__PURE__ */ i.jsx("div", { className: Ke.form__pin, children: [0, 1, 2, 3].map((c) => /* @__PURE__ */ i.jsx(
+  return /* @__PURE__ */ o.jsx("div", { className: Ke.form__pin, children: [0, 1, 2, 3].map((c) => /* @__PURE__ */ o.jsx(
     "input",
     {
       type: "number",
@@ -501,7 +501,7 @@ function rr(e) {
   return e < 10;
 }
 function tr({ start: e = 60, on_time_finished: n }) {
-  const [t, a] = w(e);
+  const [t, a] = j(e);
   return H(() => {
     const s = setInterval(() => {
       a((c) => c > 0 ? c - 1 : (n(), clearInterval(s), 0));
@@ -511,36 +511,36 @@ function tr({ start: e = 60, on_time_finished: n }) {
     };
   }, []), H(() => {
     a(e);
-  }, [e]), /* @__PURE__ */ i.jsx(
+  }, [e]), /* @__PURE__ */ o.jsx(
     "div",
     {
       className: `${B.timer__wrapper} ${rr(t) ? B["timer--last"] : B["timer--normal"]}
 		`,
-      children: /* @__PURE__ */ i.jsx("span", { children: t })
+      children: /* @__PURE__ */ o.jsx("span", { children: t })
     }
   );
 }
-const nr = "_header_1caus_1", ar = "_header__info_1caus_15", cr = "_form__pin__wrapper_1caus_43", ir = "_form__btn__wrapper_1caus_55", or = "_enter_pin_1caus_73", b = {
+const nr = "_header_1caus_1", ar = "_header__info_1caus_15", cr = "_form__pin__wrapper_1caus_43", or = "_form__btn__wrapper_1caus_55", ir = "_enter_pin_1caus_73", b = {
   header: nr,
   header__info: ar,
   form__pin__wrapper: cr,
-  form__btn__wrapper: ir,
-  enter_pin: or
+  form__btn__wrapper: or,
+  enter_pin: ir
 }, sr = "_button_u3ipf_1", lr = {
   button: sr
 };
 function M({ children: e, className: n, ...t }) {
-  return /* @__PURE__ */ i.jsx("button", { className: `${lr.button} ${n ?? ""}`, ...t, children: e });
+  return /* @__PURE__ */ o.jsx("button", { className: `${lr.button} ${n ?? ""}`, ...t, children: e });
 }
 function ur({ onFail: e, onSuccess: n }) {
-  const [a, s] = w(void 0), [c, l] = w("enter-pin"), [u, f] = w("0000"), P = ae(!1), N = () => {
+  const [a, s] = j(void 0), [c, l] = j("enter-pin"), [u, f] = j("0000"), P = ae(!1), N = () => {
     P.current || e({
       score: 0,
       message: "A turtle is faster than you"
     });
   }, T = (v) => {
     s(v);
-  }, j = (v) => {
+  }, y = (v) => {
     v.preventDefault(), a && (l("verify-pin"), f(+a < Math.pow(10, 4) / 2 ? "9999" : "0000"));
   }, E = (v) => {
     const R = +u + v;
@@ -554,14 +554,14 @@ function ur({ onFail: e, onSuccess: n }) {
       message: "Looks like you are not human enough"
     });
   };
-  return /* @__PURE__ */ i.jsxs(i.Fragment, { children: [
-    /* @__PURE__ */ i.jsxs("header", { className: b.header, children: [
-      /* @__PURE__ */ i.jsxs("div", { className: b.header__info, children: [
-        /* @__PURE__ */ i.jsx("h3", { children: "PIN Challenge" }),
-        c === "enter-pin" && /* @__PURE__ */ i.jsx("p", { children: "Prove yourself a human by creating a random pin" }),
-        c === "verify-pin" && /* @__PURE__ */ i.jsx("p", { children: "Human can remember their earlier PIN" })
+  return /* @__PURE__ */ o.jsxs(o.Fragment, { children: [
+    /* @__PURE__ */ o.jsxs("header", { className: b.header, children: [
+      /* @__PURE__ */ o.jsxs("div", { className: b.header__info, children: [
+        /* @__PURE__ */ o.jsx("h3", { children: "PIN Challenge" }),
+        c === "enter-pin" && /* @__PURE__ */ o.jsx("p", { children: "Prove yourself a human by creating a random pin" }),
+        c === "verify-pin" && /* @__PURE__ */ o.jsx("p", { children: "Human can remember their earlier PIN" })
       ] }),
-      /* @__PURE__ */ i.jsx(
+      /* @__PURE__ */ o.jsx(
         tr,
         {
           start: c === "enter-pin" ? 10 : 30,
@@ -569,26 +569,26 @@ function ur({ onFail: e, onSuccess: n }) {
         }
       )
     ] }),
-    /* @__PURE__ */ i.jsxs("main", { className: b.main, children: [
-      c === "enter-pin" && /* @__PURE__ */ i.jsxs("form", { className: b.form, onSubmit: j, children: [
-        /* @__PURE__ */ i.jsx("div", { className: b.form__pin__wrapper, children: /* @__PURE__ */ i.jsx(Qe, { digits: 4, onChange: T }) }),
-        /* @__PURE__ */ i.jsx("div", { className: b.form__btn__wrapper, children: /* @__PURE__ */ i.jsx(M, { type: "submit", disabled: !a, children: "Submit PIN" }) })
+    /* @__PURE__ */ o.jsxs("main", { className: b.main, children: [
+      c === "enter-pin" && /* @__PURE__ */ o.jsxs("form", { className: b.form, onSubmit: y, children: [
+        /* @__PURE__ */ o.jsx("div", { className: b.form__pin__wrapper, children: /* @__PURE__ */ o.jsx(Qe, { digits: 4, onChange: T }) }),
+        /* @__PURE__ */ o.jsx("div", { className: b.form__btn__wrapper, children: /* @__PURE__ */ o.jsx(M, { type: "submit", disabled: !a, children: "Submit PIN" }) })
       ] }),
-      c === "verify-pin" && /* @__PURE__ */ i.jsx("div", { className: b.form, children: /* @__PURE__ */ i.jsxs("div", { className: b.form__btn__wrapper, children: [
-        /* @__PURE__ */ i.jsxs("div", { className: b.enter_pin, children: [
-          /* @__PURE__ */ i.jsx(M, { onClick: E.bind(null, -1), children: "-" }),
-          /* @__PURE__ */ i.jsx("span", { children: u }),
-          /* @__PURE__ */ i.jsx(M, { onClick: E.bind(null, 1), children: "+" })
+      c === "verify-pin" && /* @__PURE__ */ o.jsx("div", { className: b.form, children: /* @__PURE__ */ o.jsxs("div", { className: b.form__btn__wrapper, children: [
+        /* @__PURE__ */ o.jsxs("div", { className: b.enter_pin, children: [
+          /* @__PURE__ */ o.jsx(M, { onClick: E.bind(null, -1), children: "-" }),
+          /* @__PURE__ */ o.jsx("span", { children: u }),
+          /* @__PURE__ */ o.jsx(M, { onClick: E.bind(null, 1), children: "+" })
         ] }),
-        /* @__PURE__ */ i.jsx(M, { onClick: I, children: "Verify PIN" })
+        /* @__PURE__ */ o.jsx(M, { onClick: I, children: "Verify PIN" })
       ] }) })
     ] })
   ] });
 }
 function fr() {
-  const [e, n] = w(
+  const [e, n] = j(
     process.env.NODE_ENV === "development" ? "progress" : "initial"
-  ), [t, a] = w(null), s = () => {
+  ), [t, a] = j(null), s = () => {
     n((u) => u === "initial" ? "progress" : u);
   }, c = ({ score: u, message: f }) => {
     a({
@@ -603,17 +603,17 @@ function fr() {
       type: "success"
     });
   };
-  return /* @__PURE__ */ i.jsxs("div", { className: g.captcha__wrapper, children: [
-    /* @__PURE__ */ i.jsxs(
+  return /* @__PURE__ */ o.jsxs("div", { className: g.captcha__wrapper, children: [
+    /* @__PURE__ */ o.jsxs(
       "button",
       {
         className: g.captcha__btn,
         onClick: s,
         children: [
-          /* @__PURE__ */ i.jsxs("div", { className: g.captcha__btn__main, children: [
-            e === "initial" && /* @__PURE__ */ i.jsx("div", { className: g.captcha__unchecked }),
-            e === "success" && /* @__PURE__ */ i.jsx(Oe, { style: { margin: -8 }, size: 46, color: "#41A818" }),
-            e === "error" && /* @__PURE__ */ i.jsx(
+          /* @__PURE__ */ o.jsxs("div", { className: g.captcha__btn__main, children: [
+            e === "initial" && /* @__PURE__ */ o.jsx("div", { className: g.captcha__unchecked }),
+            e === "success" && /* @__PURE__ */ o.jsx(Oe, { style: { margin: -8 }, size: 46, color: "#41A818" }),
+            e === "error" && /* @__PURE__ */ o.jsx(
               Pe,
               {
                 style: { margin: -8 },
@@ -621,29 +621,29 @@ function fr() {
                 color: "#A81818"
               }
             ),
-            e === "progress" && /* @__PURE__ */ i.jsx(Je, {}),
-            /* @__PURE__ */ i.jsx("p", { children: "Are you a human?" })
+            e === "progress" && /* @__PURE__ */ o.jsx(Je, {}),
+            /* @__PURE__ */ o.jsx("p", { children: "Are you a human?" })
           ] }),
-          /* @__PURE__ */ i.jsx("div", { className: g.captcha__btn__footer, children: /* @__PURE__ */ i.jsxs("p", { children: [
+          /* @__PURE__ */ o.jsx("div", { className: g.captcha__btn__footer, children: /* @__PURE__ */ o.jsxs("p", { children: [
             "Powered by",
             " ",
-            /* @__PURE__ */ i.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
+            /* @__PURE__ */ o.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
           ] }) })
         ]
       }
     ),
-    e === "progress" && /* @__PURE__ */ i.jsxs("div", { className: g.captcha__content, children: [
-      /* @__PURE__ */ i.jsx(
+    e === "progress" && /* @__PURE__ */ o.jsxs("div", { className: g.captcha__content, children: [
+      /* @__PURE__ */ o.jsx(
         ur,
         {
           onFail: c,
           onSuccess: l
         }
       ),
-      t && /* @__PURE__ */ i.jsx("div", { className: g.captcha__failed, children: /* @__PURE__ */ i.jsxs("div", { className: g.captcha__failed__content, children: [
-        t.type === "failure" ? /* @__PURE__ */ i.jsx(Ze, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ i.jsx(ze, { color: "#b0b0b0", size: "32px" }),
-        /* @__PURE__ */ i.jsx("p", { children: t.message }),
-        /* @__PURE__ */ i.jsx("button", { style: { marginTop: 16 }, children: /* @__PURE__ */ i.jsx($e, { size: "32px" }) })
+      t && /* @__PURE__ */ o.jsx("div", { className: g.captcha__failed, children: /* @__PURE__ */ o.jsxs("div", { className: g.captcha__failed__content, children: [
+        t.type === "failure" ? /* @__PURE__ */ o.jsx(Ze, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ o.jsx(ze, { color: "#b0b0b0", size: "32px" }),
+        /* @__PURE__ */ o.jsx("p", { children: t.message }),
+        /* @__PURE__ */ o.jsx("button", { style: { marginTop: 16 }, children: /* @__PURE__ */ o.jsx($e, { size: "32px" }) })
       ] }) })
     ] })
   ] });
