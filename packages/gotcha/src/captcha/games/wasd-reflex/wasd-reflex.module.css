@@ -32,14 +32,26 @@
 
 .wasd__key.wrong {
 	background-color: var(--color-red);
+	transform: scale(0.9);
+	transition: transform 0.2s ease-out;
 }
 
 .wasd__key.correct {
 	background-color: var(--color-green);
+	transform: scale(0.9);
+	transition: transform 0.2s ease-out;
 }
 
 .wasd__key.pressed {
 	background-color: var(--color-dark-grey);
 	transform: scale(0.9);
 	transition: transform 0.2s ease-out;
+}
+
+
+.streaks {
+	display: flex;
+	justify-content: flex-end;
+	margin: 18px 0;
+	padding-right: 10px;
 }

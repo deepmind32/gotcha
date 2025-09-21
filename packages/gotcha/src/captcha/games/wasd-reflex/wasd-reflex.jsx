@@ -1,228 +1,151 @@
 import { useEffect, useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./wasd-reflex.module.css";
+import StreakMeter from "../../../components/streak-meter/streak-meter";
 
-function get_key_satus(game_active, pressed_key, active_key) {
-	if (!game_active) {
-		return "pressed";
+function get_key_status(game_active, pressed_key, active_key) {
+	if (!game_active) return "normal";
+	return pressed_key === active_key ? "correct" : "wrong";
+}
+
+function generate_wasd_words(length) {
+	const keys = ["w", "a", "s", "d"];
+	let sequence = "";
+
+	for (let i = 0; i < length; i++) {
+		const random_index = Math.floor(Math.random() * keys.length);
+		sequence += keys[random_index];
 	}
 
-	if (pressed_key === active_key) {
-		return "correct";
-	} else {
-		return "wrong";
-	}
+	return sequence;
+}
+
+// map keys
+const keyMap = {
+	w: ["w", "W", "ArrowUp"],
+	a: ["a", "A", "ArrowLeft"],
+	s: ["s", "S", "ArrowDown"],
+	d: ["d", "D", "ArrowRight"],
+};
+
+function findPressed(eventKey) {
+	return Object.keys(keyMap).find((k) => keyMap[k].includes(eventKey));
 }
 
 export default function WASDReflexGame({
-	word = "wasdwasdwasdsawdsawdssswwwwa",
+	target = 5,
+	times = [6, 30],
 	speed_factor = 1,
 	onSuccess,
 	onFail,
 }) {
-	// normal, correct, incorrect
 	const [active_key, set_active_key] = useState({
 		w: "normal",
 		a: "normal",
 		s: "normal",
 		d: "normal",
 	});
+	const word = generate_wasd_words(100);
 	const game_ref = useRef({
 		active: false,
 		word,
 		corrects: Array(word.length).fill(undefined),
 		index: 0,
+		streak: 0,
+		max_streak: 0,
 	});
+	const [time, set_time] = useState(times[0]);
 
 	const handle_time_over = () => {
-		game_ref.current["active"] = true;
+		game_ref.current.active = true;
 	};
 
-	// used to handle the glowing thing
+	// glowing keys loop
 	useEffect(() => {
 		const glow_interval = setInterval(() => {
-			if (game_ref.current["active"]) {
-				if (game_ref.current["index"] >= game_ref.current["word"].length) {
-					game_ref.current.active = false;
-					game_ref.current.ranned = true;
-					clearInterval(glow_interval);
+			if (!game_ref.current.active) return;
 
-					const corrects = game_ref.current.corrects;
-					const correct = corrects.reduce(
-						(acc, item) => acc + (typeof item === "boolean" && item ? 1 : 0),
-						0
-					);
+			// game finished
+			if (game_ref.current.index >= game_ref.current.word.length) {
+				game_ref.current.active = false;
+				clearInterval(glow_interval);
 
-					if (correct > 0) {
-						onSuccess({
-							score: correct / corrects.length,
-							message: `You completed with score ${correct} out of ${corrects.length}`,
-						});
-					} else {
-						onFail({
-							score: 0,
-							message: "You failed",
-						});
-					}
+				const corrects = game_ref.current.corrects;
+				const correct = corrects.filter((x) => x === true).length;
 
-					return;
+				if (correct > 0) {
+					onSuccess({
+						score: correct / corrects.length,
+						streak: game_ref.current.max_streak,
+						message: `Score: ${correct}/${corrects.length}, Best streak: ${game_ref.current.max_streak}`,
+					});
+				} else {
+					onFail({
+						score: 0,
+						message: "You failed!",
+					});
 				}
-
-				const current_word =
-					game_ref.current["word"][game_ref.current["index"]];
-				game_ref.current.index += 1;
-
-				set_active_key((prev) => ({
-					w: "normal",
-					a: "normal",
-					s: "normal",
-					d: "normal",
-					[current_word]: "active",
-				}));
+				return;
 			}
-		}, 400 * speed_factor);
 
-		return () => {
-			clearInterval(glow_interval);
-		};
-	}, [game_ref.current.active]);
+			// next target
+			const current_word = game_ref.current.word[game_ref.current.index];
+			game_ref.current.index += 1;
 
-	// adding event listener to listen to WASD and arrow keys
+			set_active_key({
+				w: "normal",
+				a: "normal",
+				s: "normal",
+				d: "normal",
+				[current_word]: "active",
+			});
+		}, 600 * speed_factor);
+
+		return () => clearInterval(glow_interval);
+	}, [speed_factor, onSuccess, onFail]);
+
+	// keyboard input
 	useEffect(() => {
+		const heldKeys = new Set();
+
 		const handle_key_down = (event) => {
-			const active_key = game_ref.current.word[game_ref.current.index - 1];
+			const pressed = findPressed(event.key);
+			if (!pressed || heldKeys.has(event.key)) return;
+			heldKeys.add(event.key);
 
-			switch (event.key) {
-				case "w":
-				case "W":
-				case "ArrowUp":
-					const status_w = get_key_satus(
-						game_ref.current.active,
-						"w",
-						active_key
+			const currentIndex = game_ref.current.index - 1;
+			const active_key_char = game_ref.current.word[currentIndex];
+			const status = get_key_status(
+				game_ref.current.active,
+				pressed,
+				active_key_char
+			);
+
+			// accept only first attempt for this step
+			if (typeof game_ref.current.corrects[currentIndex] === "undefined") {
+				if (status === "correct") {
+					game_ref.current.corrects[currentIndex] = true;
+					game_ref.current.streak++;
+					game_ref.current.max_streak = Math.max(
+						game_ref.current.max_streak,
+						game_ref.current.streak
 					);
-					if (
-						typeof game_ref.current.corrects[game_ref.current.index - 1] ===
-						"undefined"
-					) {
-						if (status_w === "correct") {
-							game_ref.current.corrects[game_ref.current.index - 1] = true;
-						} else if (status_w === "wrong") {
-							game_ref.current.corrects[game_ref.current.index - 1] = false;
-						}
-					}
-					set_active_key((prev) => ({
-						...prev,
-						w: status_w,
-					}));
-					break;
-
-				case "a":
-				case "A":
-				case "ArrowLeft":
-					let status_a = get_key_satus(
-						game_ref.current.active,
-						"a",
-						active_key
-					);
-					if (
-						typeof game_ref.current.corrects[game_ref.current.index - 1] ===
-						"undefined"
-					) {
-						if (status_a === "correct") {
-							game_ref.current.corrects[game_ref.current.index - 1] = true;
-						} else if (status_a === "wrong") {
-							game_ref.current.corrects[game_ref.current.index - 1] = false;
-						}
-					}
-					set_active_key((prev) => ({
-						...prev,
-						a: status_a,
-					}));
-					break;
-
-				case "s":
-				case "S":
-				case "ArrowDown":
-					let status_s = get_key_satus(
-						game_ref.current.active,
-						"s",
-						active_key
-					);
-					if (
-						typeof game_ref.current.corrects[game_ref.current.index - 1] ===
-						"undefined"
-					) {
-						if (status_s === "correct") {
-							game_ref.current.corrects[game_ref.current.index - 1] = true;
-						} else if (status_s === "wrong") {
-							game_ref.current.corrects[game_ref.current.index - 1] = false;
-						}
-					}
-					set_active_key((prev) => ({
-						...prev,
-						s: status_s,
-					}));
-					break;
-
-				case "d":
-				case "D":
-				case "ArrowRight":
-					let status_d = get_key_satus(
-						game_ref.current.active,
-						"d",
-						active_key
-					);
-					if (
-						typeof game_ref.current.corrects[game_ref.current.index - 1] ===
-						"undefined"
-					) {
-						if (status_d === "correct") {
-							game_ref.current.corrects[game_ref.current.index - 1] = true;
-						} else if (status_d === "wrong") {
-							game_ref.current.corrects[game_ref.current.index - 1] = false;
-						}
-					}
-					set_active_key((prev) => ({
-						...prev,
-						d: status_d,
-					}));
-					break;
-
-				default:
-					break;
+				} else if (status === "wrong") {
+					game_ref.current.corrects[currentIndex] = false;
+					game_ref.current.streak = 0;
+				}
 			}
+
+			set_active_key((prev) => ({ ...prev, [pressed]: status }));
+
+			// quick reset for visual feedback
+			setTimeout(() => {
+				set_active_key((prev) => ({ ...prev, [pressed]: "normal" }));
+			}, 150);
 		};
 
 		const handle_key_up = (event) => {
-			switch (event.key) {
-				case "w":
-				case "W":
-				case "ArrowUp":
-					set_active_key((prev) => ({ ...prev, w: "normal" }));
-					break;
-
-				case "a":
-				case "A":
-				case "ArrowLeft":
-					set_active_key((prev) => ({ ...prev, a: "normal" }));
-					break;
-
-				case "s":
-				case "S":
-				case "ArrowDown":
-					set_active_key((prev) => ({ ...prev, s: "normal" }));
-					break;
-
-				case "d":
-				case "D":
-				case "ArrowRight":
-					set_active_key((prev) => ({ ...prev, d: "normal" }));
-					break;
-
-				default:
-					break;
-			}
+			heldKeys.delete(event.key);
 		};
 
 		window.addEventListener("keydown", handle_key_down);
@@ -241,9 +164,16 @@ export default function WASDReflexGame({
 					<h3>Show off your reflexes</h3>
 					<p>Use WASD or arrow keys to hit the glowing key (yellow).</p>
 				</div>
-				<Timer start={5} on_time_finished={handle_time_over} />
+				<Timer start={time} on_time_finished={handle_time_over} />
 			</header>
 			<main style={{ position: "relative" }}>
+				<div className={styles["streaks"]}>
+					<StreakMeter
+						max_streak={game_ref.current.max_streak}
+						streak={game_ref.current.streak}
+						target={target}
+					/>
+				</div>
 				<div className={styles["wasd__display"]}>
 					<div className={styles["wasd__display__row"]}>
 						<div
