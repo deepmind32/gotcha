@@ -45,7 +45,7 @@ export default function WASDReflexGame({
 				if (game_ref.current["index"] >= game_ref.current["word"].length) {
 					game_ref.current.active = false;
 					game_ref.current.ranned = true;
-					clearInterval(game_ref);
+					clearInterval(glow_interval);
 
 					const corrects = game_ref.current.corrects;
 					const correct = corrects.reduce(
@@ -60,7 +60,7 @@ export default function WASDReflexGame({
 						});
 					} else {
 						onFail({
-							score: 1 - correct / corrects.length,
+							score: 0,
 							message: "You failed",
 						});
 					}

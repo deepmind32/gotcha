@@ -519,7 +519,7 @@ function cr({
     const f = setInterval(() => {
       if (a.current.active) {
         if (a.current.index >= a.current.word.length) {
-          a.current.active = !1, a.current.ranned = !0, clearInterval(a);
+          a.current.active = !1, a.current.ranned = !0, clearInterval(f);
           const v = a.current.corrects, d = v.reduce(
             (C, g) => C + (typeof g == "boolean" && g ? 1 : 0),
             0
@@ -528,7 +528,7 @@ function cr({
             score: d / v.length,
             message: `You completed with score ${d} out of ${v.length}`
           }) : c({
-            score: 1 - d / v.length,
+            score: 0,
             message: "You failed"
           });
           return;
