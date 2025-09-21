@@ -5,8 +5,12 @@ import Timer from "../../../components/timer/timer";
 import styles from "./pin.module.css";
 import Button from "../../../components/button/button";
 
-export default function PinGame({ onFail, onSuccess }) {
-	const digit = 4;
+export default function PinGame({
+	digit = 4,
+	time = [10, 30],
+	onFail,
+	onSuccess,
+}) {
 	const [pin, set_pin] = useState(undefined);
 	const [stage, set_stage] = useState("enter-pin");
 	const [entered_pin, set_entered_pin] = useState("0000");
@@ -73,7 +77,7 @@ export default function PinGame({ onFail, onSuccess }) {
 					)}
 				</div>
 				<Timer
-					start={stage === "enter-pin" ? 10 : 30}
+					start={stage === "enter-pin" ? time[0] : time[1]}
 					on_time_finished={handle_time_finished}
 				/>
 			</header>

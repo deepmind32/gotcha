@@ -6,6 +6,7 @@ import { IoRefreshCircleOutline } from "react-icons/io5";
 import styles from "./captcha.module.css";
 import LoadingIcon from "../components/loading/loading";
 import PinGame from "./games/select-pin/pin";
+import WASDReflexGame from "./games/wasd-reflex/wasd-reflex";
 
 export function Captcha() {
 	// initial, progress, success, error
@@ -74,10 +75,11 @@ export function Captcha() {
 			</button>
 			{captcha_state === "progress" && (
 				<div className={styles["captcha__content"]}>
-					<PinGame
+					{/* <PinGame
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
-					/>
+					/> */}
+					<WASDReflexGame />
 					{message && (
 						<div className={styles["captcha__failed"]}>
 							<div className={styles["captcha__failed__content"]}>
