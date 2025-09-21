@@ -6,8 +6,17 @@
 }
 
 .header__info {
-	flex-grow: 1;
-	width: 90%;
+	width: 80%;
+}
+
+.header__info h3 {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+
+.header__info p {
+	font-size: 14px;
 }
 
 .form__pin__wrapper {
@@ -16,24 +25,29 @@
 	justify-content: center;
 }
 
-.form__btn button {
-	background-color: #578fdc;
-	border: none;
-	color: white;
+.form__btn__wrapper {
+	margin: auto;
 	width: 200px;
-	display: block;
-	margin: 0 auto;
 	text-align: center;
 	margin-top: 24px;
 	margin-bottom: 16px;
-	font-size: 16px;
-	padding: 8px 16px;
-	border-radius: 4px;
 }
 
-.form__btn button:focus {
-	outline: none;
+
+.enter_pin {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	margin-top: 40px;
+	margin-bottom: 32px;
 }
-.form__btn button:disabled {
+
+.enter_pin button {
 	background-color: #b0b0b0;
+}
+
+.enter_pin span {
+	font-size: 40px;
 }

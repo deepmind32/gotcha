@@ -26,6 +26,10 @@ export default function Timer({ start = 60, on_time_finished }) {
 		};
 	}, []);
 
+	useEffect(() => {
+		set_second(start);
+	}, [start]);
+
 	return (
 		<div
 			className={`${styles["timer__wrapper"]} ${

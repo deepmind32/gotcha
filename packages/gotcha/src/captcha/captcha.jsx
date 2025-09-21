@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { RiCheckboxLine, RiErrorWarningFill } from "react-icons/ri";
+import { BiSolidError, BiSolidFlagCheckered } from "react-icons/bi";
+import { IoRefreshCircleOutline } from "react-icons/io5";
 
 import styles from "./captcha.module.css";
 import LoadingIcon from "../components/loading/loading";
@@ -8,6 +10,7 @@ import PinGame from "./games/select-pin/pin";
 export function Captcha() {
 	// initial, progress, success, error
 	const [captcha_state, set_captcha_state] = useState("progress");
+	const [message, set_message] = useState(null);
 
 	const handle_captcha_clicked = () => {
 		set_captcha_state((prev) => {
@@ -16,6 +19,22 @@ export function Captcha() {
 			} else {
 				return prev;
 			}
+		});
+	};
+
+	const handle_challenge_failed = ({ score, message }) => {
+		set_message({
+			score,
+			message,
+			type: "failure",
+		});
+	};
+
+	const handle_challenge_success = ({ score, message }) => {
+		set_message({
+			score,
+			message,
+			type: "success",
 		});
 	};
 
@@ -53,7 +72,25 @@ export function Captcha() {
 			</button>
 			{captcha_state === "progress" && (
 				<div className={styles["captcha__content"]}>
-					<PinGame />
+					<PinGame
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/>
+					{message && (
+						<div className={styles["captcha__failed"]}>
+							<div className={styles["captcha__failed__content"]}>
+								{message["type"] === "failure" ? (
+									<BiSolidError color="#b0b0b0" size="32px" />
+								) : (
+									<BiSolidFlagCheckered color="#b0b0b0" size="32px" />
+								)}
+								<p>{message["message"]}</p>
+								<button style={{ marginTop: 16 }}>
+									<IoRefreshCircleOutline size="32px" />
+								</button>
+							</div>
+						</div>
+					)}
 				</div>
 			)}
 		</div>

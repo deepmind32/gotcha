@@ -1,13 +1,5 @@
-import b, { useState as P, useEffect as Q, useRef as he } from "react";
-import './index.css';const Ce = "_captcha__wrapper_1pyfx_1", be = "_captcha__btn_1pyfx_23", ve = "_captcha__btn__main_1pyfx_47", ge = "_captcha__btn__footer_1pyfx_71", ye = "_captcha__unchecked_1pyfx_81", xe = "_captcha__content_1pyfx_97", g = {
-  captcha__wrapper: Ce,
-  captcha__btn: be,
-  captcha__btn__main: ve,
-  captcha__btn__footer: ge,
-  captcha__unchecked: ye,
-  captcha__content: xe
-};
-var E = { exports: {} }, x = {};
+import x, { useState as w, useEffect as H, useRef as ae } from "react";
+import './index.css';var S = { exports: {} }, k = {};
 /**
  * @license React
  * react-jsx-runtime.production.js
@@ -17,29 +9,29 @@ var E = { exports: {} }, x = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var H;
-function je() {
-  if (H) return x;
-  H = 1;
+var X;
+function be() {
+  if (X) return k;
+  X = 1;
   var e = Symbol.for("react.transitional.element"), n = Symbol.for("react.fragment");
-  function t(a, i, o) {
+  function t(a, s, c) {
     var l = null;
-    if (o !== void 0 && (l = "" + o), i.key !== void 0 && (l = "" + i.key), "key" in i) {
-      o = {};
-      for (var d in i)
-        d !== "key" && (o[d] = i[d]);
-    } else o = i;
-    return i = o.ref, {
+    if (c !== void 0 && (l = "" + c), s.key !== void 0 && (l = "" + s.key), "key" in s) {
+      c = {};
+      for (var u in s)
+        u !== "key" && (c[u] = s[u]);
+    } else c = s;
+    return s = c.ref, {
       $$typeof: e,
       type: a,
       key: l,
-      ref: i !== void 0 ? i : null,
-      props: o
+      ref: s !== void 0 ? s : null,
+      props: c
     };
   }
-  return x.Fragment = n, x.jsx = t, x.jsxs = t, x;
+  return k.Fragment = n, k.jsx = t, k.jsxs = t, k;
 }
-var j = {};
+var O = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -49,47 +41,47 @@ var j = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var G;
-function we() {
-  return G || (G = 1, process.env.NODE_ENV !== "production" && (function() {
+var K;
+function Ce() {
+  return K || (K = 1, process.env.NODE_ENV !== "production" && (function() {
     function e(r) {
       if (r == null) return null;
       if (typeof r == "function")
-        return r.$$typeof === de ? null : r.displayName || r.name || null;
+        return r.$$typeof === pe ? null : r.displayName || r.name || null;
       if (typeof r == "string") return r;
       switch (r) {
-        case k:
+        case v:
           return "Fragment";
         case oe:
           return "Profiler";
-        case ae:
+        case R:
           return "StrictMode";
-        case le:
-          return "Suspense";
-        case ue:
-          return "SuspenseList";
         case _e:
+          return "Suspense";
+        case fe:
+          return "SuspenseList";
+        case he:
           return "Activity";
       }
       if (typeof r == "object")
         switch (typeof r.tag == "number" && console.error(
           "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
         ), r.$$typeof) {
-          case ne:
+          case I:
             return "Portal";
-          case ie:
+          case le:
             return (r.displayName || "Context") + ".Provider";
-          case ce:
-            return (r._context.displayName || "Context") + ".Consumer";
           case se:
-            var c = r.render;
-            return r = r.displayName, r || (r = c.displayName || c.name || "", r = r !== "" ? "ForwardRef(" + r + ")" : "ForwardRef"), r;
-          case fe:
-            return c = r.displayName || null, c !== null ? c : e(r.type) || "Memo";
-          case V:
-            c = r._payload, r = r._init;
+            return (r._context.displayName || "Context") + ".Consumer";
+          case ue:
+            var o = r.render;
+            return r = r.displayName, r || (r = o.displayName || o.name || "", r = r !== "" ? "ForwardRef(" + r + ")" : "ForwardRef"), r;
+          case de:
+            return o = r.displayName || null, o !== null ? o : e(r.type) || "Memo";
+          case Y:
+            o = r._payload, r = r._init;
             try {
-              return e(r(c));
+              return e(r(o));
             } catch {
             }
         }
@@ -101,73 +93,73 @@ function we() {
     function t(r) {
       try {
         n(r);
-        var c = !1;
+        var o = !1;
       } catch {
-        c = !0;
+        o = !0;
       }
-      if (c) {
-        c = console;
-        var u = c.error, f = typeof Symbol == "function" && Symbol.toStringTag && r[Symbol.toStringTag] || r.constructor.name || "Object";
-        return u.call(
-          c,
+      if (o) {
+        o = console;
+        var _ = o.error, d = typeof Symbol == "function" && Symbol.toStringTag && r[Symbol.toStringTag] || r.constructor.name || "Object";
+        return _.call(
+          o,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
-          f
+          d
         ), n(r);
       }
     }
     function a(r) {
-      if (r === k) return "<>";
-      if (typeof r == "object" && r !== null && r.$$typeof === V)
+      if (r === v) return "<>";
+      if (typeof r == "object" && r !== null && r.$$typeof === Y)
         return "<...>";
       try {
-        var c = e(r);
-        return c ? "<" + c + ">" : "<...>";
+        var o = e(r);
+        return o ? "<" + o + ">" : "<...>";
       } catch {
         return "<...>";
       }
     }
-    function i() {
-      var r = T.A;
+    function s() {
+      var r = Z.A;
       return r === null ? null : r.getOwner();
     }
-    function o() {
+    function c() {
       return Error("react-stack-top-frame");
     }
     function l(r) {
-      if ($.call(r, "key")) {
-        var c = Object.getOwnPropertyDescriptor(r, "key").get;
-        if (c && c.isReactWarning) return !1;
+      if (W.call(r, "key")) {
+        var o = Object.getOwnPropertyDescriptor(r, "key").get;
+        if (o && o.isReactWarning) return !1;
       }
       return r.key !== void 0;
     }
-    function d(r, c) {
-      function u() {
-        Y || (Y = !0, console.error(
+    function u(r, o) {
+      function _() {
+        F || (F = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
-          c
+          o
         ));
       }
-      u.isReactWarning = !0, Object.defineProperty(r, "key", {
-        get: u,
+      _.isReactWarning = !0, Object.defineProperty(r, "key", {
+        get: _,
         configurable: !0
       });
     }
-    function p() {
+    function f() {
       var r = e(this.type);
-      return B[r] || (B[r] = !0, console.error(
+      return G[r] || (G[r] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), r = this.props.ref, r !== void 0 ? r : null;
     }
-    function te(r, c, u, f, C, m, S, A) {
-      return u = m.ref, r = {
-        $$typeof: D,
+    function P(r, o, _, d, C, m, z, $) {
+      return _ = m.ref, r = {
+        $$typeof: E,
         type: r,
-        key: c,
+        key: o,
         props: m,
         _owner: C
-      }, (u !== void 0 ? u : null) !== null ? Object.defineProperty(r, "ref", {
+      }, (_ !== void 0 ? _ : null) !== null ? Object.defineProperty(r, "ref", {
         enumerable: !1,
-        get: p
+        get: f
       }) : Object.defineProperty(r, "ref", { enumerable: !1, value: null }), r._store = {}, Object.defineProperty(r._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -182,128 +174,128 @@ function we() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: S
+        value: z
       }), Object.defineProperty(r, "_debugTask", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: A
+        value: $
       }), Object.freeze && (Object.freeze(r.props), Object.freeze(r)), r;
     }
-    function Z(r, c, u, f, C, m, S, A) {
-      var _ = c.children;
-      if (_ !== void 0)
-        if (f)
-          if (pe(_)) {
-            for (f = 0; f < _.length; f++)
-              I(_[f]);
-            Object.freeze && Object.freeze(_);
+    function N(r, o, _, d, C, m, z, $) {
+      var h = o.children;
+      if (h !== void 0)
+        if (d)
+          if (me(h)) {
+            for (d = 0; d < h.length; d++)
+              T(h[d]);
+            Object.freeze && Object.freeze(h);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else I(_);
-      if ($.call(c, "key")) {
-        _ = e(r);
-        var v = Object.keys(c).filter(function(me) {
-          return me !== "key";
+        else T(h);
+      if (W.call(o, "key")) {
+        h = e(r);
+        var y = Object.keys(o).filter(function(ve) {
+          return ve !== "key";
         });
-        f = 0 < v.length ? "{key: someKey, " + v.join(": ..., ") + ": ...}" : "{key: someKey}", W[_ + f] || (v = 0 < v.length ? "{" + v.join(": ..., ") + ": ...}" : "{}", console.error(
+        d = 0 < y.length ? "{key: someKey, " + y.join(": ..., ") + ": ...}" : "{key: someKey}", q[h + d] || (y = 0 < y.length ? "{" + y.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
   <%s key={someKey} {...props} />`,
-          f,
-          _,
-          v,
-          _
-        ), W[_ + f] = !0);
+          d,
+          h,
+          y,
+          h
+        ), q[h + d] = !0);
       }
-      if (_ = null, u !== void 0 && (t(u), _ = "" + u), l(c) && (t(c.key), _ = "" + c.key), "key" in c) {
-        u = {};
-        for (var M in c)
-          M !== "key" && (u[M] = c[M]);
-      } else u = c;
-      return _ && d(
-        u,
-        typeof r == "function" ? r.displayName || r.name || "Unknown" : r
-      ), te(
-        r,
+      if (h = null, _ !== void 0 && (t(_), h = "" + _), l(o) && (t(o.key), h = "" + o.key), "key" in o) {
+        _ = {};
+        for (var B in o)
+          B !== "key" && (_[B] = o[B]);
+      } else _ = o;
+      return h && u(
         _,
+        typeof r == "function" ? r.displayName || r.name || "Unknown" : r
+      ), P(
+        r,
+        h,
         m,
         C,
-        i(),
-        u,
-        S,
-        A
+        s(),
+        _,
+        z,
+        $
       );
     }
-    function I(r) {
-      typeof r == "object" && r !== null && r.$$typeof === D && r._store && (r._store.validated = 1);
+    function T(r) {
+      typeof r == "object" && r !== null && r.$$typeof === E && r._store && (r._store.validated = 1);
     }
-    var w = b, D = Symbol.for("react.transitional.element"), ne = Symbol.for("react.portal"), k = Symbol.for("react.fragment"), ae = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), ce = Symbol.for("react.consumer"), ie = Symbol.for("react.context"), se = Symbol.for("react.forward_ref"), le = Symbol.for("react.suspense"), ue = Symbol.for("react.suspense_list"), fe = Symbol.for("react.memo"), V = Symbol.for("react.lazy"), _e = Symbol.for("react.activity"), de = Symbol.for("react.client.reference"), T = w.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, $ = Object.prototype.hasOwnProperty, pe = Array.isArray, N = console.createTask ? console.createTask : function() {
+    var j = x, E = Symbol.for("react.transitional.element"), I = Symbol.for("react.portal"), v = Symbol.for("react.fragment"), R = Symbol.for("react.strict_mode"), oe = Symbol.for("react.profiler"), se = Symbol.for("react.consumer"), le = Symbol.for("react.context"), ue = Symbol.for("react.forward_ref"), _e = Symbol.for("react.suspense"), fe = Symbol.for("react.suspense_list"), de = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), he = Symbol.for("react.activity"), pe = Symbol.for("react.client.reference"), Z = j.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, W = Object.prototype.hasOwnProperty, me = Array.isArray, V = console.createTask ? console.createTask : function() {
       return null;
     };
-    w = {
+    j = {
       react_stack_bottom_frame: function(r) {
         return r();
       }
     };
-    var Y, B = {}, F = w.react_stack_bottom_frame.bind(
-      w,
-      o
-    )(), z = N(a(o)), W = {};
-    j.Fragment = k, j.jsx = function(r, c, u, f, C) {
-      var m = 1e4 > T.recentlyCreatedOwnerStacks++;
-      return Z(
+    var F, G = {}, U = j.react_stack_bottom_frame.bind(
+      j,
+      c
+    )(), J = V(a(c)), q = {};
+    O.Fragment = v, O.jsx = function(r, o, _, d, C) {
+      var m = 1e4 > Z.recentlyCreatedOwnerStacks++;
+      return N(
         r,
-        c,
-        u,
+        o,
+        _,
         !1,
-        f,
+        d,
         C,
-        m ? Error("react-stack-top-frame") : F,
-        m ? N(a(r)) : z
+        m ? Error("react-stack-top-frame") : U,
+        m ? V(a(r)) : J
       );
-    }, j.jsxs = function(r, c, u, f, C) {
-      var m = 1e4 > T.recentlyCreatedOwnerStacks++;
-      return Z(
+    }, O.jsxs = function(r, o, _, d, C) {
+      var m = 1e4 > Z.recentlyCreatedOwnerStacks++;
+      return N(
         r,
-        c,
-        u,
+        o,
+        _,
         !0,
-        f,
+        d,
         C,
-        m ? Error("react-stack-top-frame") : F,
-        m ? N(a(r)) : z
+        m ? Error("react-stack-top-frame") : U,
+        m ? V(a(r)) : J
       );
     };
-  })()), j;
+  })()), O;
 }
-var U;
-function Ee() {
-  return U || (U = 1, process.env.NODE_ENV === "production" ? E.exports = je() : E.exports = we()), E.exports;
+var Q;
+function ge() {
+  return Q || (Q = 1, process.env.NODE_ENV === "production" ? S.exports = be() : S.exports = Ce()), S.exports;
 }
-var s = Ee(), ee = {
+var i = ge(), ce = {
   color: void 0,
   size: void 0,
   className: void 0,
   style: void 0,
   attr: void 0
-}, J = b.createContext && /* @__PURE__ */ b.createContext(ee), Re = ["attr", "size", "title"];
-function Oe(e, n) {
+}, ee = x.createContext && /* @__PURE__ */ x.createContext(ce), xe = ["attr", "size", "title"];
+function we(e, n) {
   if (e == null) return {};
-  var t = Pe(e, n), a, i;
+  var t = je(e, n), a, s;
   if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e);
-    for (i = 0; i < o.length; i++)
-      a = o[i], !(n.indexOf(a) >= 0) && Object.prototype.propertyIsEnumerable.call(e, a) && (t[a] = e[a]);
+    var c = Object.getOwnPropertySymbols(e);
+    for (s = 0; s < c.length; s++)
+      a = c[s], !(n.indexOf(a) >= 0) && Object.prototype.propertyIsEnumerable.call(e, a) && (t[a] = e[a]);
   }
   return t;
 }
-function Pe(e, n) {
+function je(e, n) {
   if (e == null) return {};
   var t = {};
   for (var a in e)
@@ -313,45 +305,45 @@ function Pe(e, n) {
     }
   return t;
 }
-function R() {
-  return R = Object.assign ? Object.assign.bind() : function(e) {
+function A() {
+  return A = Object.assign ? Object.assign.bind() : function(e) {
     for (var n = 1; n < arguments.length; n++) {
       var t = arguments[n];
       for (var a in t)
         Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a]);
     }
     return e;
-  }, R.apply(this, arguments);
+  }, A.apply(this, arguments);
 }
-function q(e, n) {
+function re(e, n) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
-    n && (a = a.filter(function(i) {
-      return Object.getOwnPropertyDescriptor(e, i).enumerable;
+    n && (a = a.filter(function(s) {
+      return Object.getOwnPropertyDescriptor(e, s).enumerable;
     })), t.push.apply(t, a);
   }
   return t;
 }
-function O(e) {
+function L(e) {
   for (var n = 1; n < arguments.length; n++) {
     var t = arguments[n] != null ? arguments[n] : {};
-    n % 2 ? q(Object(t), !0).forEach(function(a) {
-      ke(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : q(Object(t)).forEach(function(a) {
+    n % 2 ? re(Object(t), !0).forEach(function(a) {
+      ye(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : re(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function ke(e, n, t) {
-  return n = Te(n), n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e;
+function ye(e, n, t) {
+  return n = Ee(n), n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e;
 }
-function Te(e) {
-  var n = Ne(e, "string");
+function Ee(e) {
+  var n = Re(e, "string");
   return typeof n == "symbol" ? n : n + "";
 }
-function Ne(e, n) {
+function Re(e, n) {
   if (typeof e != "object" || !e) return e;
   var t = e[Symbol.toPrimitive];
   if (t !== void 0) {
@@ -361,217 +353,299 @@ function Ne(e, n) {
   }
   return (n === "string" ? String : Number)(e);
 }
-function re(e) {
-  return e && e.map((n, t) => /* @__PURE__ */ b.createElement(n.tag, O({
+function ie(e) {
+  return e && e.map((n, t) => /* @__PURE__ */ x.createElement(n.tag, L({
     key: t
-  }, n.attr), re(n.child)));
+  }, n.attr), ie(n.child)));
 }
-function h(e) {
-  return (n) => /* @__PURE__ */ b.createElement(Se, R({
-    attr: O({}, e.attr)
-  }, n), re(e.child));
+function p(e) {
+  return (n) => /* @__PURE__ */ x.createElement(ke, A({
+    attr: L({}, e.attr)
+  }, n), ie(e.child));
 }
-function Se(e) {
+function ke(e) {
   var n = (t) => {
     var {
       attr: a,
-      size: i,
-      title: o
-    } = e, l = Oe(e, Re), d = i || t.size || "1em", p;
-    return t.className && (p = t.className), e.className && (p = (p ? p + " " : "") + e.className), /* @__PURE__ */ b.createElement("svg", R({
+      size: s,
+      title: c
+    } = e, l = we(e, xe), u = s || t.size || "1em", f;
+    return t.className && (f = t.className), e.className && (f = (f ? f + " " : "") + e.className), /* @__PURE__ */ x.createElement("svg", A({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
     }, t.attr, a, l, {
-      className: p,
-      style: O(O({
+      className: f,
+      style: L(L({
         color: e.color || t.color
       }, t.style), e.style),
-      height: d,
-      width: d,
+      height: u,
+      width: u,
       xmlns: "http://www.w3.org/2000/svg"
-    }), o && /* @__PURE__ */ b.createElement("title", null, o), e.children);
+    }), c && /* @__PURE__ */ x.createElement("title", null, c), e.children);
   };
-  return J !== void 0 ? /* @__PURE__ */ b.createElement(J.Consumer, null, (t) => n(t)) : n(ee);
+  return ee !== void 0 ? /* @__PURE__ */ x.createElement(ee.Consumer, null, (t) => n(t)) : n(ce);
 }
-function Ae(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z" }, child: [] }] })(e);
+function Oe(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z" }, child: [] }] })(e);
+}
+function Pe(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z" }, child: [] }] })(e);
+}
+function Ne(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 12V6C13.6569 6 15.1569 6.67157 16.2426 7.75736L12 12Z" }, child: [] }] })(e);
+}
+function Te(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 12V6C15.3137 6 18 8.68629 18 12H12Z" }, child: [] }] })(e);
+}
+function Se(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 13.6569 17.3284 15.1569 16.2426 16.2426L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
 function Me(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z" }, child: [] }] })(e);
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
+}
+function Ae(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C10.3431 18 8.84311 17.3284 7.75732 16.2426L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
 function Le(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 12V6C13.6569 6 15.1569 6.67157 16.2426 7.75736L12 12Z" }, child: [] }] })(e);
-}
-function Ze(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 12V6C15.3137 6 18 8.68629 18 12H12Z" }, child: [] }] })(e);
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM17.9998 12C17.9998 15.3137 15.3135 18 11.9998 18C8.68606 18 5.99977 15.3137 5.99977 12H11.9998V6C15.3135 6 17.9998 8.68629 17.9998 12Z" }, child: [] }] })(e);
 }
 function Ie(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 13.6569 17.3284 15.1569 16.2426 16.2426L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 10.3431 6.67157 8.84315 7.75736 7.75736L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
-function De(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
+function Ze(e) {
+  return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" }, child: [] }] })(e);
 }
 function Ve(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C10.3431 18 8.84311 17.3284 7.75732 16.2426L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
+  return p({ attr: { viewBox: "0 0 24 24" }, child: [{ tag: "path", attr: { d: "M12.884 2.532c-.346-.654-1.422-.654-1.768 0l-9 17A.999.999 0 0 0 3 21h18a.998.998 0 0 0 .883-1.467L12.884 2.532zM13 18h-2v-2h2v2zm-2-4V9h2l.001 5H11z" }, child: [] }] })(e);
+}
+function ze(e) {
+  return p({ attr: { viewBox: "0 0 24 24" }, child: [{ tag: "path", attr: { d: "M4 2v18H3v2h4v-2H6v-5h13a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H6V2H4zm4 3v2h2V5h2v2h2V5h2v2h2v2h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H8v-2H6V9h2V7H6V5h2z" }, child: [] }, { tag: "path", attr: { d: "M8 9h2v2H8zm4 0h2v2h-2zm-2-2h2v2h-2zm4 0h2v2h-2z" }, child: [] }] })(e);
 }
 function $e(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM17.9998 12C17.9998 15.3137 15.3135 18 11.9998 18C8.68606 18 5.99977 15.3137 5.99977 12H11.9998V6C15.3135 6 17.9998 8.68629 17.9998 12Z" }, child: [] }] })(e);
+  return p({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeMiterlimit: "10", strokeWidth: "28", d: "M288 193s12.18-6-32-6a80 80 0 1 0 80 80" }, child: [] }, { tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "28", d: "m256 149 40 40-40 40" }, child: [] }, { tag: "path", attr: { fill: "none", strokeMiterlimit: "10", strokeWidth: "32", d: "M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" }, child: [] }] })(e);
 }
-function Ye(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 10.3431 6.67157 8.84315 7.75736 7.75736L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
-}
-function Be(e) {
-  return h({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" }, child: [] }] })(e);
-}
-const X = [
+const Be = "_captcha__wrapper_w8022_5", De = "_captcha__failed_w8022_71", He = "_captcha__failed__content_w8022_101", Ye = "_captcha__btn_w8022_129", We = "_captcha__btn__main_w8022_153", Fe = "_captcha__btn__footer_w8022_177", Ge = "_captcha__unchecked_w8022_187", Ue = "_captcha__content_w8022_203", g = {
+  captcha__wrapper: Be,
+  captcha__failed: De,
+  captcha__failed__content: He,
+  captcha__btn: Ye,
+  captcha__btn__main: We,
+  captcha__btn__footer: Fe,
+  captcha__unchecked: Ge,
+  captcha__content: Ue
+}, te = [
+  Ne,
+  Te,
+  Se,
+  Me,
+  Ae,
   Le,
-  Ze,
   Ie,
-  De,
-  Ve,
-  $e,
-  Ye,
-  Be
+  Ze
 ];
-function Fe() {
-  const [e, n] = P(7);
-  Q(() => {
+function Je() {
+  const [e, n] = w(7);
+  H(() => {
     const a = setInterval(() => {
-      n((i) => (i + 1) % X.length);
+      n((s) => (s + 1) % te.length);
     }, 100);
     return () => {
       clearInterval(a);
     };
   }, []);
-  const t = X[e];
-  return /* @__PURE__ */ s.jsx(t, { style: { margin: -8 }, size: 46 });
+  const t = te[e];
+  return /* @__PURE__ */ i.jsx(t, { style: { margin: -8 }, size: 46 });
 }
-function ze(e, n, t = 1) {
-  const i = e, o = [];
+function qe(e, n, t = 1) {
+  const s = e, c = [];
   let l = 0;
-  for (; l < i; )
-    o.push(l), l += t;
-  return o;
+  for (; l < s; )
+    c.push(l), l += t;
+  return c;
 }
-const We = "_form__pin_1kyyk_1", He = {
-  form__pin: We
+const Xe = "_form__pin_1kyyk_1", Ke = {
+  form__pin: Xe
 };
-function K(e, n) {
-  const t = ze(n).map((a) => e.current[a].value);
-  return t.map((a) => a.length > 0).every(Boolean) ? t.reduce((a, i) => `${a}${i}`) : !1;
+function ne(e, n) {
+  const t = qe(n).map((a) => e.current[a].value);
+  return t.map((a) => a.length > 0).every(Boolean) ? t.reduce((a, s) => `${a}${s}`) : !1;
 }
-function Ge({ digits: e = 4, onChange: n }) {
-  const t = he([]), a = (o, l) => {
-    const d = l.target.value;
-    o <= 2 && d.length === 1 && t.current[o + 1].focus();
-    const p = K(t, e);
-    n(p || void 0);
-  }, i = (o, l) => {
-    const d = l.target.value;
-    d.length > 0 && l.key === "Backspace" ? (t.current[o].value = null, K(t, e) || n(void 0)) : o !== 0 && (l.key === "Backspace" || l.key === "ArrowLeft") ? t.current[o - 1].focus() : o !== e - 1 && l.key === "ArrowRight" ? t.current[o + 1].focus() : d.length === 1 && l.key.length == 1 && !l.ctrlKey && !l.metaKey && (t.current[o].value = String(l.key), l.preventDefault(), o < e - 1 && t.current[o + 1].focus());
+function Qe({ digits: e = 4, onChange: n }) {
+  const t = ae([]), a = (c, l) => {
+    const u = l.target.value;
+    c <= 2 && u.length === 1 && t.current[c + 1].focus();
+    const f = ne(t, e);
+    n(f || void 0);
+  }, s = (c, l) => {
+    const u = l.target.value;
+    u.length > 0 && l.key === "Backspace" ? (t.current[c].value = null, ne(t, e) || n(void 0)) : c !== 0 && (l.key === "Backspace" || l.key === "ArrowLeft") ? t.current[c - 1].focus() : c !== e - 1 && l.key === "ArrowRight" ? t.current[c + 1].focus() : u.length === 1 && l.key.length == 1 && !l.ctrlKey && !l.metaKey && (t.current[c].value = String(l.key), l.preventDefault(), c < e - 1 && t.current[c + 1].focus());
   };
-  return /* @__PURE__ */ s.jsx("div", { className: He.form__pin, children: [0, 1, 2, 3].map((o) => /* @__PURE__ */ s.jsx(
+  return /* @__PURE__ */ i.jsx("div", { className: Ke.form__pin, children: [0, 1, 2, 3].map((c) => /* @__PURE__ */ i.jsx(
     "input",
     {
       type: "number",
       placeholder: "x",
-      onInput: a.bind(null, o),
-      onKeyDown: i.bind(null, o),
-      ref: (l) => t.current[o] = l
+      onInput: a.bind(null, c),
+      onKeyDown: s.bind(null, c),
+      ref: (l) => t.current[c] = l
     },
-    o
+    c
   )) });
 }
-const Ue = "_timer__wrapper_17tk4_1", L = {
-  timer__wrapper: Ue,
+const er = "_timer__wrapper_17tk4_1", D = {
+  timer__wrapper: er,
   "timer--last": "_timer--last_17tk4_33"
 };
-function Je(e) {
+function rr(e) {
   return e < 10;
 }
-function qe({ start: e = 60, on_time_finished: n }) {
-  const [t, a] = P(e);
-  return Q(() => {
-    const i = setInterval(() => {
-      a((o) => o > 0 ? o - 1 : (n(), clearInterval(i), 0));
+function tr({ start: e = 60, on_time_finished: n }) {
+  const [t, a] = w(e);
+  return H(() => {
+    const s = setInterval(() => {
+      a((c) => c > 0 ? c - 1 : (n(), clearInterval(s), 0));
     }, 1e3);
     return () => {
-      clearInterval(i);
+      clearInterval(s);
     };
-  }, []), /* @__PURE__ */ s.jsx(
+  }, []), H(() => {
+    a(e);
+  }, [e]), /* @__PURE__ */ i.jsx(
     "div",
     {
-      className: `${L.timer__wrapper} ${Je(t) ? L["timer--last"] : L["timer--normal"]}
+      className: `${D.timer__wrapper} ${rr(t) ? D["timer--last"] : D["timer--normal"]}
 		`,
-      children: /* @__PURE__ */ s.jsx("span", { children: t })
+      children: /* @__PURE__ */ i.jsx("span", { children: t })
     }
   );
 }
-const Xe = "_header_s76go_1", Ke = "_header__info_s76go_15", Qe = "_form__pin__wrapper_s76go_25", er = "_form__btn_s76go_37", y = {
-  header: Xe,
-  header__info: Ke,
-  form__pin__wrapper: Qe,
-  form__btn: er
+const nr = "_header_1caus_1", ar = "_header__info_1caus_15", cr = "_form__pin__wrapper_1caus_43", ir = "_form__btn__wrapper_1caus_55", or = "_enter_pin_1caus_73", b = {
+  header: nr,
+  header__info: ar,
+  form__pin__wrapper: cr,
+  form__btn__wrapper: ir,
+  enter_pin: or
+}, sr = "_button_u3ipf_1", lr = {
+  button: sr
 };
-function rr() {
-  const [e, n] = P(void 0), t = () => {
-    console.log("Oops, you failed");
-  }, a = (o) => {
-    n(o);
-  }, i = (o) => {
-    o.preventDefault();
+function M({ children: e, className: n, ...t }) {
+  return /* @__PURE__ */ i.jsx("button", { className: `${lr.button} ${n ?? ""}`, ...t, children: e });
+}
+function ur({ onFail: e, onSuccess: n }) {
+  const [a, s] = w(void 0), [c, l] = w("enter-pin"), [u, f] = w("0000"), P = ae(!1), N = () => {
+    P.current || e({
+      score: 0,
+      message: "A turtle is faster than you"
+    });
+  }, T = (v) => {
+    s(v);
+  }, j = (v) => {
+    v.preventDefault(), a && (l("verify-pin"), f(+a < Math.pow(10, 4) / 2 ? "9999" : "0000"));
+  }, E = (v) => {
+    const R = +u + v;
+    R >= 0 && R <= Math.pow(10, 4) - 1 && f(String(R));
+  }, I = () => {
+    P.current = !0, a === u ? n({
+      score: 1,
+      message: "Looks like you need something little harder"
+    }) : e({
+      score: 0,
+      message: "Looks like you are not human enough"
+    });
   };
-  return /* @__PURE__ */ s.jsxs(s.Fragment, { children: [
-    /* @__PURE__ */ s.jsxs("header", { className: y.header, children: [
-      /* @__PURE__ */ s.jsxs("div", { className: y.header__info, children: [
-        /* @__PURE__ */ s.jsx("h3", { children: "Set the pin" }),
-        /* @__PURE__ */ s.jsx("p", { children: "Prove yourself a human by changing a random pin" })
+  return /* @__PURE__ */ i.jsxs(i.Fragment, { children: [
+    /* @__PURE__ */ i.jsxs("header", { className: b.header, children: [
+      /* @__PURE__ */ i.jsxs("div", { className: b.header__info, children: [
+        /* @__PURE__ */ i.jsx("h3", { children: "PIN Challenge" }),
+        c === "enter-pin" && /* @__PURE__ */ i.jsx("p", { children: "Prove yourself a human by creating a random pin" }),
+        c === "verify-pin" && /* @__PURE__ */ i.jsx("p", { children: "Human can remember their earlier PIN" })
       ] }),
-      /* @__PURE__ */ s.jsx(qe, { start: 15, on_time_finished: t })
+      /* @__PURE__ */ i.jsx(
+        tr,
+        {
+          start: c === "enter-pin" ? 10 : 30,
+          on_time_finished: N
+        }
+      )
     ] }),
-    /* @__PURE__ */ s.jsx("main", { className: y.main, children: /* @__PURE__ */ s.jsxs("form", { className: y.form, onSubmit: i, children: [
-      /* @__PURE__ */ s.jsx("div", { className: y.form__pin__wrapper, children: /* @__PURE__ */ s.jsx(Ge, { digits: 4, onChange: a }) }),
-      /* @__PURE__ */ s.jsx("div", { className: y.form__btn, children: /* @__PURE__ */ s.jsx("button", { type: "submit", disabled: !e, children: "Submit" }) })
-    ] }) })
+    /* @__PURE__ */ i.jsxs("main", { className: b.main, children: [
+      c === "enter-pin" && /* @__PURE__ */ i.jsxs("form", { className: b.form, onSubmit: j, children: [
+        /* @__PURE__ */ i.jsx("div", { className: b.form__pin__wrapper, children: /* @__PURE__ */ i.jsx(Qe, { digits: 4, onChange: T }) }),
+        /* @__PURE__ */ i.jsx("div", { className: b.form__btn__wrapper, children: /* @__PURE__ */ i.jsx(M, { type: "submit", disabled: !a, children: "Submit PIN" }) })
+      ] }),
+      c === "verify-pin" && /* @__PURE__ */ i.jsx("div", { className: b.form, children: /* @__PURE__ */ i.jsxs("div", { className: b.form__btn__wrapper, children: [
+        /* @__PURE__ */ i.jsxs("div", { className: b.enter_pin, children: [
+          /* @__PURE__ */ i.jsx(M, { onClick: E.bind(null, -1), children: "-" }),
+          /* @__PURE__ */ i.jsx("span", { children: u }),
+          /* @__PURE__ */ i.jsx(M, { onClick: E.bind(null, 1), children: "+" })
+        ] }),
+        /* @__PURE__ */ i.jsx(M, { onClick: I, children: "Verify PIN" })
+      ] }) })
+    ] })
   ] });
 }
-function nr() {
-  const [e, n] = P("progress"), t = () => {
-    n((a) => a === "initial" ? "progress" : a);
+function fr() {
+  const [e, n] = w("progress"), [t, a] = w(null), s = () => {
+    n((u) => u === "initial" ? "progress" : u);
+  }, c = ({ score: u, message: f }) => {
+    a({
+      score: u,
+      message: f,
+      type: "failure"
+    });
+  }, l = ({ score: u, message: f }) => {
+    a({
+      score: u,
+      message: f,
+      type: "success"
+    });
   };
-  return /* @__PURE__ */ s.jsxs("div", { className: g.captcha__wrapper, children: [
-    /* @__PURE__ */ s.jsxs(
+  return /* @__PURE__ */ i.jsxs("div", { className: g.captcha__wrapper, children: [
+    /* @__PURE__ */ i.jsxs(
       "button",
       {
         className: g.captcha__btn,
-        onClick: t,
+        onClick: s,
         children: [
-          /* @__PURE__ */ s.jsxs("div", { className: g.captcha__btn__main, children: [
-            e === "initial" && /* @__PURE__ */ s.jsx("div", { className: g.captcha__unchecked }),
-            e === "success" && /* @__PURE__ */ s.jsx(Ae, { style: { margin: -8 }, size: 46, color: "#41A818" }),
-            e === "error" && /* @__PURE__ */ s.jsx(
-              Me,
+          /* @__PURE__ */ i.jsxs("div", { className: g.captcha__btn__main, children: [
+            e === "initial" && /* @__PURE__ */ i.jsx("div", { className: g.captcha__unchecked }),
+            e === "success" && /* @__PURE__ */ i.jsx(Oe, { style: { margin: -8 }, size: 46, color: "#41A818" }),
+            e === "error" && /* @__PURE__ */ i.jsx(
+              Pe,
               {
                 style: { margin: -8 },
                 size: 46,
                 color: "#A81818"
               }
             ),
-            e === "progress" && /* @__PURE__ */ s.jsx(Fe, {}),
-            /* @__PURE__ */ s.jsx("p", { children: "Are you a human?" })
+            e === "progress" && /* @__PURE__ */ i.jsx(Je, {}),
+            /* @__PURE__ */ i.jsx("p", { children: "Are you a human?" })
           ] }),
-          /* @__PURE__ */ s.jsx("div", { className: g.captcha__btn__footer, children: /* @__PURE__ */ s.jsxs("p", { children: [
+          /* @__PURE__ */ i.jsx("div", { className: g.captcha__btn__footer, children: /* @__PURE__ */ i.jsxs("p", { children: [
             "Powered by",
             " ",
-            /* @__PURE__ */ s.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
+            /* @__PURE__ */ i.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
           ] }) })
         ]
       }
     ),
-    e === "progress" && /* @__PURE__ */ s.jsx("div", { className: g.captcha__content, children: /* @__PURE__ */ s.jsx(rr, {}) })
+    e === "progress" && /* @__PURE__ */ i.jsxs("div", { className: g.captcha__content, children: [
+      /* @__PURE__ */ i.jsx(
+        ur,
+        {
+          onFail: c,
+          onSuccess: l
+        }
+      ),
+      t && /* @__PURE__ */ i.jsx("div", { className: g.captcha__failed, children: /* @__PURE__ */ i.jsxs("div", { className: g.captcha__failed__content, children: [
+        t.type === "failure" ? /* @__PURE__ */ i.jsx(Ve, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ i.jsx(ze, { color: "#b0b0b0", size: "32px" }),
+        /* @__PURE__ */ i.jsx("p", { children: t.message }),
+        /* @__PURE__ */ i.jsx("button", { style: { marginTop: 16 }, children: /* @__PURE__ */ i.jsx($e, { size: "32px" }) })
+      ] }) })
+    ] })
   ] });
 }
 export {
-  nr as Captcha
+  fr as Captcha
 };

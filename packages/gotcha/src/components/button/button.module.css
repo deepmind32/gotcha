@@ -1,0 +1,26 @@
+.button {
+	background-color: #578fdc;
+	border: none;
+	color: white;
+	display: inline-block;
+	font-size: 16px;
+	text-align: center;
+	padding: 8px 16px;
+	border-radius: 4px;
+	transition: transfrom 0.25s ease-out;
+}
+
+.button:hover {
+	transform: scale(1.05);
+	transition: transfrom 0.2s ease-in;
+}
+
+.button:focus {
+	outline: none;
+	transform: scale(0.95);
+	transition: transform 0.2s ease-in;
+}
+
+.button:disabled {
+	background-color: #b0b0b0;
+}
