@@ -9,22 +9,19 @@ export default function Timer({ start = 60, on_time_finished }) {
 	const [second, set_second] = useState(start);
 
 	useEffect(() => {
-		const timer_interval = setInterval(() => {
-			set_second((prev) => {
-				if (prev > 0) {
-					return prev - 1;
-				} else {
-					on_time_finished();
-					clearInterval(timer_interval);
-					return 0;
-				}
-			});
+		if (second <= 0) {
+			on_time_finished?.();
+			return;
+		}
+
+		const timer_timeout = setTimeout(() => {
+			set_second((prev) => prev - 1);
 		}, 1000);
 
 		return () => {
-			clearInterval(timer_interval);
+			clearTimeout(timer_timeout);
 		};
-	}, []);
+	}, [second]);
 
 	useEffect(() => {
 		set_second(start);
