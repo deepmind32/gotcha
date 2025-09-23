@@ -7,6 +7,7 @@ import styles from "./captcha.module.css";
 import LoadingIcon from "../components/loading/loading";
 import PinGame from "./games/select-pin/pin";
 import WASDReflexGame from "./games/wasd-reflex/wasd-reflex";
+import MathGame from "./games/math-game/math-game";
 
 export function Captcha() {
 	// initial, progress, success, error
@@ -79,7 +80,15 @@ export function Captcha() {
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/> */}
-					<WASDReflexGame
+					{/* <WASDReflexGame
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/> */}
+					<MathGame
+						difficulty="hard"
+						question="2+3"
+						answer={5}
+						time={400}
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/>
