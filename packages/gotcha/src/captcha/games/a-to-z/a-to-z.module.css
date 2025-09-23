@@ -1,0 +1,50 @@
+.alphabet_showcase {
+	display: flex;
+	gap: 4px;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 20px;
+}
+
+.alphabet_showcase span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	font-size: 16px;
+	background-color: var(--color-green);
+	color: white;
+}
+
+.alphabet_input {
+	display: block;
+	width: 40%;
+	margin: 0 auto;
+	border: none;
+	text-align: center;
+	background-color: transparent;
+	border-bottom: 2px solid var(--color-dark-grey);
+	margin-bottom: 16px;
+	font-size: 22px;
+	font-weight: 500;
+	padding-bottom: 4px;
+}
+
+.alphabet_input:focus {
+	outline: none;
+	border-color: var(--color-blue);
+}
+
+.light {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: var(--color-grey);
+	margin: 16px auto;
+}
+
+.light.active {
+	background-color: var(--color-yellow);
+}

@@ -8,8 +8,9 @@ import LoadingIcon from "../components/loading/loading";
 import PinGame from "./games/select-pin/pin";
 import WASDReflexGame from "./games/wasd-reflex/wasd-reflex";
 import MathGame from "./games/math-game/math-game";
+import AToZGame from "./games/a-to-z/a-to-z";
 
-export function Captcha() {
+export function Captcha({ difficulty, onComplete }) {
 	// initial, progress, success, error
 	const [captcha_state, set_captcha_state] = useState(
 		process.env.NODE_ENV === "development" ? "progress" : "initial"
@@ -84,10 +85,16 @@ export function Captcha() {
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/> */}
-					<MathGame
+					{/* <MathGame
 						difficulty="hard"
 						question="2+3"
 						answer={5}
+						time={400}
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/> */}
+					<AToZGame
+						difficulty="hard"
 						time={400}
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
