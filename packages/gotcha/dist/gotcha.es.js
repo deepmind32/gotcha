@@ -1,5 +1,5 @@
-import E, { useState as w, useEffect as Y, useRef as ge } from "react";
-import './index.css';var k = { exports: {} }, R = {};
+import j, { useState as w, useEffect as I, useRef as pe } from "react";
+import './index.css';var O = { exports: {} }, R = {};
 /**
  * @license React
  * react-jsx-runtime.production.js
@@ -9,29 +9,29 @@ import './index.css';var k = { exports: {} }, R = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var X;
-function be() {
-  if (X) return R;
-  X = 1;
-  var e = Symbol.for("react.transitional.element"), n = Symbol.for("react.fragment");
-  function r(a, o, i) {
-    var _ = null;
-    if (i !== void 0 && (_ = "" + i), o.key !== void 0 && (_ = "" + o.key), "key" in o) {
-      i = {};
-      for (var m in o)
-        m !== "key" && (i[m] = o[m]);
-    } else i = o;
-    return o = i.ref, {
+var U;
+function ve() {
+  if (U) return R;
+  U = 1;
+  var e = Symbol.for("react.transitional.element"), r = Symbol.for("react.fragment");
+  function n(a, s, l) {
+    var c = null;
+    if (l !== void 0 && (c = "" + l), s.key !== void 0 && (c = "" + s.key), "key" in s) {
+      l = {};
+      for (var d in s)
+        d !== "key" && (l[d] = s[d]);
+    } else l = s;
+    return s = l.ref, {
       $$typeof: e,
       type: a,
-      key: _,
-      ref: o !== void 0 ? o : null,
-      props: i
+      key: c,
+      ref: s !== void 0 ? s : null,
+      props: l
     };
   }
-  return R.Fragment = n, R.jsx = r, R.jsxs = r, R;
+  return R.Fragment = r, R.jsx = n, R.jsxs = n, R;
 }
-var O = {};
+var k = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -41,102 +41,102 @@ var O = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var Q;
-function je() {
-  return Q || (Q = 1, process.env.NODE_ENV !== "production" && (function() {
+var J;
+function ge() {
+  return J || (J = 1, process.env.NODE_ENV !== "production" && (function() {
     function e(t) {
       if (t == null) return null;
       if (typeof t == "function")
-        return t.$$typeof === pe ? null : t.displayName || t.name || null;
+        return t.$$typeof === _e ? null : t.displayName || t.name || null;
       if (typeof t == "string") return t;
       switch (t) {
-        case M:
+        case N:
           return "Fragment";
-        case ie:
+        case ce:
           return "Profiler";
-        case se:
+        case ae:
           return "StrictMode";
-        case fe:
+        case le:
           return "Suspense";
-        case de:
+        case ue:
           return "SuspenseList";
-        case me:
+        case de:
           return "Activity";
       }
       if (typeof t == "object")
         switch (typeof t.tag == "number" && console.error(
           "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
         ), t.$$typeof) {
-          case ce:
+          case ne:
             return "Portal";
-          case ue:
+          case ie:
             return (t.displayName || "Context") + ".Provider";
-          case le:
+          case oe:
             return (t._context.displayName || "Context") + ".Consumer";
-          case _e:
-            var c = t.render;
-            return t = t.displayName, t || (t = c.displayName || c.name || "", t = t !== "" ? "ForwardRef(" + t + ")" : "ForwardRef"), t;
-          case he:
-            return c = t.displayName || null, c !== null ? c : e(t.type) || "Memo";
-          case B:
-            c = t._payload, t = t._init;
+          case se:
+            var o = t.render;
+            return t = t.displayName, t || (t = o.displayName || o.name || "", t = t !== "" ? "ForwardRef(" + t + ")" : "ForwardRef"), t;
+          case fe:
+            return o = t.displayName || null, o !== null ? o : e(t.type) || "Memo";
+          case H:
+            o = t._payload, t = t._init;
             try {
-              return e(t(c));
+              return e(t(o));
             } catch {
             }
         }
       return null;
     }
-    function n(t) {
+    function r(t) {
       return "" + t;
     }
-    function r(t) {
+    function n(t) {
       try {
-        n(t);
-        var c = !1;
+        r(t);
+        var o = !1;
       } catch {
-        c = !0;
+        o = !0;
       }
-      if (c) {
-        c = console;
-        var u = c.error, d = typeof Symbol == "function" && Symbol.toStringTag && t[Symbol.toStringTag] || t.constructor.name || "Object";
+      if (o) {
+        o = console;
+        var u = o.error, _ = typeof Symbol == "function" && Symbol.toStringTag && t[Symbol.toStringTag] || t.constructor.name || "Object";
         return u.call(
-          c,
+          o,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
-          d
-        ), n(t);
+          _
+        ), r(t);
       }
     }
     function a(t) {
-      if (t === M) return "<>";
-      if (typeof t == "object" && t !== null && t.$$typeof === B)
+      if (t === N) return "<>";
+      if (typeof t == "object" && t !== null && t.$$typeof === H)
         return "<...>";
       try {
-        var c = e(t);
-        return c ? "<" + c + ">" : "<...>";
+        var o = e(t);
+        return o ? "<" + o + ">" : "<...>";
       } catch {
         return "<...>";
       }
     }
-    function o() {
-      var t = A.A;
+    function s() {
+      var t = S.A;
       return t === null ? null : t.getOwner();
     }
-    function i() {
+    function l() {
       return Error("react-stack-top-frame");
     }
-    function _(t) {
-      if (W.call(t, "key")) {
-        var c = Object.getOwnPropertyDescriptor(t, "key").get;
-        if (c && c.isReactWarning) return !1;
+    function c(t) {
+      if (Y.call(t, "key")) {
+        var o = Object.getOwnPropertyDescriptor(t, "key").get;
+        if (o && o.isReactWarning) return !1;
       }
       return t.key !== void 0;
     }
-    function m(t, c) {
+    function d(t, o) {
       function u() {
-        F || (F = !0, console.error(
+        B || (B = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
-          c
+          o
         ));
       }
       u.isReactWarning = !0, Object.defineProperty(t, "key", {
@@ -146,17 +146,17 @@ function je() {
     }
     function v() {
       var t = e(this.type);
-      return G[t] || (G[t] = !0, console.error(
+      return W[t] || (W[t] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), t = this.props.ref, t !== void 0 ? t : null;
     }
-    function C(t, c, u, d, j, g, z, Z) {
-      return u = g.ref, t = {
-        $$typeof: $,
+    function y(t, o, u, _, b, C, L, Z) {
+      return u = C.ref, t = {
+        $$typeof: D,
         type: t,
-        key: c,
-        props: g,
-        _owner: j
+        key: o,
+        props: C,
+        _owner: b
       }, (u !== void 0 ? u : null) !== null ? Object.defineProperty(t, "ref", {
         enumerable: !1,
         get: v
@@ -174,7 +174,7 @@ function je() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: z
+        value: L
       }), Object.defineProperty(t, "_debugTask", {
         configurable: !1,
         enumerable: !1,
@@ -182,1873 +182,410 @@ function je() {
         value: Z
       }), Object.freeze && (Object.freeze(t.props), Object.freeze(t)), t;
     }
-    function l(t, c, u, d, j, g, z, Z) {
-      var h = c.children;
+    function f(t, o, u, _, b, C, L, Z) {
+      var h = o.children;
       if (h !== void 0)
-        if (d)
-          if (ve(h)) {
-            for (d = 0; d < h.length; d++)
-              f(h[d]);
+        if (_)
+          if (he(h)) {
+            for (_ = 0; _ < h.length; _++)
+              g(h[_]);
             Object.freeze && Object.freeze(h);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else f(h);
-      if (W.call(c, "key")) {
+        else g(h);
+      if (Y.call(o, "key")) {
         h = e(t);
-        var y = Object.keys(c).filter(function(Ce) {
-          return Ce !== "key";
+        var E = Object.keys(o).filter(function(me) {
+          return me !== "key";
         });
-        d = 0 < y.length ? "{key: someKey, " + y.join(": ..., ") + ": ...}" : "{key: someKey}", q[h + d] || (y = 0 < y.length ? "{" + y.join(": ..., ") + ": ...}" : "{}", console.error(
+        _ = 0 < E.length ? "{key: someKey, " + E.join(": ..., ") + ": ...}" : "{key: someKey}", G[h + _] || (E = 0 < E.length ? "{" + E.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
   <%s key={someKey} {...props} />`,
-          d,
+          _,
           h,
-          y,
+          E,
           h
-        ), q[h + d] = !0);
+        ), G[h + _] = !0);
       }
-      if (h = null, u !== void 0 && (r(u), h = "" + u), _(c) && (r(c.key), h = "" + c.key), "key" in c) {
+      if (h = null, u !== void 0 && (n(u), h = "" + u), c(o) && (n(o.key), h = "" + o.key), "key" in o) {
         u = {};
-        for (var V in c)
-          V !== "key" && (u[V] = c[V]);
-      } else u = c;
-      return h && m(
+        for (var V in o)
+          V !== "key" && (u[V] = o[V]);
+      } else u = o;
+      return h && d(
         u,
         typeof t == "function" ? t.displayName || t.name || "Unknown" : t
-      ), C(
+      ), y(
         t,
         h,
-        g,
-        j,
-        o(),
+        C,
+        b,
+        s(),
         u,
-        z,
+        L,
         Z
       );
     }
-    function f(t) {
-      typeof t == "object" && t !== null && t.$$typeof === $ && t._store && (t._store.validated = 1);
+    function g(t) {
+      typeof t == "object" && t !== null && t.$$typeof === D && t._store && (t._store.validated = 1);
     }
-    var b = E, $ = Symbol.for("react.transitional.element"), ce = Symbol.for("react.portal"), M = Symbol.for("react.fragment"), se = Symbol.for("react.strict_mode"), ie = Symbol.for("react.profiler"), le = Symbol.for("react.consumer"), ue = Symbol.for("react.context"), _e = Symbol.for("react.forward_ref"), fe = Symbol.for("react.suspense"), de = Symbol.for("react.suspense_list"), he = Symbol.for("react.memo"), B = Symbol.for("react.lazy"), me = Symbol.for("react.activity"), pe = Symbol.for("react.client.reference"), A = b.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, W = Object.prototype.hasOwnProperty, ve = Array.isArray, L = console.createTask ? console.createTask : function() {
+    var m = j, D = Symbol.for("react.transitional.element"), ne = Symbol.for("react.portal"), N = Symbol.for("react.fragment"), ae = Symbol.for("react.strict_mode"), ce = Symbol.for("react.profiler"), oe = Symbol.for("react.consumer"), ie = Symbol.for("react.context"), se = Symbol.for("react.forward_ref"), le = Symbol.for("react.suspense"), ue = Symbol.for("react.suspense_list"), fe = Symbol.for("react.memo"), H = Symbol.for("react.lazy"), de = Symbol.for("react.activity"), _e = Symbol.for("react.client.reference"), S = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, Y = Object.prototype.hasOwnProperty, he = Array.isArray, A = console.createTask ? console.createTask : function() {
       return null;
     };
-    b = {
+    m = {
       react_stack_bottom_frame: function(t) {
         return t();
       }
     };
-    var F, G = {}, U = b.react_stack_bottom_frame.bind(
-      b,
-      i
-    )(), J = L(a(i)), q = {};
-    O.Fragment = M, O.jsx = function(t, c, u, d, j) {
-      var g = 1e4 > A.recentlyCreatedOwnerStacks++;
-      return l(
+    var B, W = {}, $ = m.react_stack_bottom_frame.bind(
+      m,
+      l
+    )(), F = A(a(l)), G = {};
+    k.Fragment = N, k.jsx = function(t, o, u, _, b) {
+      var C = 1e4 > S.recentlyCreatedOwnerStacks++;
+      return f(
         t,
-        c,
+        o,
         u,
         !1,
-        d,
-        j,
-        g ? Error("react-stack-top-frame") : U,
-        g ? L(a(t)) : J
+        _,
+        b,
+        C ? Error("react-stack-top-frame") : $,
+        C ? A(a(t)) : F
       );
-    }, O.jsxs = function(t, c, u, d, j) {
-      var g = 1e4 > A.recentlyCreatedOwnerStacks++;
-      return l(
+    }, k.jsxs = function(t, o, u, _, b) {
+      var C = 1e4 > S.recentlyCreatedOwnerStacks++;
+      return f(
         t,
-        c,
+        o,
         u,
         !0,
-        d,
-        j,
-        g ? Error("react-stack-top-frame") : U,
-        g ? L(a(t)) : J
+        _,
+        b,
+        C ? Error("react-stack-top-frame") : $,
+        C ? A(a(t)) : F
       );
     };
-  })()), O;
+  })()), k;
 }
-var K;
-function xe() {
-  return K || (K = 1, process.env.NODE_ENV === "production" ? k.exports = be() : k.exports = je()), k.exports;
+var q;
+function Ce() {
+  return q || (q = 1, process.env.NODE_ENV === "production" ? O.exports = ve() : O.exports = ge()), O.exports;
 }
-var s = xe(), ne = {
+var i = Ce(), te = {
   color: void 0,
   size: void 0,
   className: void 0,
   style: void 0,
   attr: void 0
-}, ee = E.createContext && /* @__PURE__ */ E.createContext(ne), Ee = ["attr", "size", "title"];
-function ye(e, n) {
+}, X = j.createContext && /* @__PURE__ */ j.createContext(te), be = ["attr", "size", "title"];
+function xe(e, r) {
   if (e == null) return {};
-  var r = we(e, n), a, o;
+  var n = je(e, r), a, s;
   if (Object.getOwnPropertySymbols) {
-    var i = Object.getOwnPropertySymbols(e);
-    for (o = 0; o < i.length; o++)
-      a = i[o], !(n.indexOf(a) >= 0) && Object.prototype.propertyIsEnumerable.call(e, a) && (r[a] = e[a]);
+    var l = Object.getOwnPropertySymbols(e);
+    for (s = 0; s < l.length; s++)
+      a = l[s], !(r.indexOf(a) >= 0) && Object.prototype.propertyIsEnumerable.call(e, a) && (n[a] = e[a]);
   }
-  return r;
+  return n;
 }
-function we(e, n) {
+function je(e, r) {
   if (e == null) return {};
-  var r = {};
+  var n = {};
   for (var a in e)
     if (Object.prototype.hasOwnProperty.call(e, a)) {
-      if (n.indexOf(a) >= 0) continue;
-      r[a] = e[a];
+      if (r.indexOf(a) >= 0) continue;
+      n[a] = e[a];
     }
-  return r;
+  return n;
 }
-function N() {
-  return N = Object.assign ? Object.assign.bind() : function(e) {
-    for (var n = 1; n < arguments.length; n++) {
-      var r = arguments[n];
-      for (var a in r)
-        Object.prototype.hasOwnProperty.call(r, a) && (e[a] = r[a]);
+function T() {
+  return T = Object.assign ? Object.assign.bind() : function(e) {
+    for (var r = 1; r < arguments.length; r++) {
+      var n = arguments[r];
+      for (var a in n)
+        Object.prototype.hasOwnProperty.call(n, a) && (e[a] = n[a]);
     }
     return e;
-  }, N.apply(this, arguments);
+  }, T.apply(this, arguments);
 }
-function te(e, n) {
-  var r = Object.keys(e);
+function Q(e, r) {
+  var n = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
-    n && (a = a.filter(function(o) {
-      return Object.getOwnPropertyDescriptor(e, o).enumerable;
-    })), r.push.apply(r, a);
+    r && (a = a.filter(function(s) {
+      return Object.getOwnPropertyDescriptor(e, s).enumerable;
+    })), n.push.apply(n, a);
   }
-  return r;
+  return n;
 }
-function S(e) {
-  for (var n = 1; n < arguments.length; n++) {
-    var r = arguments[n] != null ? arguments[n] : {};
-    n % 2 ? te(Object(r), !0).forEach(function(a) {
-      Re(e, a, r[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : te(Object(r)).forEach(function(a) {
-      Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(r, a));
+function M(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var n = arguments[r] != null ? arguments[r] : {};
+    r % 2 ? Q(Object(n), !0).forEach(function(a) {
+      Ee(e, a, n[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Q(Object(n)).forEach(function(a) {
+      Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(n, a));
     });
   }
   return e;
 }
-function Re(e, n, r) {
-  return n = Oe(n), n in e ? Object.defineProperty(e, n, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = r, e;
+function Ee(e, r, n) {
+  return r = ye(r), r in e ? Object.defineProperty(e, r, { value: n, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = n, e;
 }
-function Oe(e) {
-  var n = ke(e, "string");
-  return typeof n == "symbol" ? n : n + "";
+function ye(e) {
+  var r = Re(e, "string");
+  return typeof r == "symbol" ? r : r + "";
 }
-function ke(e, n) {
+function Re(e, r) {
   if (typeof e != "object" || !e) return e;
-  var r = e[Symbol.toPrimitive];
-  if (r !== void 0) {
-    var a = r.call(e, n);
+  var n = e[Symbol.toPrimitive];
+  if (n !== void 0) {
+    var a = n.call(e, r);
     if (typeof a != "object") return a;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (n === "string" ? String : Number)(e);
+  return (r === "string" ? String : Number)(e);
 }
-function ae(e) {
-  return e && e.map((n, r) => /* @__PURE__ */ E.createElement(n.tag, S({
-    key: r
-  }, n.attr), ae(n.child)));
+function re(e) {
+  return e && e.map((r, n) => /* @__PURE__ */ j.createElement(r.tag, M({
+    key: n
+  }, r.attr), re(r.child)));
 }
 function p(e) {
-  return (n) => /* @__PURE__ */ E.createElement(Pe, N({
-    attr: S({}, e.attr)
-  }, n), ae(e.child));
+  return (r) => /* @__PURE__ */ j.createElement(ke, T({
+    attr: M({}, e.attr)
+  }, r), re(e.child));
 }
-function Pe(e) {
-  var n = (r) => {
+function ke(e) {
+  var r = (n) => {
     var {
       attr: a,
-      size: o,
-      title: i
-    } = e, _ = ye(e, Ee), m = o || r.size || "1em", v;
-    return r.className && (v = r.className), e.className && (v = (v ? v + " " : "") + e.className), /* @__PURE__ */ E.createElement("svg", N({
+      size: s,
+      title: l
+    } = e, c = xe(e, be), d = s || n.size || "1em", v;
+    return n.className && (v = n.className), e.className && (v = (v ? v + " " : "") + e.className), /* @__PURE__ */ j.createElement("svg", T({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
-    }, r.attr, a, _, {
+    }, n.attr, a, c, {
       className: v,
-      style: S(S({
-        color: e.color || r.color
-      }, r.style), e.style),
-      height: m,
-      width: m,
+      style: M(M({
+        color: e.color || n.color
+      }, n.style), e.style),
+      height: d,
+      width: d,
       xmlns: "http://www.w3.org/2000/svg"
-    }), i && /* @__PURE__ */ E.createElement("title", null, i), e.children);
+    }), l && /* @__PURE__ */ j.createElement("title", null, l), e.children);
   };
-  return ee !== void 0 ? /* @__PURE__ */ E.createElement(ee.Consumer, null, (r) => n(r)) : n(ne);
+  return X !== void 0 ? /* @__PURE__ */ j.createElement(X.Consumer, null, (n) => r(n)) : r(te);
 }
-function Te(e) {
+function we(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z" }, child: [] }] })(e);
 }
-function Ne(e) {
+function Oe(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z" }, child: [] }] })(e);
 }
-function Se(e) {
+function Pe(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 12V6C13.6569 6 15.1569 6.67157 16.2426 7.75736L12 12Z" }, child: [] }] })(e);
 }
-function Me(e) {
+function Te(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 12V6C15.3137 6 18 8.68629 18 12H12Z" }, child: [] }] })(e);
 }
-function Ae(e) {
+function Me(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 13.6569 17.3284 15.1569 16.2426 16.2426L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
-function Le(e) {
+function Ne(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
-function ze(e) {
+function Se(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C10.3431 18 8.84311 17.3284 7.75732 16.2426L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
-function Ze(e) {
+function Ae(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM17.9998 12C17.9998 15.3137 15.3135 18 11.9998 18C8.68606 18 5.99977 15.3137 5.99977 12H11.9998V6C15.3135 6 17.9998 8.68629 17.9998 12Z" }, child: [] }] })(e);
 }
-function Ve(e) {
+function Le(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 10.3431 6.67157 8.84315 7.75736 7.75736L12 12V6C15.3137 6 18 8.68629 18 12Z" }, child: [] }] })(e);
 }
-function Ie(e) {
+function Ze(e) {
   return p({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" }, child: [] }] })(e);
 }
-function De(e) {
+function Ve(e) {
   return p({ attr: { viewBox: "0 0 24 24" }, child: [{ tag: "path", attr: { d: "M12.884 2.532c-.346-.654-1.422-.654-1.768 0l-9 17A.999.999 0 0 0 3 21h18a.998.998 0 0 0 .883-1.467L12.884 2.532zM13 18h-2v-2h2v2zm-2-4V9h2l.001 5H11z" }, child: [] }] })(e);
 }
-function He(e) {
+function ze(e) {
   return p({ attr: { viewBox: "0 0 24 24" }, child: [{ tag: "path", attr: { d: "M4 2v18H3v2h4v-2H6v-5h13a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H6V2H4zm4 3v2h2V5h2v2h2V5h2v2h2v2h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H8v-2H6V9h2V7H6V5h2z" }, child: [] }, { tag: "path", attr: { d: "M8 9h2v2H8zm4 0h2v2h-2zm-2-2h2v2h-2zm4 0h2v2h-2z" }, child: [] }] })(e);
 }
-function Ye(e) {
+function Ie(e) {
   return p({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeMiterlimit: "10", strokeWidth: "28", d: "M288 193s12.18-6-32-6a80 80 0 1 0 80 80" }, child: [] }, { tag: "path", attr: { fill: "none", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "28", d: "m256 149 40 40-40 40" }, child: [] }, { tag: "path", attr: { fill: "none", strokeMiterlimit: "10", strokeWidth: "32", d: "M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" }, child: [] }] })(e);
 }
-const $e = "_captcha__wrapper_109tv_5", Be = "_captcha__failed_109tv_93", We = "_captcha__failed__content_109tv_123", Fe = "_captcha__btn_109tv_151", Ge = "_captcha__btn__main_109tv_183", Ue = "_captcha__btn__footer_109tv_207", Je = "_captcha__unchecked_109tv_217", qe = "_captcha__content_109tv_233", x = {
-  captcha__wrapper: $e,
-  captcha__failed: Be,
-  captcha__failed__content: We,
-  captcha__btn: Fe,
-  captcha__btn__main: Ge,
-  captcha__btn__footer: Ue,
-  captcha__unchecked: Je,
-  captcha__content: qe
-}, re = [
-  Se,
+const De = "_captcha__wrapper_109tv_5", He = "_captcha__failed_109tv_93", Ye = "_captcha__failed__content_109tv_123", Be = "_captcha__btn_109tv_151", We = "_captcha__btn__main_109tv_183", $e = "_captcha__btn__footer_109tv_207", Fe = "_captcha__unchecked_109tv_217", Ge = "_captcha__content_109tv_233", x = {
+  captcha__wrapper: De,
+  captcha__failed: He,
+  captcha__failed__content: Ye,
+  captcha__btn: Be,
+  captcha__btn__main: We,
+  captcha__btn__footer: $e,
+  captcha__unchecked: Fe,
+  captcha__content: Ge
+}, K = [
+  Pe,
+  Te,
   Me,
+  Ne,
+  Se,
   Ae,
   Le,
-  ze,
-  Ze,
-  Ve,
-  Ie
+  Ze
 ];
-function Xe() {
-  const [e, n] = w(7);
-  Y(() => {
+function Ue() {
+  const [e, r] = w(7);
+  I(() => {
     const a = setInterval(() => {
-      n((o) => (o + 1) % re.length);
+      r((s) => (s + 1) % K.length);
     }, 100);
     return () => {
       clearInterval(a);
     };
   }, []);
-  const r = re[e];
-  return /* @__PURE__ */ s.jsx(r, { style: { margin: -8 }, size: 46 });
+  const n = K[e];
+  return /* @__PURE__ */ i.jsx(n, { style: { margin: -8 }, size: 46 });
 }
-function I(e, n, r = 1) {
-  const o = e, i = [];
-  let _ = 0;
-  for (; _ < o; )
-    i.push(_), _ += r;
-  return i;
+function ee(e, r, n = 1) {
+  const s = e, l = [];
+  let c = 0;
+  for (; c < s; )
+    l.push(c), c += n;
+  return l;
 }
-const Qe = "_timer__wrapper_17tk4_1", D = {
-  timer__wrapper: Qe,
+const Je = "_timer__wrapper_17tk4_1", z = {
+  timer__wrapper: Je,
   "timer--last": "_timer--last_17tk4_33"
 };
-function Ke(e) {
+function qe(e) {
   return e < 10;
 }
-function et({ start: e = 60, on_time_finished: n, on_change: r }) {
-  const [a, o] = w(e), i = ge(e);
-  return Y(() => {
+function Xe({ start: e = 60, on_time_finished: r, on_change: n }) {
+  const [a, s] = w(e), l = pe(e);
+  return I(() => {
     if (a <= 0) {
-      n?.();
+      r?.();
       return;
     }
-    const _ = setTimeout(() => {
-      o((m) => m - 1), i.current -= 1, r?.(i.current);
+    const c = setTimeout(() => {
+      s((d) => d - 1), l.current -= 1, n?.(l.current);
     }, 1e3);
-    return () => clearTimeout(_);
-  }, [a]), Y(() => {
-    o(e);
-  }, [e]), /* @__PURE__ */ s.jsx(
+    return () => clearTimeout(c);
+  }, [a]), I(() => {
+    s(e);
+  }, [e]), /* @__PURE__ */ i.jsx(
     "div",
     {
-      className: `${D.timer__wrapper} ${Ke(a) ? D["timer--last"] : D["timer--normal"]}`,
-      children: /* @__PURE__ */ s.jsx("span", { children: a })
+      className: `${z.timer__wrapper} ${qe(a) ? z["timer--last"] : z["timer--normal"]}`,
+      children: /* @__PURE__ */ i.jsx("span", { children: a })
     }
   );
 }
-function oe(e) {
-  const n = [...e];
-  for (let r = n.length - 1; r > 0; r--) {
-    const a = Math.floor(Math.random() * (r + 1));
-    [n[r], n[a]] = [n[a], n[r]];
+function Qe(e) {
+  const r = [...e];
+  for (let n = r.length - 1; n > 0; n--) {
+    const a = Math.floor(Math.random() * (n + 1));
+    [r[n], r[a]] = [r[a], r[n]];
   }
-  return n;
+  return r;
 }
-function H(e, n) {
-  return oe(e).slice(0, n);
+function Ke(e, r) {
+  return Qe(e).slice(0, r);
 }
-const tt = "_main_wz9d7_1", rt = "_instruction_wz9d7_9", nt = "_emoji_display_wz9d7_27", P = {
-  main: tt,
-  instruction: rt,
-  emoji_display: nt,
-  "button--correct": "_button--correct_wz9d7_53"
-}, T = [
-  "😀",
-  "😃",
-  "😄",
-  "😁",
-  "😆",
-  "😅",
-  "😂",
-  "🤣",
-  "😭",
-  "😉",
-  "😗",
-  "😙",
-  "😚",
-  "😘",
-  "🥰",
-  "😍",
-  "🤩",
-  "🥳",
-  "🙃",
-  "🙂",
-  "🥲",
-  "🥹",
-  "😋",
-  "😛",
-  "😝",
-  "😜",
-  "🤪",
-  "😇",
-  "😊",
-  "☺️",
-  "😏",
-  "😌",
-  "😔",
-  "😑",
-  "😐",
-  "😶",
-  "🫡",
-  "🤔",
-  "🤫",
-  "🫢",
-  "🤭",
-  "🥱",
-  "🤗",
-  "🫣",
-  "😱",
-  "🤨",
-  "🧐",
-  "😒",
-  "🙄",
-  "😮‍💨",
-  "😤",
-  "😠",
-  "😡",
-  "🤬",
-  "🥺",
-  "😟",
-  "😥",
-  "😢",
-  "☹️",
-  "🙁",
-  "🫤",
-  "😕",
-  "🤐",
-  "😰",
-  "😨",
-  "😧",
-  "😦",
-  "😮",
-  "😯",
-  "😲",
-  "😳",
-  "🤯",
-  "😬",
-  "😓",
-  "😞",
-  "😖",
-  "😣",
-  "😩",
-  "😫",
-  "😵",
-  "😵‍💫",
-  "🫥",
-  "😴",
-  "😪",
-  "🤤",
-  "🌛",
-  "🌜",
-  "🌚",
-  "🌝",
-  "🌞",
-  "🫠",
-  "😶‍🌫️",
-  "🥴",
-  "🥵",
-  "🥶",
-  "🤢",
-  "🤮",
-  "🤧",
-  "🤒",
-  "🤕",
-  "😷",
-  "🤠",
-  "🤑",
-  "😎",
-  "🤓",
-  "🥸",
-  "🤥",
-  "🤡",
-  "👻",
-  "💩",
-  "👽",
-  "🤖",
-  "🎃",
-  "😈",
-  "👿",
-  "👹",
-  "👺",
-  "🔥",
-  "💫",
-  "⭐",
-  "🌟",
-  "✨",
-  "💥",
-  "💯",
-  "💢",
-  "💨",
-  "💦",
-  "🫧",
-  "💤",
-  "🕳️",
-  "🎉",
-  "🎊",
-  "🙈",
-  "🙉",
-  "🙊",
-  "😺",
-  "😸",
-  "😹",
-  "😻",
-  "😼",
-  "😽",
-  "🙀",
-  "😿",
-  "😾",
-  "❤️",
-  "🧡",
-  "💛",
-  "💚",
-  "💙",
-  "💜",
-  "🤎",
-  "🖤",
-  "🤍",
-  "♥️",
-  "💘",
-  "💝",
-  "💖",
-  "💗",
-  "💓",
-  "💞",
-  "💕",
-  "💌",
-  "💟",
-  "❣️",
-  "❤️‍🩹",
-  "💔",
-  "❤️‍🔥",
-  "💋",
-  "🫂",
-  "👥",
-  "👤",
-  "🗣️",
-  "👣",
-  "🧠",
-  "🫀",
-  "🫁",
-  "🩸",
-  "🦠",
-  "🦷",
-  "🦴",
-  "☠️",
-  "💀",
-  "👀",
-  "👁️",
-  "👄",
-  "🫦",
-  "👅",
-  "👃",
-  "👂",
-  "🦻",
-  "🦶",
-  "🦵",
-  "🦿",
-  "🦾",
-  "💪",
-  "👍",
-  "👎",
-  "👏",
-  "🫶",
-  "🙌",
-  "👐",
-  "🤲",
-  "🤝",
-  "🤜",
-  "🤛",
-  "✊",
-  "👊",
-  "🫳",
-  "🫴",
-  "🫱",
-  "🫲",
-  "🤚",
-  "👋",
-  "🖐️",
-  "✋",
-  "🖖",
-  "🤟",
-  "🤘",
-  "✌️",
-  "🤞",
-  "🫰",
-  "🤙",
-  "🤌",
-  "🤏",
-  "👌",
-  "🖕",
-  "☝️",
-  "👆",
-  "👇",
-  "👉",
-  "👈",
-  "🫵",
-  "✍️",
-  "🤳",
-  "🙏",
-  "💅",
-  "🙇",
-  "🙋",
-  "💁",
-  "🙆",
-  "🙅",
-  "🤷",
-  "🤦",
-  "🙍",
-  "🙎",
-  "🧏",
-  "💆",
-  "💇",
-  "🧖",
-  "🛀",
-  "🛌",
-  "🧘",
-  "🧑‍🦯",
-  "🧑‍🦼",
-  "🧑‍🦽",
-  "🧎",
-  "🧍",
-  "🚶",
-  "🏃",
-  "🤸",
-  "🏋️",
-  "⛹️",
-  "🤾",
-  "🚴",
-  "🚵",
-  "🧗",
-  "🤼",
-  "🤹",
-  "🏌️",
-  "🏇",
-  "🤺",
-  "⛷️",
-  "🏂",
-  "🪂",
-  "🏄",
-  "🚣",
-  "🏊",
-  "🤽",
-  "🧜",
-  "🧚",
-  "🧞",
-  "🧝",
-  "🧙",
-  "🧛",
-  "🧟",
-  "🧌",
-  "🦸",
-  "🦹",
-  "🥷",
-  "🧑‍🎄",
-  "👼",
-  "💂",
-  "🫅",
-  "🤵",
-  "👰",
-  "🧑‍🚀",
-  "👷",
-  "👮",
-  "🕵️",
-  "🧑‍✈️",
-  "🧑‍🔬",
-  "🧑‍⚕️",
-  "🧑‍🔧",
-  "🧑‍🏭",
-  "🧑‍🚒",
-  "🧑‍🌾",
-  "🧑‍🏫",
-  "🧑‍🎓",
-  "🧑‍💼",
-  "🧑‍⚖️",
-  "🧑‍💻",
-  "🧑‍🎤",
-  "🧑‍🎨",
-  "🧑‍🍳",
-  "👳",
-  "🧕",
-  "👲",
-  "👶",
-  "🧒",
-  "🧑",
-  "🧓",
-  "🧑‍🦳",
-  "🧑‍🦰",
-  "👱",
-  "🧑‍🦱",
-  "🧑‍🦲",
-  "🧔",
-  "🕴️",
-  "💃",
-  "🕺",
-  "👯",
-  "🧑‍🤝‍🧑",
-  "👭",
-  "👬",
-  "👫",
-  "💏",
-  "👩‍❤️‍💋‍👨",
-  "👨‍❤️‍💋‍👨",
-  "👩‍❤️‍💋‍👩",
-  "💑",
-  "👩‍❤️‍👨",
-  "👨‍❤️‍👨",
-  "👩‍❤️‍👩",
-  "🫄",
-  "🤱",
-  "🧑‍🍼",
-  "👪",
-  "💐",
-  "🌹",
-  "🥀",
-  "🌺",
-  "🌷",
-  "🪷",
-  "🌸",
-  "💮",
-  "🏵️",
-  "🌻",
-  "🌼",
-  "🍂",
-  "🍁",
-  "🍄",
-  "🌾",
-  "🌱",
-  "🌿",
-  "🍃",
-  "☘️",
-  "🍀",
-  "🪴",
-  "🌵",
-  "🌴",
-  "🌳",
-  "🌲",
-  "🪹",
-  "🪺",
-  "🪵",
-  "🪨",
-  "⛰️",
-  "🏔️",
-  "❄️",
-  "☃️",
-  "⛄",
-  "🌊",
-  "🫧",
-  "🌬️",
-  "🌀",
-  "🌪️",
-  "🌁",
-  "🌫️",
-  "🌡️",
-  "🔥",
-  "🌋",
-  "🏜️",
-  "🏞️",
-  "🏖️",
-  "⛱️",
-  "🌅",
-  "🌄",
-  "☀️",
-  "🌤️",
-  "⛅",
-  "🌥️",
-  "🌦️",
-  "☁️",
-  "🌨️",
-  "⛈️",
-  "🌩️",
-  "🌧️",
-  "💧",
-  "☔",
-  "⚡",
-  "🌈",
-  "⭐",
-  "🌟",
-  "💫",
-  "✨",
-  "🌙",
-  "☄️",
-  "🌠",
-  "🌌",
-  "🪐",
-  "🌑",
-  "🌒",
-  "🌓",
-  "🌔",
-  "🌕",
-  "🌖",
-  "🌗",
-  "🌘",
-  "🌍",
-  "🌎",
-  "🌏",
-  "🙈",
-  "🙉",
-  "🙊",
-  "🐵",
-  "🦁",
-  "🐯",
-  "🐱",
-  "🐶",
-  "🐺",
-  "🐻",
-  "🐻‍❄️",
-  "🐨",
-  "🐼",
-  "🐹",
-  "🐭",
-  "🐰",
-  "🦊",
-  "🦝",
-  "🐮",
-  "🐷",
-  "🐽",
-  "🐗",
-  "🦓",
-  "🦄",
-  "🐴",
-  "🐸",
-  "🐲",
-  "🦎",
-  "🐉",
-  "🦖",
-  "🦕",
-  "🐢",
-  "🐊",
-  "🐍",
-  "🐁",
-  "🐀",
-  "🐇",
-  "🐈",
-  "🐈‍⬛",
-  "🐩",
-  "🐕",
-  "🦮",
-  "🐕‍🦺",
-  "🐅",
-  "🐆",
-  "🐎",
-  "🐖",
-  "🐄",
-  "🐂",
-  "🐃",
-  "🦬",
-  "🐏",
-  "🐑",
-  "🐐",
-  "🦌",
-  "🦙",
-  "🦥",
-  "🦘",
-  "🐘",
-  "🦣",
-  "🦏",
-  "🦛",
-  "🦒",
-  "🐒",
-  "🦍",
-  "🦧",
-  "🐪",
-  "🐫",
-  "🐿️",
-  "🦫",
-  "🦨",
-  "🦡",
-  "🦔",
-  "🦦",
-  "🦇",
-  "🪶",
-  "🦅",
-  "🦉",
-  "🐓",
-  "🐔",
-  "🐣",
-  "🐤",
-  "🐥",
-  "🐦",
-  "🦜",
-  "🕊️",
-  "🦤",
-  "🦢",
-  "🦩",
-  "🦚",
-  "🦃",
-  "🦆",
-  "🐧",
-  "🦭",
-  "🦈",
-  "🐬",
-  "🐋",
-  "🐳",
-  "🐟",
-  "🐠",
-  "🐡",
-  "🦐",
-  "🦞",
-  "🦀",
-  "🦑",
-  "🐙",
-  "🦪",
-  "🪸",
-  "🦂",
-  "🕷️",
-  "🕸️",
-  "🐚",
-  "🐌",
-  "🐜",
-  "🦗",
-  "🪲",
-  "🦟",
-  "🪳",
-  "🪰",
-  "🐝",
-  "🐞",
-  "🦋",
-  "🐛",
-  "🪱",
-  "🦠",
-  "🐾",
-  "🍓",
-  "🍒",
-  "🍎",
-  "🍉",
-  "🍑",
-  "🍊",
-  "🥭",
-  "🍍",
-  "🍌",
-  "🍋",
-  "🍈",
-  "🍏",
-  "🍐",
-  "🥝",
-  "🫒",
-  "🫐",
-  "🍇",
-  "🥥",
-  "🍅",
-  "🌶️",
-  "🥕",
-  "🍠",
-  "🧅",
-  "🌽",
-  "🥦",
-  "🥒",
-  "🥬",
-  "🫑",
-  "🥑",
-  "🍆",
-  "🧄",
-  "🥔",
-  "🫘",
-  "🌰",
-  "🥜",
-  "🍞",
-  "🫓",
-  "🥐",
-  "🥖",
-  "🥯",
-  "🧇",
-  "🥞",
-  "🍳",
-  "🥚",
-  "🧀",
-  "🥓",
-  "🥩",
-  "🍗",
-  "🍖",
-  "🍔",
-  "🌭",
-  "🥪",
-  "🥨",
-  "🍟",
-  "🍕",
-  "🫔",
-  "🌮",
-  "🌯",
-  "🥙",
-  "🧆",
-  "🥘",
-  "🍝",
-  "🥫",
-  "🫕",
-  "🥣",
-  "🥗",
-  "🍲",
-  "🍛",
-  "🍜",
-  "🦪",
-  "🦞",
-  "🍣",
-  "🍤",
-  "🥡",
-  "🍚",
-  "🍱",
-  "🥟",
-  "🍢",
-  "🍙",
-  "🍘",
-  "🍥",
-  "🍡",
-  "🥠",
-  "🥮",
-  "🍧",
-  "🍨",
-  "🍦",
-  "🥧",
-  "🍰",
-  "🍮",
-  "🎂",
-  "🧁",
-  "🍭",
-  "🍬",
-  "🍫",
-  "🍩",
-  "🍪",
-  "🍯",
-  "🧂",
-  "🧈",
-  "🍿",
-  "🧊",
-  "🫙",
-  "🥤",
-  "🧋",
-  "🧃",
-  "🥛",
-  "🍼",
-  "🍵",
-  "☕",
-  "🫖",
-  "🧉",
-  "🍺",
-  "🍻",
-  "🥂",
-  "🍾",
-  "🍷",
-  "🥃",
-  "🫗",
-  "🍸",
-  "🍹",
-  "🍶",
-  "🥢",
-  "🍴",
-  "🥄",
-  "🔪",
-  "🍽️",
-  "🛑",
-  "🚧",
-  "🚨",
-  "⛽",
-  "🛢️",
-  "🧭",
-  "🛞",
-  "🛟",
-  "⚓",
-  "🚏",
-  "🚇",
-  "🚥",
-  "🚦",
-  "🛴",
-  "🦽",
-  "🦼",
-  "🩼",
-  "🚲",
-  "🛵",
-  "🏍️",
-  "🚙",
-  "🚗",
-  "🛻",
-  "🚐",
-  "🚚",
-  "🚛",
-  "🚜",
-  "🏎️",
-  "🚒",
-  "🚑",
-  "🚓",
-  "🚕",
-  "🛺",
-  "🚌",
-  "🚈",
-  "🚝",
-  "🚅",
-  "🚄",
-  "🚂",
-  "🚃",
-  "🚋",
-  "🚎",
-  "🚞",
-  "🚊",
-  "🚉",
-  "🚍",
-  "🚔",
-  "🚘",
-  "🚖",
-  "🚆",
-  "🚢",
-  "🛳️",
-  "🛥️",
-  "🚤",
-  "⛴️",
-  "⛵",
-  "🛶",
-  "🚟",
-  "🚠",
-  "🚡",
-  "🚁",
-  "🛸",
-  "🚀",
-  "✈️",
-  "🛫",
-  "🛬",
-  "🛩️",
-  "🛝",
-  "🎢",
-  "🎡",
-  "🎠",
-  "🎪",
-  "🗼",
-  "🗽",
-  "🗿",
-  "🗻",
-  "🏛️",
-  "💈",
-  "⛲",
-  "⛩️",
-  "🕍",
-  "🕌",
-  "🕋",
-  "🛕",
-  "⛪",
-  "💒",
-  "🏩",
-  "🏯",
-  "🏰",
-  "🏗️",
-  "🏢",
-  "🏭",
-  "🏬",
-  "🏪",
-  "🏟️",
-  "🏦",
-  "🏫",
-  "🏨",
-  "🏣",
-  "🏤",
-  "🏥",
-  "🏚️",
-  "🏠",
-  "🏡",
-  "🏘️",
-  "🛖",
-  "⛺",
-  "🏕️",
-  "🏙️",
-  "🌆",
-  "🌇",
-  "🌃",
-  "🌉",
-  "🌁",
-  "🛤️",
-  "🛣️",
-  "🏝️",
-  "🗾",
-  "🗺️",
-  "🌐",
-  "💺",
-  "🧳",
-  "🎉",
-  "🎊",
-  "🎈",
-  "🎂",
-  "🎀",
-  "🎁",
-  "🎇",
-  "🎆",
-  "🧨",
-  "🧧",
-  "🪔",
-  "🪅",
-  "🪩",
-  "🎐",
-  "🎏",
-  "🎎",
-  "🎑",
-  "🎍",
-  "🎋",
-  "🎄",
-  "🎃",
-  "🎗️",
-  "🥇",
-  "🥈",
-  "🥉",
-  "🏅",
-  "🎖️",
-  "🏆",
-  "📢",
-  "⚽",
-  "⚾",
-  "🥎",
-  "🏀",
-  "🏐",
-  "🏈",
-  "🏉",
-  "🎾",
-  "🥅",
-  "🏸",
-  "🥍",
-  "🏏",
-  "🏑",
-  "🏒",
-  "🥌",
-  "🛷",
-  "🎿",
-  "⛸️",
-  "🛼",
-  "🩰",
-  "🛹",
-  "⛳",
-  "🎯",
-  "🏹",
-  "🥏",
-  "🪃",
-  "🪁",
-  "🎣",
-  "🤿",
-  "🩱",
-  "🎽",
-  "🥋",
-  "🥊",
-  "🎱",
-  "🏓",
-  "🎳",
-  "♟️",
-  "🪀",
-  "🧩",
-  "🎮",
-  "🕹️",
-  "👾",
-  "🔫",
-  "🎲",
-  "🎰",
-  "🎴",
-  "🀄",
-  "🃏",
-  "🪄",
-  "🎩",
-  "📷",
-  "📸",
-  "🖼️",
-  "🎨",
-  "🖌️",
-  "🖍️",
-  "🪡",
-  "🧵",
-  "🧶",
-  "🎹",
-  "🎷",
-  "🎺",
-  "🎸",
-  "🪕",
-  "🎻",
-  "🪘",
-  "🥁",
-  "🪗",
-  "🎤",
-  "🎧",
-  "🎚️",
-  "🎛️",
-  "🎙️",
-  "📻",
-  "📺",
-  "📼",
-  "📹",
-  "📽️",
-  "🎥",
-  "🎞️",
-  "🎬",
-  "🎭",
-  "🎫",
-  "🎟️",
-  "📱",
-  "☎️",
-  "📞",
-  "📟",
-  "📠",
-  "🔌",
-  "🔋",
-  "🪫",
-  "🖲️",
-  "💽",
-  "💾",
-  "💿",
-  "📀",
-  "🖥️",
-  "💻",
-  "⌨️",
-  "🖨️",
-  "🖱️",
-  "🪙",
-  "💸",
-  "💵",
-  "💴",
-  "💶",
-  "💷",
-  "💳",
-  "💰",
-  "🧾",
-  "🧮",
-  "⚖️",
-  "🛒",
-  "🛍️",
-  "🕯️",
-  "💡",
-  "🔦",
-  "🏮",
-  "🧱",
-  "🪟",
-  "🪞",
-  "🚪",
-  "🪑",
-  "🛏️",
-  "🛋️",
-  "🚿",
-  "🛁",
-  "🚽",
-  "🧻",
-  "🪠",
-  "🧸",
-  "🪆",
-  "🧷",
-  "🪢",
-  "🧹",
-  "🧴",
-  "🧽",
-  "🧼",
-  "🪥",
-  "🪒",
-  "🧺",
-  "🧦",
-  "🧤",
-  "🧣",
-  "👖",
-  "👕",
-  "🎽",
-  "👚",
-  "👔",
-  "👗",
-  "👘",
-  "🥻",
-  "🩱",
-  "👙",
-  "🩳",
-  "🩲",
-  "🧥",
-  "🥼",
-  "🦺",
-  "⛑️",
-  "🪖",
-  "🎓",
-  "🎩",
-  "👒",
-  "🧢",
-  "👑",
-  "🎒",
-  "👝",
-  "👛",
-  "👜",
-  "💼",
-  "🧳",
-  "☂️",
-  "🌂",
-  "💍",
-  "💎",
-  "💄",
-  "👠",
-  "👟",
-  "👞",
-  "🥿",
-  "🩴",
-  "👡",
-  "👢",
-  "🥾",
-  "👓",
-  "🕶️",
-  "🦯",
-  "🥽",
-  "⚗️",
-  "🧫",
-  "🧪",
-  "🌡️",
-  "🧬",
-  "💉",
-  "💊",
-  "🩹",
-  "🩺",
-  "🩻",
-  "🔭",
-  "🔬",
-  "📡",
-  "🛰️",
-  "🧯",
-  "🪓",
-  "🪜",
-  "🪣",
-  "🪝",
-  "🧲",
-  "🧰",
-  "🗜️",
-  "🔩",
-  "🪛",
-  "🪚",
-  "🔧",
-  "🔨",
-  "⚒️",
-  "🛠️",
-  "⛏️",
-  "⚙️",
-  "🔗",
-  "⛓️",
-  "📎",
-  "🖇️",
-  "📏",
-  "📐",
-  "✂️",
-  "📌",
-  "📍",
-  "🗑️",
-  "🖌️",
-  "🖍️",
-  "🖊️",
-  "🖋️",
-  "✒️",
-  "✏️",
-  "📝",
-  "📒",
-  "📔",
-  "📕",
-  "📓",
-  "📗",
-  "📘",
-  "📙",
-  "📚",
-  "📖",
-  "🔖",
-  "🗒️",
-  "📄",
-  "📃",
-  "📋",
-  "📇",
-  "📑",
-  "🗃️",
-  "🗄️",
-  "🗂️",
-  "📂",
-  "📁",
-  "📰",
-  "🗞️",
-  "📊",
-  "📈",
-  "📉",
-  "🪧",
-  "🪪",
-  "🏷️",
-  "📦",
-  "📫",
-  "📪",
-  "📬",
-  "📭",
-  "📮",
-  "✉️",
-  "📧",
-  "📩",
-  "📨",
-  "💌",
-  "📤",
-  "📥",
-  "🗳️",
-  "⏱️",
-  "🕛",
-  "🕧",
-  "🕐",
-  "🕜",
-  "🕑",
-  "🕝",
-  "🕒",
-  "🕞",
-  "🕓",
-  "🕟",
-  "🕔",
-  "🕠",
-  "🕕",
-  "🕡",
-  "🕖",
-  "🕢",
-  "🕗",
-  "🕣",
-  "🕘",
-  "🕤",
-  "🕙",
-  "🕥",
-  "🕚",
-  "🕦",
-  "⌛",
-  "⏳",
-  "🕰️",
-  "⌚",
-  "⏲️",
-  "⏰",
-  "🗓️",
-  "📅",
-  "📆",
-  "🛎️",
-  "🔔",
-  "📯",
-  "📢",
-  "📣",
-  "🔍",
-  "🔎",
-  "🔮",
-  "🧿",
-  "🪬",
-  "📿",
-  "🏺",
-  "⚱️",
-  "⚰️",
-  "🪦",
-  "🚬",
-  "💣",
-  "🪤",
-  "📜",
-  "⚔️",
-  "🗡️",
-  "🛡️",
-  "🗝️",
-  "🔑",
-  "🔐",
-  "🔏",
-  "🔒",
-  "🔓",
-  "❤️",
-  "🧡",
-  "💛",
-  "💚",
-  "💙",
-  "💜",
-  "🤎",
-  "🖤",
-  "🤍",
-  "🔴",
-  "🟠",
-  "🟡",
-  "🟢",
-  "🔵",
-  "🟣",
-  "🟤",
-  "⚫",
-  "⚪",
-  "🟥",
-  "🟧",
-  "🟨",
-  "🟩",
-  "🟦",
-  "🟪",
-  "🟫",
-  "⬛",
-  "⬜",
-  "♈",
-  "♉",
-  "♊",
-  "♋",
-  "♌",
-  "♍",
-  "♎",
-  "♏",
-  "♐",
-  "♑",
-  "♒",
-  "♓",
-  "⛎",
-  "♀️",
-  "♂️",
-  "⚧️",
-  "🔻",
-  "🔺",
-  "❕",
-  "❗",
-  "❔",
-  "❓",
-  "⁉️",
-  "‼️",
-  "⭕",
-  "❌",
-  "🚫",
-  "🚳",
-  "🚭",
-  "🚯",
-  "🚱",
-  "🚷",
-  "📵",
-  "🔞",
-  "🔕",
-  "🔇",
-  "🅰️",
-  "🆎",
-  "🅱️",
-  "🅾️",
-  "🆑",
-  "🆘",
-  "🛑",
-  "⛔",
-  "📛",
-  "♨️",
-  "🉐",
-  "㊙️",
-  "㊗️",
-  "🈴",
-  "🈵",
-  "🈹",
-  "🈲",
-  "🉑",
-  "🈶",
-  "🈚",
-  "🈸",
-  "🈺",
-  "🈷️",
-  "🔶",
-  "🔸",
-  "🔆",
-  "🔅",
-  "✴️",
-  "🆚",
-  "🎦",
-  "📶",
-  "🔁",
-  "🔂",
-  "🔀",
-  "▶️",
-  "⏩",
-  "⏭️",
-  "⏯️",
-  "◀️",
-  "⏪",
-  "⏮️",
-  "🔼",
-  "⏫",
-  "🔽",
-  "⏬",
-  "⏸️",
-  "⏹️",
-  "⏺️",
-  "⏏️",
-  "📴",
-  "📳",
-  "📲",
-  "🔈",
-  "🔉",
-  "🔊",
-  "🎼",
-  "🎵",
-  "🎶",
-  "☢️",
-  "☣️",
-  "⚠️",
-  "🚸",
-  "⚜️",
-  "🔱",
-  "〽️",
-  "🔰",
-  "✳️",
-  "❇️",
-  "♻️",
-  "💱",
-  "💲",
-  "💹",
-  "🈯",
-  "❎",
-  "✅",
-  "✔️",
-  "☑️",
-  "⬆️",
-  "↗️",
-  "➡️",
-  "↘️",
-  "⬇️",
-  "↙️",
-  "⬅️",
-  "↖️",
-  "↕️",
-  "↔️",
-  "↩️",
-  "↪️",
-  "⤴️",
-  "⤵️",
-  "🔃",
-  "🔄",
-  "🔙",
-  "🔛",
-  "🔝",
-  "🔚",
-  "🔜",
-  "🆕",
-  "🆓",
-  "🆙",
-  "🆗",
-  "🆒",
-  "🆖",
-  "ℹ️",
-  "🅿️",
-  "🈁",
-  "🈂️",
-  "🈳",
-  "🔣",
-  "🔤",
-  "🔠",
-  "🔡",
-  "🔢",
-  "#️⃣",
-  "*️⃣",
-  "0️⃣",
-  "1️⃣",
-  "2️⃣",
-  "3️⃣",
-  "4️⃣",
-  "5️⃣",
-  "6️⃣",
-  "7️⃣",
-  "8️⃣",
-  "9️⃣",
-  "🔟",
-  "💠",
-  "🔷",
-  "🔹",
-  "🌐",
-  "🏧",
-  "Ⓜ️",
-  "🚾",
-  "🚻",
-  "🚹",
-  "🚺",
-  "♿",
-  "🚼",
-  "🛗",
-  "🚮",
-  "🚰",
-  "🛂",
-  "🛃",
-  "🛄",
-  "🛅",
-  "💟",
-  "⚛️",
-  "🛐",
-  "🕉️",
-  "☸️",
-  "☮️",
-  "☯️",
-  "☪️",
-  "✝️",
-  "☦️",
-  "✡️",
-  "🔯",
-  "🕎",
-  "♾️",
-  "🆔",
-  "⚕️",
-  "✖️",
-  "➕",
-  "➖",
-  "➗",
-  "🟰",
-  "➰",
-  "➿",
-  "〰️",
-  "©️",
-  "®️",
-  "™️",
-  "♥️",
-  "♦️",
-  "♣️",
-  "♠️",
-  "🔘",
-  "🔳",
-  "◼️",
-  "◾",
-  "▪️",
-  "🔲",
-  "◻️",
-  "◽",
-  "▫️",
-  "💭",
-  "🗯️",
-  "💬",
-  "🗨️",
-  "👁️‍🗨️"
-];
-function at({
+const et = "_main_1kxxm_1", tt = "_instruction_1kxxm_9", rt = "_pattern_grid_1kxxm_23", P = {
+  main: et,
+  instruction: tt,
+  pattern_grid: rt,
+  "button--correct": "_button--correct_1kxxm_57"
+};
+function nt({
   width: e = 3,
-  time: n = [5, 3, 10],
-  onSuccess: r,
-  onFail: a
+  numbers: r = 4,
+  order_matters: n = !1,
+  time: a = [5, 3, 15],
+  onSuccess: s,
+  onFail: l
 }) {
-  const [o, i] = w({
-    width: e,
+  const [c, d] = w({
+    active: !0,
     stage: 0,
-    correct_indexes: [],
-    instruction: "Remember them...",
-    score: 0,
-    user_clicked: [],
-    active: !0
-  }), [_, m] = w(
-    H(I(T.length), e)
-  ), v = () => {
-    if (o.stage === 0)
-      i((l) => ({
-        ...l,
-        correct_indexes: _,
-        stage: 1,
-        instruction: "Do you know you can't lick your elbow?"
-      }));
-    else if (o.stage === 1) {
-      i((b) => ({
-        ...b,
-        stage: 2,
-        instruction: "Click on the old emojis"
-      }));
-      let l = H(
-        I(T.length),
-        e * (e - 1)
-      );
-      for (; l.some((b) => o.correct_indexes.includes(b)); )
-        l = H(
-          I(T.length),
-          e * (e - 1)
-        );
-      const f = oe([..._, ...l]);
-      m(f);
-    } else o.stage == 2 && o.active && (a({
-      score: o.score / e,
-      message: "Time and tides waits for none"
-    }), i((l) => ({ ...l, active: !1 })));
-  }, C = (l) => {
-    if (!(o.stage !== 2 || !o.active))
-      if (o.correct_indexes.includes(l)) {
-        if (o.score === e - 1) {
-          r({
-            score: 1,
-            message: "Are you a memory king?"
-          }), i((f) => ({
-            ...f,
-            active: !1,
-            user_clicked: [...f.user_clicked, l]
-          }));
-          return;
-        }
-        i((f) => ({
-          ...f,
-          score: f.score + 1,
-          user_clicked: [...f.user_clicked, l]
-        }));
-      } else
-        i((f) => ({
-          ...f,
-          user_clicked: [...f.user_clicked, l],
-          active: !1
-        })), a({
-          score: o.score / e,
-          message: "Oops! I just arrived here"
+    instruction: "Memorize the patterns",
+    correct: Ke(ee(e * e), r),
+    clicked: []
+  }), v = () => {
+    c.stage === 0 ? d((f) => ({
+      ...f,
+      stage: 1,
+      instruction: "Do you know you cannot laugh while your nose are closed?"
+    })) : c.stage === 1 ? d((f) => ({
+      ...f,
+      stage: 2,
+      instruction: n ? "Click the boxes in correct order." : "Click the earlier highlighted boxes."
+    })) : c.stage === 2 && c.active && (d((f) => ({
+      ...f,
+      active: !1
+    })), l({
+      score: c.clicked.length,
+      message: "Better care about your time at next round"
+    }));
+  }, y = (f) => {
+    if (!c.active || c.stage !== 2)
+      return;
+    const g = Math.max(0, c.clicked.length);
+    if (c.correct[g] === f || !n && c.correct.includes(f)) {
+      if (c.clicked.length === r - 1) {
+        d((m) => ({ ...m, active: !1 })), s({
+          score: 1,
+          message: "Didn't knew you were that sharp"
         });
+        return;
+      }
+      d((m) => ({ ...m, clicked: [...m.clicked, f] }));
+    } else
+      d((m) => ({ ...m, active: !1 })), l({
+        score: c.clicked.length / r,
+        message: "Whoops! you may need to sharpen your brain"
+      });
   };
-  return /* @__PURE__ */ s.jsxs(s.Fragment, { children: [
-    /* @__PURE__ */ s.jsxs("header", { children: [
-      /* @__PURE__ */ s.jsxs("div", { children: [
-        /* @__PURE__ */ s.jsx("h3", { children: "Remember Emojis" }),
-        /* @__PURE__ */ s.jsxs("p", { children: [
-          "Look at all the emojis carefully for ",
-          /* @__PURE__ */ s.jsxs("u", { children: [
-            n[0],
-            " seconds"
-          ] })
-        ] })
+  return /* @__PURE__ */ i.jsxs(i.Fragment, { children: [
+    /* @__PURE__ */ i.jsxs("header", { children: [
+      /* @__PURE__ */ i.jsxs("div", { children: [
+        /* @__PURE__ */ i.jsx("h3", { children: "Test your brain" }),
+        n && /* @__PURE__ */ i.jsx("p", { children: "Remember the number patterns and click as per the pattern later" }),
+        n && /* @__PURE__ */ i.jsx("p", { children: "Remember the number patterns and click the pattern later" })
       ] }),
-      /* @__PURE__ */ s.jsx(
-        et,
+      /* @__PURE__ */ i.jsx(
+        Xe,
         {
-          start: n[o?.stage ?? 0],
+          start: a[c?.stage ?? 0],
           on_time_finished: v
         }
       )
     ] }),
-    /* @__PURE__ */ s.jsxs("main", { className: P.main, children: [
-      /* @__PURE__ */ s.jsx("p", { className: P.instruction, children: o.instruction }),
-      o.stage !== 1 && /* @__PURE__ */ s.jsx(
+    /* @__PURE__ */ i.jsxs("main", { className: P.main, children: [
+      /* @__PURE__ */ i.jsx("p", { className: P.instruction, children: c.instruction }),
+      c.stage !== 1 && /* @__PURE__ */ i.jsx(
         "div",
         {
-          className: P.emoji_display,
+          className: P.pattern_grid,
           style: { gridTemplateColumns: `repeat(${e}, auto)` },
-          children: _.map((l, f) => /* @__PURE__ */ s.jsx(
+          children: ee(e * e).map((f) => /* @__PURE__ */ i.jsx(
             "button",
             {
-              onClick: C.bind(null, l),
-              className: o.user_clicked.includes(l) ? P["button--correct"] : "",
-              children: /* @__PURE__ */ s.jsx("span", { children: T[l] })
+              onClick: y.bind(null, f),
+              className: (c.clicked.includes(f) || c.stage !== 2) && c.correct.includes(f) ? P["button--correct"] : "",
+              children: (c.clicked.includes(f) || c.stage !== 2) && c.correct.includes(f) && /* @__PURE__ */ i.jsx("span", { children: c.correct.indexOf(f) + 1 })
             },
             f
           ))
@@ -2057,65 +594,65 @@ function at({
     ] })
   ] });
 }
-function ct({ difficulty: e, onComplete: n }) {
-  const [r, a] = w(
+function ct({ difficulty: e, tries: r = 1, shuffle_on_retry: n = !1, on_complete: a }) {
+  const [s, l] = w(
     process.env.NODE_ENV === "development" ? "progress" : "initial"
-  ), [o, i] = w(null), _ = () => {
-    a((C) => C === "initial" ? "progress" : C);
-  }, m = ({ score: C, message: l }) => {
-    i({
-      score: C,
-      message: l,
+  ), [c, d] = w(null), v = () => {
+    l((g) => g === "initial" ? "progress" : g);
+  }, y = ({ score: g, message: m }) => {
+    d({
+      score: g,
+      message: m,
       type: "failure"
     });
-  }, v = ({ score: C, message: l }) => {
-    i({
-      score: C,
-      message: l,
+  }, f = ({ score: g, message: m }) => {
+    d({
+      score: g,
+      message: m,
       type: "success"
     });
   };
-  return /* @__PURE__ */ s.jsxs("div", { className: x.captcha__wrapper, children: [
-    /* @__PURE__ */ s.jsxs(
+  return /* @__PURE__ */ i.jsxs("div", { className: x.captcha__wrapper, children: [
+    /* @__PURE__ */ i.jsxs(
       "button",
       {
         className: x.captcha__btn,
-        onClick: _,
+        onClick: v,
         children: [
-          /* @__PURE__ */ s.jsxs("div", { className: x.captcha__btn__main, children: [
-            r === "initial" && /* @__PURE__ */ s.jsx("div", { className: x.captcha__unchecked }),
-            r === "success" && /* @__PURE__ */ s.jsx(Te, { style: { margin: -8 }, size: 46, color: "#41A818" }),
-            r === "error" && /* @__PURE__ */ s.jsx(
-              Ne,
+          /* @__PURE__ */ i.jsxs("div", { className: x.captcha__btn__main, children: [
+            s === "initial" && /* @__PURE__ */ i.jsx("div", { className: x.captcha__unchecked }),
+            s === "success" && /* @__PURE__ */ i.jsx(we, { style: { margin: -8 }, size: 46, color: "#41A818" }),
+            s === "error" && /* @__PURE__ */ i.jsx(
+              Oe,
               {
                 style: { margin: -8 },
                 size: 46,
                 color: "#A81818"
               }
             ),
-            r === "progress" && /* @__PURE__ */ s.jsx(Xe, {}),
-            /* @__PURE__ */ s.jsx("p", { children: "Are you a human?" })
+            s === "progress" && /* @__PURE__ */ i.jsx(Ue, {}),
+            /* @__PURE__ */ i.jsx("p", { children: "Are you a human?" })
           ] }),
-          /* @__PURE__ */ s.jsx("div", { className: x.captcha__btn__footer, children: /* @__PURE__ */ s.jsxs("p", { children: [
+          /* @__PURE__ */ i.jsx("div", { className: x.captcha__btn__footer, children: /* @__PURE__ */ i.jsxs("p", { children: [
             "Powered by",
             " ",
-            /* @__PURE__ */ s.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
+            /* @__PURE__ */ i.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
           ] }) })
         ]
       }
     ),
-    r === "progress" && /* @__PURE__ */ s.jsxs("div", { className: x.captcha__content, children: [
-      /* @__PURE__ */ s.jsx(
-        at,
+    s === "progress" && /* @__PURE__ */ i.jsxs("div", { className: x.captcha__content, children: [
+      /* @__PURE__ */ i.jsx(
+        nt,
         {
-          onFail: m,
-          onSuccess: v
+          onFail: y,
+          onSuccess: f
         }
       ),
-      o && /* @__PURE__ */ s.jsx("div", { className: x.captcha__failed, children: /* @__PURE__ */ s.jsxs("div", { className: x.captcha__failed__content, children: [
-        o.type === "failure" ? /* @__PURE__ */ s.jsx(De, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ s.jsx(He, { color: "#b0b0b0", size: "32px" }),
-        /* @__PURE__ */ s.jsx("p", { children: o.message }),
-        /* @__PURE__ */ s.jsx("button", { style: { marginTop: 16 }, children: /* @__PURE__ */ s.jsx(Ye, { size: "32px" }) })
+      c && /* @__PURE__ */ i.jsx("div", { className: x.captcha__failed, children: /* @__PURE__ */ i.jsxs("div", { className: x.captcha__failed__content, children: [
+        c.type === "failure" ? /* @__PURE__ */ i.jsx(Ve, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ i.jsx(ze, { color: "#b0b0b0", size: "32px" }),
+        /* @__PURE__ */ i.jsx("p", { children: c.message }),
+        /* @__PURE__ */ i.jsx("button", { style: { marginTop: 16 }, children: /* @__PURE__ */ i.jsx(Ie, { size: "32px" }) })
       ] }) })
     ] })
   ] });

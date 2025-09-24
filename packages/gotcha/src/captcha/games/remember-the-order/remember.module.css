@@ -1,0 +1,31 @@
+.main {
+	padding-bottom: 22px;
+}
+
+.instruction {
+	font-size: 18px;
+	padding: 0 16px;
+	text-align: center;
+	margin: 16px 0;
+}
+
+.pattern_grid {
+	display: grid;
+	justify-content: center;
+	gap: 8px;
+}
+
+.pattern_grid button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border: 2px solid var(--color-dark-grey);
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.button--correct {
+	background-color: var(--color-grey);
+}

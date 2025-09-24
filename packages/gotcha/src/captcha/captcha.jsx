@@ -10,8 +10,9 @@ import WASDReflexGame from "./games/wasd-reflex/wasd-reflex";
 import MathGame from "./games/math-game/math-game";
 import AToZGame from "./games/a-to-z/a-to-z";
 import ImposterEmojiGame from "./games/imposter-emoji/imposter-emoji";
+import RememberTheOrderGame from "./games/remember-the-order/remember";
 
-export function Captcha({ difficulty, onComplete }) {
+export function Captcha({ difficulty, tries=1, shuffle_on_retry=false, on_complete }) {
 	// initial, progress, success, error
 	const [captcha_state, set_captcha_state] = useState(
 		process.env.NODE_ENV === "development" ? "progress" : "initial"
@@ -100,7 +101,11 @@ export function Captcha({ difficulty, onComplete }) {
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/> */}
-					<ImposterEmojiGame
+					{/* <ImposterEmojiGame
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/> */}
+					<RememberTheOrderGame
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/>
