@@ -45,6 +45,6 @@
 	margin: 16px auto;
 }
 
-.light.active {
-	background-color: var(--color-yellow);
+.light.light--active {
+	background-color: var(--color-red);
 }

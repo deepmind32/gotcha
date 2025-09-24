@@ -95,7 +95,7 @@ export function Captcha({ difficulty, onComplete }) {
 					/> */}
 					<AToZGame
 						difficulty="hard"
-						time={400}
+						time={10}
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/>

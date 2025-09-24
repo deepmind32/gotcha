@@ -34,22 +34,37 @@ const ALPHABETS = [
 export default function AToZGame({
 	difficulty = "easy",
 	time = 26,
+	total_light_glows = 3,
 	onSuccess,
 	onFail,
 }) {
 	const [game, set_game] = useState({
 		active: true,
 		index: -1,
+		light_glow: false,
+		lights: null,
+		glow: false,
 	});
+	const [curr_time, set_curr_time] = useState(time);
 	const input_ref = useRef(null);
 	let alphabets = ALPHABETS;
 
-	if (difficulty === "medium" || alphabets === "very hard") {
-		alphabets = ALPHABETS.reverse();
+	if (difficulty === "medium" || difficulty === "very hard") {
+		alphabets = [...ALPHABETS].reverse();
 	}
 
 	useEffect(() => {
 		input_ref.current.focus();
+
+		// getting three random times to glow the light and random glow duration anywhere from 1 sec to 3second
+		const lights = Array(total_light_glows)
+			.fill(null)
+			.map((_) => ({
+				time: Math.floor(Math.random() * (time - 1)),
+				duration: Math.floor(Math.random() * time * 100),
+			}));
+
+		set_game((prev) => ({ ...prev, lights }));
 	}, []);
 
 	const handle_time_finished = () => {
@@ -68,6 +83,15 @@ export default function AToZGame({
 			return;
 		}
 		const entered_key = event.key;
+
+		if (game.glow) {
+			onSuccess({
+				score: 0,
+				message: "Told you. Don't type while the light is glowing",
+			});
+
+			set_game((prev) => ({ ...prev, active: false }));
+		}
 
 		if (entered_key === alphabets[game.index + 1]) {
 			if (entered_key === alphabets.at(-1)) {
@@ -90,6 +114,29 @@ export default function AToZGame({
 		input_ref.current.value = "";
 	};
 
+	const handle_time_change = (t) => {
+		set_curr_time(t);
+	};
+
+	useEffect(() => {
+		let glow_timeout = undefined;
+		if (game.lights) {
+			const light_time = game.lights.map((item) => item["time"]);
+			const light_duration = game.lights.map((item) => item["duration"]);
+
+			const index = light_time.indexOf(curr_time);
+
+			if (index !== -1) {
+				set_game((prev) => ({ ...prev, glow: true }));
+				glow_timeout = setTimeout(() => {
+					set_game((prev) => ({ ...prev, glow: false }));
+				}, light_duration[index]);
+			}
+		}
+
+		return () => glow_timeout && clearTimeout(glow_timeout);
+	}, [curr_time]);
+
 	return (
 		<>
 			<header>
@@ -104,11 +151,19 @@ export default function AToZGame({
 					</p>
 				</div>
 
-				<Timer start={time} on_time_finished={handle_time_finished} />
+				<Timer
+					start={time}
+					on_time_finished={handle_time_finished}
+					on_change={handle_time_change}
+				/>
 			</header>
 			<main>
 				{(difficulty === "hard" || difficulty === "very hard") && (
-					<div className={styles["light"]} />
+					<div
+						className={`${styles["light"]} ${
+							game.glow ? styles["light--active"] : ""
+						}`}
+					/>
 				)}
 				<div className={styles["alphabet_showcase"]}>
 					{game.index >= 0 &&
