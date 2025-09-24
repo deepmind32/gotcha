@@ -11,8 +11,14 @@ import MathGame from "./games/math-game/math-game";
 import AToZGame from "./games/a-to-z/a-to-z";
 import ImposterEmojiGame from "./games/imposter-emoji/imposter-emoji";
 import RememberTheOrderGame from "./games/remember-the-order/remember";
+import QuizGame from "./games/quiz/quiz";
 
-export function Captcha({ difficulty, tries=1, shuffle_on_retry=false, on_complete }) {
+export function Captcha({
+	difficulty,
+	tries = 1,
+	shuffle_on_retry = false,
+	on_complete,
+}) {
 	// initial, progress, success, error
 	const [captcha_state, set_captcha_state] = useState(
 		process.env.NODE_ENV === "development" ? "progress" : "initial"
@@ -105,10 +111,17 @@ export function Captcha({ difficulty, tries=1, shuffle_on_retry=false, on_comple
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/> */}
-					<RememberTheOrderGame
+					{/* <RememberTheOrderGame
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/> */}
+					<QuizGame
+						question="What is the capital city of Nepal?"
+						answer="Kathmandu"
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/>
+
 					{message && (
 						<div className={styles["captcha__failed"]}>
 							<div className={styles["captcha__failed__content"]}>

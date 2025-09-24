@@ -1,0 +1,31 @@
+.main {
+	padding: 32px 16px;
+}
+
+.main p {
+	margin-bottom: 16px;
+	font-weight: 500;
+}
+
+.main p span {
+	color: var(--color-dark-grey);
+}
+
+.main input {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid var(--color-dark-grey);
+	font-size: 20px;
+}
+
+.main input:focus {
+	border-color: var(--color-blue);
+	outline: none;
+}
+
+.main button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 8px;
+	width: 100%;
+}
