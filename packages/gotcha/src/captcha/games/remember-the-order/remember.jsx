@@ -7,7 +7,7 @@ import { get_random_samples } from "../../utils";
 export default function RememberTheOrderGame({
 	width = 3,
 	numbers = 4,
-	order_matters = false,
+	order_matters = true,
 	time = [5, 3, 15],
 	onSuccess,
 	onFail,
@@ -87,7 +87,7 @@ export default function RememberTheOrderGame({
 							Remember the number patterns and click as per the pattern later
 						</p>
 					)}
-					{order_matters && (
+					{!order_matters && (
 						<p>Remember the number patterns and click the pattern later</p>
 					)}
 				</div>
@@ -115,7 +115,7 @@ export default function RememberTheOrderGame({
 										: ""
 								}
 							>
-								{(game.clicked.includes(item) || game.stage !== 2) &&
+								{order_matters && (game.clicked.includes(item) || game.stage !== 2) &&
 									game.correct.includes(item) && (
 										<span>{game.correct.indexOf(item) + 1}</span>
 									)}

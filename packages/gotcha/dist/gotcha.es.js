@@ -512,7 +512,7 @@ const et = "_main_1kxxm_1", tt = "_instruction_1kxxm_9", rt = "_pattern_grid_1kx
 function nt({
   width: e = 3,
   numbers: r = 4,
-  order_matters: n = !1,
+  order_matters: n = !0,
   time: a = [5, 3, 15],
   onSuccess: s,
   onFail: l
@@ -563,7 +563,7 @@ function nt({
       /* @__PURE__ */ i.jsxs("div", { children: [
         /* @__PURE__ */ i.jsx("h3", { children: "Test your brain" }),
         n && /* @__PURE__ */ i.jsx("p", { children: "Remember the number patterns and click as per the pattern later" }),
-        n && /* @__PURE__ */ i.jsx("p", { children: "Remember the number patterns and click the pattern later" })
+        !n && /* @__PURE__ */ i.jsx("p", { children: "Remember the number patterns and click the pattern later" })
       ] }),
       /* @__PURE__ */ i.jsx(
         Xe,
@@ -585,7 +585,7 @@ function nt({
             {
               onClick: y.bind(null, f),
               className: (c.clicked.includes(f) || c.stage !== 2) && c.correct.includes(f) ? P["button--correct"] : "",
-              children: (c.clicked.includes(f) || c.stage !== 2) && c.correct.includes(f) && /* @__PURE__ */ i.jsx("span", { children: c.correct.indexOf(f) + 1 })
+              children: n && (c.clicked.includes(f) || c.stage !== 2) && c.correct.includes(f) && /* @__PURE__ */ i.jsx("span", { children: c.correct.indexOf(f) + 1 })
             },
             f
           ))
