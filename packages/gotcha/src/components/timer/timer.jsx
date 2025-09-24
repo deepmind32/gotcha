@@ -18,7 +18,7 @@ export default function Timer({ start = 60, on_time_finished, on_change }) {
 		const timer_timeout = setTimeout(() => {
 			set_second((prev) => prev - 1);
 			second_ref.current -= 1;
-			on_change(second_ref.current);
+			on_change?.(second_ref.current);
 		}, 1000);
 
 		return () => clearTimeout(timer_timeout);

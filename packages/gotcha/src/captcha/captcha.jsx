@@ -9,6 +9,7 @@ import PinGame from "./games/select-pin/pin";
 import WASDReflexGame from "./games/wasd-reflex/wasd-reflex";
 import MathGame from "./games/math-game/math-game";
 import AToZGame from "./games/a-to-z/a-to-z";
+import ImposterEmojiGame from "./games/imposter-emoji/imposter-emoji";
 
 export function Captcha({ difficulty, onComplete }) {
 	// initial, progress, success, error
@@ -93,9 +94,13 @@ export function Captcha({ difficulty, onComplete }) {
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/> */}
-					<AToZGame
+					{/* <AToZGame
 						difficulty="hard"
 						time={10}
+						onFail={handle_challenge_failed}
+						onSuccess={handle_challenge_success}
+					/> */}
+					<ImposterEmojiGame
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/>

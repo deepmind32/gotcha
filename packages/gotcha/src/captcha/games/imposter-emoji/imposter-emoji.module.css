@@ -1,0 +1,31 @@
+.main {
+	padding-bottom: 32px;
+}
+
+.instruction {
+	text-align: center;
+	margin-top: 16px;
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 16px;
+	padding: 0 16px;
+}
+
+.emoji_display {
+	display: grid;
+	gap: 22px;
+	padding: 16px;
+	align-items: center;
+	justify-content: center;
+}
+
+.emoji_display span {
+	font-family: var(--font-emoji);
+	font-size: 32px;
+}
+
+.button--correct {
+	display: block;
+	border: 2px solid var(--color-green);
+	border-radius: 4px;
+}
