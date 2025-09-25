@@ -129,7 +129,6 @@ button {
 	padding: 4px;
 	border-radius: 2px;
 	border: 1px solid #b0b0b0;
-	width: 300px;
 	background-color: #f9f9f9;
 	line-height: 1.2;
 }
@@ -161,4 +160,11 @@ button {
 
 .captcha__content header p {
 	font-size: 14px;
+}
+
+.break-word {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	word-break: break-all;
 }

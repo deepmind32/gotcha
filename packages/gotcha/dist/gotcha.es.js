@@ -9,10 +9,10 @@ import './index.css';var H = { exports: {} }, W = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var we;
+var ye;
 function Ze() {
-  if (we) return W;
-  we = 1;
+  if (ye) return W;
+  ye = 1;
   var e = Symbol.for("react.transitional.element"), s = Symbol.for("react.fragment");
   function r(c, o, i) {
     var n = null;
@@ -41,20 +41,20 @@ var V = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var ve;
+var we;
 function We() {
-  return ve || (ve = 1, process.env.NODE_ENV !== "production" && (function() {
+  return we || (we = 1, process.env.NODE_ENV !== "production" && (function() {
     function e(a) {
       if (a == null) return null;
       if (typeof a == "function")
         return a.$$typeof === $e ? null : a.displayName || a.name || null;
       if (typeof a == "string") return a;
       switch (a) {
-        case y:
+        case v:
           return "Fragment";
         case x:
           return "Profiler";
-        case w:
+        case y:
           return "StrictMode";
         case Z:
           return "Suspense";
@@ -99,8 +99,8 @@ function We() {
       }
       if (m) {
         m = console;
-        var v = m.error, k = typeof Symbol == "function" && Symbol.toStringTag && a[Symbol.toStringTag] || a.constructor.name || "Object";
-        return v.call(
+        var w = m.error, k = typeof Symbol == "function" && Symbol.toStringTag && a[Symbol.toStringTag] || a.constructor.name || "Object";
+        return w.call(
           m,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           k
@@ -108,7 +108,7 @@ function We() {
       }
     }
     function c(a) {
-      if (a === y) return "<>";
+      if (a === v) return "<>";
       if (typeof a == "object" && a !== null && a.$$typeof === _e)
         return "<...>";
       try {
@@ -133,14 +133,14 @@ function We() {
       return a.key !== void 0;
     }
     function _(a, m) {
-      function v() {
+      function w() {
         he || (he = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
           m
         ));
       }
-      v.isReactWarning = !0, Object.defineProperty(a, "key", {
-        get: v,
+      w.isReactWarning = !0, Object.defineProperty(a, "key", {
+        get: w,
         configurable: !0
       });
     }
@@ -150,14 +150,14 @@ function We() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), a = this.props.ref, a !== void 0 ? a : null;
     }
-    function g(a, m, v, k, L, P, ne, se) {
-      return v = P.ref, a = {
+    function g(a, m, w, k, L, P, ne, se) {
+      return w = P.ref, a = {
         $$typeof: j,
         type: a,
         key: m,
         props: P,
         _owner: L
-      }, (v !== void 0 ? v : null) !== null ? Object.defineProperty(a, "ref", {
+      }, (w !== void 0 ? w : null) !== null ? Object.defineProperty(a, "ref", {
         enumerable: !1,
         get: l
       }) : Object.defineProperty(a, "ref", { enumerable: !1, value: null }), a._store = {}, Object.defineProperty(a._store, "validated", {
@@ -182,7 +182,7 @@ function We() {
         value: se
       }), Object.freeze && (Object.freeze(a.props), Object.freeze(a)), a;
     }
-    function u(a, m, v, k, L, P, ne, se) {
+    function u(a, m, w, k, L, P, ne, se) {
       var C = m.children;
       if (C !== void 0)
         if (k)
@@ -200,7 +200,7 @@ function We() {
         var I = Object.keys(m).filter(function(De) {
           return De !== "key";
         });
-        k = 0 < I.length ? "{key: someKey, " + I.join(": ..., ") + ": ...}" : "{key: someKey}", ye[C + k] || (I = 0 < I.length ? "{" + I.join(": ..., ") + ": ...}" : "{}", console.error(
+        k = 0 < I.length ? "{key: someKey, " + I.join(": ..., ") + ": ...}" : "{key: someKey}", ve[C + k] || (I = 0 < I.length ? "{" + I.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -211,15 +211,15 @@ React keys must be passed directly to JSX without using spread:
           C,
           I,
           C
-        ), ye[C + k] = !0);
+        ), ve[C + k] = !0);
       }
-      if (C = null, v !== void 0 && (r(v), C = "" + v), n(m) && (r(m.key), C = "" + m.key), "key" in m) {
-        v = {};
+      if (C = null, w !== void 0 && (r(w), C = "" + w), n(m) && (r(m.key), C = "" + m.key), "key" in m) {
+        w = {};
         for (var ae in m)
-          ae !== "key" && (v[ae] = m[ae]);
-      } else v = m;
+          ae !== "key" && (w[ae] = m[ae]);
+      } else w = m;
       return C && _(
-        v,
+        w,
         typeof a == "function" ? a.displayName || a.name || "Unknown" : a
       ), g(
         a,
@@ -227,7 +227,7 @@ React keys must be passed directly to JSX without using spread:
         P,
         L,
         o(),
-        v,
+        w,
         ne,
         se
       );
@@ -235,7 +235,7 @@ React keys must be passed directly to JSX without using spread:
     function d(a) {
       typeof a == "object" && a !== null && a.$$typeof === j && a._store && (a._store.validated = 1);
     }
-    var p = z, j = Symbol.for("react.transitional.element"), R = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), x = Symbol.for("react.profiler"), h = Symbol.for("react.consumer"), b = Symbol.for("react.context"), f = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Le = Symbol.for("react.suspense_list"), ze = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), qe = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, Ie = Array.isArray, re = console.createTask ? console.createTask : function() {
+    var p = z, j = Symbol.for("react.transitional.element"), R = Symbol.for("react.portal"), v = Symbol.for("react.fragment"), y = Symbol.for("react.strict_mode"), x = Symbol.for("react.profiler"), h = Symbol.for("react.consumer"), b = Symbol.for("react.context"), f = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Le = Symbol.for("react.suspense_list"), ze = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), qe = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, Ie = Array.isArray, re = console.createTask ? console.createTask : function() {
       return null;
     };
     p = {
@@ -246,25 +246,25 @@ React keys must be passed directly to JSX without using spread:
     var he, fe = {}, pe = p.react_stack_bottom_frame.bind(
       p,
       i
-    )(), ge = re(c(i)), ye = {};
-    V.Fragment = y, V.jsx = function(a, m, v, k, L) {
+    )(), ge = re(c(i)), ve = {};
+    V.Fragment = v, V.jsx = function(a, m, w, k, L) {
       var P = 1e4 > te.recentlyCreatedOwnerStacks++;
       return u(
         a,
         m,
-        v,
+        w,
         !1,
         k,
         L,
         P ? Error("react-stack-top-frame") : pe,
         P ? re(c(a)) : ge
       );
-    }, V.jsxs = function(a, m, v, k, L) {
+    }, V.jsxs = function(a, m, w, k, L) {
       var P = 1e4 > te.recentlyCreatedOwnerStacks++;
       return u(
         a,
         m,
-        v,
+        w,
         !0,
         k,
         L,
@@ -431,16 +431,16 @@ function ut(e) {
 function dt(e) {
   return N({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { d: "M352.7 21.04l-194.4.41L21.04 159.3l.41 194.4L159.3 491l194.4-.4L491 352.7l-.4-194.4L352.7 21.04zm-8 19.66l126.2 125.7.4 178.3-123.1 123.6-2.6 2.6-178.3.4L41.08 345.6l-.38-178.3L166.4 41.08l178.3-.38zm-7.5 18.01l-163.3.34L58.71 174.8l.34 163.3L174.8 453.3l163.3-.3 115.2-115.8-.3-163.3L337.2 58.71zM108.4 210.4c5.3 0 10.8.5 16.4 1.3 5.7.8 11.5 2 17.5 3.6v20.5c-5.3-2.4-10.5-4.2-15.6-5.4-5.1-1.2-9.9-1.8-14.4-1.8-6 0-10.4.8-13.25 2.5-2.87 1.6-4.3 4.2-4.3 7.7 0 2.6.96 4.6 2.87 6.1 1.95 1.4 5.48 2.7 10.58 3.7l10.6 2.1c10.8 2.2 18.5 5.5 23.1 9.9 4.5 4.5 6.8 10.8 6.8 18.9 0 10.7-3.2 18.7-9.5 24-6.4 5.2-16.1 7.8-29.2 7.8-6.1 0-12.3-.6-18.51-1.8-6.2-1.1-12.41-2.9-18.61-5.2v-21.1c6.2 3.3 12.19 5.8 17.96 7.5 5.82 1.6 11.46 2.4 16.76 2.4 5.5 0 9.7-.9 12.6-2.7 2.9-1.8 4.4-4.4 4.4-7.8 0-3.1-1-5.4-3-7.1-2-1.6-5.9-3.1-11.8-4.4l-9.7-2.1c-9.73-2.1-16.85-5.4-21.37-10-4.47-4.5-6.7-10.7-6.7-18.4 0-9.7 3.12-17.1 9.37-22.3 6.25-5.3 15.24-7.9 27-7.9zm187.7 0c15.6 0 27.8 4.5 36.7 13.5 8.9 8.9 13.3 21.2 13.3 37 0 15.7-4.4 28-13.3 37-8.9 8.9-21.1 13.4-36.7 13.4-15.6 0-27.8-4.5-36.7-13.4-8.9-9-13.3-21.3-13.3-37 0-15.8 4.4-28.1 13.3-37 8.9-9 21.1-13.5 36.7-13.5zm-141.9 1.8h89.6v18.9h-32.2v78.3h-25.1v-78.3h-32.3v-18.9zm205.8 0h41.6c12.3 0 21.8 2.8 28.4 8.3 6.7 5.4 10 13.2 10 23.4s-3.3 18.1-10 23.6c-6.6 5.4-16.1 8.2-28.4 8.2H385v33.7h-25v-97.2zm-63.9 16.4c-7.7 0-13.6 2.8-17.8 8.5-4.2 5.6-6.3 13.6-6.3 23.8 0 10.2 2.1 18.1 6.3 23.8 4.2 5.6 10.1 8.4 17.8 8.4 7.7 0 13.6-2.8 17.8-8.4 4.2-5.7 6.3-13.6 6.3-23.8 0-10.2-2.1-18.2-6.3-23.8-4.2-5.7-10.1-8.5-17.8-8.5zm88.9 1.8v27.1h13.9c4.9 0 8.6-1.2 11.3-3.5 2.6-2.4 3.9-5.8 3.9-10.1s-1.3-7.7-3.9-10c-2.7-2.4-6.4-3.5-11.3-3.5H385z" }, child: [] }] })(e);
 }
-const _t = "_captcha__wrapper_69j60_5", mt = "_buttons_69j60_59", ht = "_captcha__failed_69j60_109", ft = "_captcha__failed__content_69j60_139", pt = "_captcha__btn_69j60_167", gt = "_captcha__btn__main_69j60_199", yt = "_captcha__btn__footer_69j60_223", wt = "_captcha__unchecked_69j60_233", vt = "_captcha__content_69j60_249", T = {
+const _t = "_captcha__wrapper_is9ba_5", mt = "_buttons_is9ba_59", ht = "_captcha__failed_is9ba_109", ft = "_captcha__failed__content_is9ba_139", pt = "_captcha__btn_is9ba_167", gt = "_captcha__btn__main_is9ba_199", vt = "_captcha__btn__footer_is9ba_223", yt = "_captcha__unchecked_is9ba_233", wt = "_captcha__content_is9ba_249", T = {
   captcha__wrapper: _t,
   buttons: mt,
   captcha__failed: ht,
   captcha__failed__content: ft,
   captcha__btn: pt,
   captcha__btn__main: gt,
-  captcha__btn__footer: yt,
-  captcha__unchecked: wt,
-  captcha__content: vt
+  captcha__btn__footer: vt,
+  captcha__unchecked: yt,
+  captcha__content: wt
 }, ke = [
   Xe,
   et,
@@ -607,25 +607,25 @@ function oe({
   let u = Ce;
   e && (u = [...Ce].reverse()), S(() => {
     g.current.focus();
-    const y = Array(r).fill(null).map((w) => ({
+    const v = Array(r).fill(null).map((y) => ({
       time: Math.floor(Math.random() * (s - 1)),
       duration: Math.floor(Math.random() * s * 100)
     }));
-    n((w) => ({ ...w, lights: y }));
+    n((y) => ({ ...y, lights: v }));
   }, []);
   const d = () => {
     i.active && o({
       score: (i.index + 1) / 26,
       message: "My brother could type it faster."
-    }), n((y) => ({ ...y, active: !1 }));
-  }, p = (y) => {
+    }), n((v) => ({ ...v, active: !1 }));
+  }, p = (v) => {
     if (!i.active)
       return;
-    const w = y.key;
+    const y = v.key;
     i.glow && (o({
       score: (i.index + 1) / 26,
       message: "Told you. Don't type while the light is glowing"
-    }), n((x) => ({ ...x, active: !1 }))), w === u[i.index + 1] ? (w === u.at(-1) && (c({
+    }), n((x) => ({ ...x, active: !1 }))), y === u[i.index + 1] ? (y === u.at(-1) && (c({
       score: 1,
       message: "Didn't expect you to be that fast"
     }), n((x) => ({ ...x, active: !1 }))), n((x) => ({ ...x, index: x.index + 1 }))) : o({
@@ -634,18 +634,18 @@ function oe({
     });
   }, j = () => {
     g.current.value = "";
-  }, R = (y) => {
-    l(y);
+  }, R = (v) => {
+    l(v);
   };
   return S(() => {
-    let y;
+    let v;
     if (i.lights) {
-      const w = i.lights.map((b) => b.time), x = i.lights.map((b) => b.duration), h = w.indexOf(_);
-      h !== -1 && (n((b) => ({ ...b, glow: !0 })), y = setTimeout(() => {
+      const y = i.lights.map((b) => b.time), x = i.lights.map((b) => b.duration), h = y.indexOf(_);
+      h !== -1 && (n((b) => ({ ...b, glow: !0 })), v = setTimeout(() => {
         n((b) => ({ ...b, glow: !1 }));
       }, x[h]));
     }
-    return () => y && clearTimeout(y);
+    return () => v && clearTimeout(v);
   }, [_]), /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
       /* @__PURE__ */ t.jsxs("div", { children: [
@@ -676,7 +676,7 @@ function oe({
           className: `${G.light} ${i.glow ? G["light--active"] : ""}`
         }
       ),
-      /* @__PURE__ */ t.jsx("div", { className: G.alphabet_showcase, children: i.index >= 0 && u.slice(0, i.index + 1).map((y) => /* @__PURE__ */ t.jsx("span", { children: y }, y)) }),
+      /* @__PURE__ */ t.jsx("div", { className: G.alphabet_showcase, children: i.index >= 0 && u.slice(0, i.index + 1).map((v) => /* @__PURE__ */ t.jsx("span", { children: v }, v)) }),
       /* @__PURE__ */ t.jsx(
         "input",
         {
@@ -708,11 +708,11 @@ function Ae(e) {
 function Q(e, s) {
   return Ae(e).slice(0, s);
 }
-const St = "_main_wz9d7_1", Tt = "_instruction_wz9d7_9", Mt = "_emoji_display_wz9d7_27", F = {
+const St = "_main_1gv5v_1", Tt = "_instruction_1gv5v_9", Mt = "_emoji_display_1gv5v_27", F = {
   main: St,
   instruction: Tt,
   emoji_display: Mt,
-  "button--correct": "_button--correct_wz9d7_53"
+  "button--correct": "_button--correct_1gv5v_61"
 }, U = [
   "😀",
   "😃",
@@ -2228,7 +2228,7 @@ function ce({
         /* @__PURE__ */ t.jsxs("p", { children: [
           "Look at all the emojis carefully for ",
           /* @__PURE__ */ t.jsxs("u", { children: [
-            s[0],
+            s[o.stage],
             " seconds"
           ] })
         ] })
@@ -2475,16 +2475,16 @@ function Ne({
       score: 0,
       message: "A turtle is faster than you"
     });
-  }, p = (w) => {
-    i(w);
-  }, j = (w) => {
-    w.preventDefault(), o && (_("verify-pin"), g(
+  }, p = (y) => {
+    i(y);
+  }, j = (y) => {
+    y.preventDefault(), o && (_("verify-pin"), g(
       +o < Math.pow(10, e) / 2 ? Array(e).fill("9").join("") : Array(e).fill("0").join("")
     ));
-  }, R = (w) => {
-    const x = +l + w;
+  }, R = (y) => {
+    const x = +l + y;
     x >= 0 && x <= Math.pow(10, e) - 1 && g(String(x));
-  }, y = () => {
+  }, v = () => {
     u.current = !0, o === +l ? c({
       score: 1,
       message: "Looks like you need something little harder"
@@ -2519,7 +2519,7 @@ function Ne({
           /* @__PURE__ */ t.jsx("span", { children: l }),
           /* @__PURE__ */ t.jsx(D, { onClick: R.bind(null, 1), children: "+" })
         ] }),
-        /* @__PURE__ */ t.jsx(D, { onClick: y, children: "Verify PIN" })
+        /* @__PURE__ */ t.jsx(D, { onClick: v, children: "Verify PIN" })
       ] }) })
     ] })
   ] });
@@ -2629,13 +2629,13 @@ function de({
         d: "normal",
         [R]: "active"
       });
-    }, 600 * r);
+    }, 600 / r);
     return () => clearInterval(j);
   }, [r]), S(() => {
-    const j = /* @__PURE__ */ new Set(), R = (w) => {
-      const x = mr(w.key);
-      if (!x || j.has(w.key)) return;
-      j.add(w.key);
+    const j = /* @__PURE__ */ new Set(), R = (y) => {
+      const x = mr(y.key);
+      if (!x || j.has(y.key)) return;
+      j.add(y.key);
       const h = l.current.index - 1, b = l.current.word[h], f = dr(
         l.current.active,
         x,
@@ -2647,11 +2647,11 @@ function de({
       )) : f === "wrong" && (l.current.corrects[h] = !1, l.current.streak = 0)), n((Z) => ({ ...Z, [x]: f })), setTimeout(() => {
         n((Z) => ({ ...Z, [x]: "normal" }));
       }, 150);
-    }, y = (w) => {
-      j.delete(w.key);
+    }, v = (y) => {
+      j.delete(y.key);
     };
-    return window.addEventListener("keydown", R), window.addEventListener("keyup", y), () => {
-      window.removeEventListener("keydown", R), window.removeEventListener("keyup", y);
+    return window.addEventListener("keydown", R), window.addEventListener("keyup", v), () => {
+      window.removeEventListener("keydown", R), window.removeEventListener("keyup", v);
     };
   }, []), /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
@@ -2731,7 +2731,7 @@ const B = [
       {
         question: "What is 0/0?",
         answer: "undefined",
-        time: 7
+        time: 10
       }
     ]
   },
@@ -2741,7 +2741,7 @@ const B = [
     props: [
       {
         difficulty: "easy",
-        time: 7,
+        time: 10,
         question: "7+65=?",
         answer: 72
       },
@@ -2798,7 +2798,7 @@ const B = [
         reverse: !1
       },
       {
-        time: 26,
+        time: 40,
         total_light_glows: 0,
         reverse: !0
       }
@@ -2811,17 +2811,17 @@ const B = [
       {
         question: "Who is the yellow color electric pokemon?",
         answer: "pikachu",
-        time: 7
+        time: 12
       },
       {
         question: "What does LOL stands for?",
         answer: "Laugh Out Loud",
-        time: 7
+        time: 15
       },
       {
         question: "Right or Wrong?",
         answer: "wrong",
-        time: 5
+        time: 10
       }
     ]
   },
@@ -2831,15 +2831,15 @@ const B = [
     props: [
       {
         width: 3,
-        time: [8, 3, 15]
+        time: [9, 3, 15]
       },
       {
         width: 4,
-        time: [10, 3, 10]
+        time: [9, 3, 10]
       },
       {
         width: 4,
-        time: [5, 3, 10]
+        time: [9, 3, 10]
       }
     ]
   },
@@ -2849,17 +2849,17 @@ const B = [
     props: [
       {
         target: 3,
-        times: [10, 30],
+        times: [10, 20],
         speed_factor: 0.5
       },
       {
         target: 5,
-        times: [5, 30],
-        speed_factor: 1
+        times: [5, 20],
+        speed_factor: 0.8
       },
       {
         target: 8,
-        times: [5, 30],
+        times: [5, 20],
         speed_factor: 0.8
       }
     ]
@@ -2870,15 +2870,15 @@ const B = [
     props: [
       {
         digit: 1,
+        time: [10, 15]
+      },
+      {
+        digit: 2,
+        time: [10, 40]
+      },
+      {
+        digit: 2,
         time: [10, 30]
-      },
-      {
-        digit: 2,
-        time: [5, 60]
-      },
-      {
-        digit: 2,
-        time: [5, 30]
       }
     ]
   },
@@ -2917,13 +2917,13 @@ const B = [
         difficulty: "hard",
         question: "136+25=?",
         answer: 61,
-        time: 13
+        time: 20
       },
       {
         difficulty: "very hard",
         question: "87+49=?",
         answer: 136,
-        time: 15
+        time: 22
       }
     ]
   },
@@ -2986,7 +2986,7 @@ const B = [
       },
       {
         width: 6,
-        time: [5, 5, 10]
+        time: [8, 5, 8]
       }
     ]
   },
@@ -3007,7 +3007,7 @@ const B = [
       {
         target: 11,
         times: [5, 22],
-        speed_factor: 1
+        speed_factor: 1.1
       }
     ]
   },
@@ -3018,15 +3018,15 @@ const B = [
     props: [
       {
         digit: 3,
-        time: [5, 20]
+        time: [5, 30]
       },
       {
         digits: 4,
-        time: [5, 20]
+        time: [5, 30]
       },
       {
         digits: 5,
-        time: [5, 20]
+        time: [5, 40]
       }
     ]
   },
@@ -3042,12 +3042,12 @@ const B = [
       {
         question: "100 digits of PI?",
         answer: "You can't type that within 10 seconds",
-        time: 10
+        time: 20
       },
       {
         question: "What is the largest prime number?",
         answer: "noone knows",
-        time: 10
+        time: 20
       }
     ]
   },
@@ -3059,19 +3059,19 @@ const B = [
         difficulty: "medium",
         question: "73x21=?",
         answer: 1533,
-        time: 8
+        time: 15
       },
       {
         difficulty: "hard",
         question: "136x25=?",
         answer: 3400,
-        time: 8
+        time: 15
       },
       {
         difficulty: "very hard",
         question: "87x49=?",
         answer: 4263,
-        time: 10
+        time: 12
       }
     ]
   },
@@ -3083,7 +3083,7 @@ const B = [
         width: 6,
         numbers: 9,
         order_matters: !0,
-        time: [9, 3, 15]
+        time: [10, 3, 15]
       },
       {
         width: 6,
@@ -3126,11 +3126,11 @@ const B = [
     props: [
       {
         width: 6,
-        time: [5, 5, 5]
+        time: [7, 5, 10]
       },
       {
         width: 7,
-        time: [5, 5, 5]
+        time: [7, 5, 10]
       },
       {
         width: 7,
@@ -3150,16 +3150,16 @@ const B = [
       {
         target: 15,
         times: [5, 20],
-        speed_factor: 1
+        speed_factor: 1.1
       },
       {
         target: 16,
         times: [5, 20],
-        speed_factor: 1.1
+        speed_factor: 1.3
       }
     ]
   }
-].slice(2, 3);
+];
 function Pe(e, s, r) {
   const c = B.length;
   let [o, i] = [void 0, void 0];
@@ -3261,7 +3261,7 @@ function pr({
       ...h,
       try: h.try - 1
     })), u.current = Date.now(), g(null);
-  }, y = () => {
+  }, v = () => {
     d.current = {
       ...d.current,
       total_games: d.current.total_games + 1
@@ -3278,7 +3278,7 @@ function pr({
       questions: f.questions - 1,
       difficulty: b
     })), g(null), u.current += 1;
-  }, w = ({ score: h, message: b }) => {
+  }, y = ({ score: h, message: b }) => {
     if (d.current = {
       ...d.current,
       total_success: d.current.total_success + 1,
@@ -3346,7 +3346,7 @@ function pr({
           index: n.index,
           difficulty: n.difficulty,
           onFail: j,
-          onSuccess: w
+          onSuccess: y
         },
         u.current
       ),
@@ -3355,7 +3355,7 @@ function pr({
         /* @__PURE__ */ t.jsx("p", { children: l.message }),
         l.option === "retry" && /* @__PURE__ */ t.jsx("button", { style: { marginTop: 16 }, onClick: R, children: /* @__PURE__ */ t.jsx(ut, { size: "32px" }) }),
         l.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: T.buttons, children: [
-          /* @__PURE__ */ t.jsx("button", { onClick: y, children: /* @__PURE__ */ t.jsx(ot, { size: "32px" }) }),
+          /* @__PURE__ */ t.jsx("button", { onClick: v, children: /* @__PURE__ */ t.jsx(ot, { size: "32px" }) }),
           c && /* @__PURE__ */ t.jsx("button", { onClick: x, children: /* @__PURE__ */ t.jsx(dt, { size: "32px", color: "var(--color-red)" }) })
         ] })
       ] }) })

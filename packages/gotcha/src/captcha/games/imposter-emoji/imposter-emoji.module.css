@@ -24,8 +24,13 @@
 	font-size: 32px;
 }
 
-.button--correct {
+.emoji_display button {
+	transition: all 0.1s ease-in !important;
+}
+
+.emoji_display .button--correct {
 	display: block;
 	border: 2px solid var(--color-green);
 	border-radius: 4px;
+	transition: all 0.1s ease-out !important;
 }

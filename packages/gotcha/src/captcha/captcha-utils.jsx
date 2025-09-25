@@ -26,7 +26,7 @@ export const ALL_GAMES = [
 			{
 				question: "What is 0/0?",
 				answer: "undefined",
-				time: 7,
+				time: 10,
 			},
 		],
 	},
@@ -36,7 +36,7 @@ export const ALL_GAMES = [
 		props: [
 			{
 				difficulty: "easy",
-				time: 7,
+				time: 10,
 				question: "7+65=?",
 				answer: 72,
 			},
@@ -93,7 +93,7 @@ export const ALL_GAMES = [
 				reverse: false,
 			},
 			{
-				time: 26,
+				time: 40,
 				total_light_glows: 0,
 				reverse: true,
 			},
@@ -106,17 +106,17 @@ export const ALL_GAMES = [
 			{
 				question: "Who is the yellow color electric pokemon?",
 				answer: "pikachu",
-				time: 7,
+				time: 12,
 			},
 			{
 				question: "What does LOL stands for?",
 				answer: "Laugh Out Loud",
-				time: 7,
+				time: 15,
 			},
 			{
 				question: "Right or Wrong?",
 				answer: "wrong",
-				time: 5,
+				time: 10,
 			},
 		],
 	},
@@ -126,15 +126,15 @@ export const ALL_GAMES = [
 		props: [
 			{
 				width: 3,
-				time: [8, 3, 15],
+				time: [9, 3, 15],
 			},
 			{
 				width: 4,
-				time: [10, 3, 10],
+				time: [9, 3, 10],
 			},
 			{
 				width: 4,
-				time: [5, 3, 10],
+				time: [9, 3, 10],
 			},
 		],
 	},
@@ -144,17 +144,17 @@ export const ALL_GAMES = [
 		props: [
 			{
 				target: 3,
-				times: [10, 30],
+				times: [10, 20],
 				speed_factor: 0.5,
 			},
 			{
 				target: 5,
-				times: [5, 30],
-				speed_factor: 1,
+				times: [5, 20],
+				speed_factor: 0.8,
 			},
 			{
 				target: 8,
-				times: [5, 30],
+				times: [5, 20],
 				speed_factor: 0.8,
 			},
 		],
@@ -165,15 +165,15 @@ export const ALL_GAMES = [
 		props: [
 			{
 				digit: 1,
+				time: [10, 15],
+			},
+			{
+				digit: 2,
+				time: [10, 40],
+			},
+			{
+				digit: 2,
 				time: [10, 30],
-			},
-			{
-				digit: 2,
-				time: [5, 60],
-			},
-			{
-				digit: 2,
-				time: [5, 30],
 			},
 		],
 	},
@@ -214,13 +214,13 @@ export const ALL_GAMES = [
 				difficulty: "hard",
 				question: "136+25=?",
 				answer: 61,
-				time: 13,
+				time: 20,
 			},
 			{
 				difficulty: "very hard",
 				question: "87+49=?",
 				answer: 136,
-				time: 15,
+				time: 22,
 			},
 		],
 	},
@@ -283,7 +283,7 @@ export const ALL_GAMES = [
 			},
 			{
 				width: 6,
-				time: [5, 5, 10],
+				time: [8, 5, 8],
 			},
 		],
 	},
@@ -304,7 +304,7 @@ export const ALL_GAMES = [
 			{
 				target: 11,
 				times: [5, 22],
-				speed_factor: 1,
+				speed_factor: 1.1,
 			},
 		],
 	},
@@ -315,15 +315,15 @@ export const ALL_GAMES = [
 		props: [
 			{
 				digit: 3,
-				time: [5, 20],
+				time: [5, 30],
 			},
 			{
 				digits: 4,
-				time: [5, 20],
+				time: [5, 30],
 			},
 			{
 				digits: 5,
-				time: [5, 20],
+				time: [5, 40],
 			},
 		],
 	},
@@ -340,12 +340,12 @@ export const ALL_GAMES = [
 			{
 				question: "100 digits of PI?",
 				answer: "You can't type that within 10 seconds",
-				time: 10,
+				time: 20,
 			},
 			{
 				question: "What is the largest prime number?",
 				answer: "noone knows",
-				time: 10,
+				time: 20,
 			},
 		],
 	},
@@ -357,19 +357,19 @@ export const ALL_GAMES = [
 				difficulty: "medium",
 				question: "73x21=?",
 				answer: 1533,
-				time: 8,
+				time: 15,
 			},
 			{
 				difficulty: "hard",
 				question: "136x25=?",
 				answer: 3400,
-				time: 8,
+				time: 15,
 			},
 			{
 				difficulty: "very hard",
 				question: "87x49=?",
 				answer: 4263,
-				time: 10,
+				time: 12,
 			},
 		],
 	},
@@ -381,7 +381,7 @@ export const ALL_GAMES = [
 				width: 6,
 				numbers: 9,
 				order_matters: true,
-				time: [9, 3, 15],
+				time: [10, 3, 15],
 			},
 			{
 				width: 6,
@@ -424,11 +424,11 @@ export const ALL_GAMES = [
 		props: [
 			{
 				width: 6,
-				time: [5, 5, 5],
+				time: [7, 5, 10],
 			},
 			{
 				width: 7,
-				time: [5, 5, 5],
+				time: [7, 5, 10],
 			},
 			{
 				width: 7,
@@ -448,13 +448,13 @@ export const ALL_GAMES = [
 			{
 				target: 15,
 				times: [5, 20],
-				speed_factor: 1,
+				speed_factor: 1.1,
 			},
 			{
 				target: 16,
 				times: [5, 20],
-				speed_factor: 1.1,
+				speed_factor: 1.3,
 			},
 		],
 	},
-].slice(2, 3);
+];

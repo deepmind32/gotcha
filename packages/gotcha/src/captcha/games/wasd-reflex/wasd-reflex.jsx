@@ -100,7 +100,7 @@ export default function WASDReflexGame({
 				d: "normal",
 				[current_word]: "active",
 			});
-		}, 600 * speed_factor);
+		}, 600 / speed_factor);
 
 		return () => clearInterval(glow_interval);
 	}, [speed_factor]);

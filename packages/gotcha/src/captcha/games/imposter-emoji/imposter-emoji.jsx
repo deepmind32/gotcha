@@ -1546,7 +1546,7 @@ export default function ImposterEmojiGame({
 				<div>
 					<h3>Remember Emojis</h3>
 					<p>
-						Look at all the emojis carefully for <u>{time[0]} seconds</u>
+						Look at all the emojis carefully for <u>{time[game.stage]} seconds</u>
 					</p>
 				</div>
 				<Timer
