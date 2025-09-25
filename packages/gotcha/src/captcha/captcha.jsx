@@ -78,6 +78,7 @@ export function Captcha({
 	useEffect(() => {
 		set_captcha(dummy_captcha);
 		record_ref.current = dummy_record;
+		set_message(null);
 	}, [difficulty, tries]);
 
 	const handle_captcha_clicked = () => {

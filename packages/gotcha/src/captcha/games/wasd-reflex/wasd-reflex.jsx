@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./wasd-reflex.module.css";
 import StreakMeter from "../../../components/streak-meter/streak-meter";
+import { get_generic_failure_taunt, get_success_taunt } from "../../taunts";
 
 function get_key_status(game_active, pressed_key, active_key) {
 	if (!game_active) return "normal";
@@ -67,12 +68,12 @@ export default function WASDReflexGame({
 		if (game_ref.current.max_streak >= target) {
 			onSuccess({
 				score: game_ref.current.max_streak / target,
-				message: "As quick as a Crane.",
+				message: get_success_taunt(),
 			});
 		} else {
 			onFail({
 				score: game_ref.current.max_streak / target,
-				message: "Didn't knew you were such a loser.",
+				message: get_generic_failure_taunt(),
 			});
 		}
 	};

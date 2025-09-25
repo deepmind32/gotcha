@@ -3,6 +3,11 @@ import { range } from "../../../utils/python";
 import { get_random_samples, shuffle } from "../../utils";
 import styles from "./imposter-emoji.module.css";
 import Timer from "../../../components/timer/timer";
+import {
+	get_distraction,
+	get_memory_taunts,
+	get_success_taunt,
+} from "../../taunts";
 
 const COLLECTIONS = [
 	"😀",
@@ -1465,7 +1470,7 @@ export default function ImposterEmojiGame({
 				...prev,
 				correct_indexes: emojis,
 				stage: 1,
-				instruction: "Do you know you can't lick your elbow?",
+				instruction: get_distraction(),
 			}));
 		} else if (game.stage === 1) {
 			set_game((prev) => ({
@@ -1512,7 +1517,7 @@ export default function ImposterEmojiGame({
 			if (game.score === width - 1) {
 				onSuccess({
 					score: 1,
-					message: "Are you a memory king?",
+					message: get_success_taunt(),
 				});
 				set_game((prev) => ({
 					...prev,
@@ -1535,7 +1540,7 @@ export default function ImposterEmojiGame({
 
 			onFail({
 				score: game.score / width,
-				message: "Oops! I just arrived here",
+				message: get_memory_taunts(),
 			});
 		}
 	};
@@ -1546,7 +1551,8 @@ export default function ImposterEmojiGame({
 				<div>
 					<h3>Remember Emojis</h3>
 					<p>
-						Look at all the emojis carefully for <u>{time[game.stage]} seconds</u>
+						Look at all the emojis carefully for{" "}
+						<u>{time[game.stage]} seconds</u>
 					</p>
 				</div>
 				<Timer

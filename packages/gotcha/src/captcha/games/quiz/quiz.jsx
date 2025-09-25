@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./quiz.module.css";
 import Button from "../../../components/button/button";
+import { get_generic_failure_taunt, get_success_taunt } from "../../taunts";
 
 // answer can be text or
 // {correct: true, text: ""}
@@ -24,7 +25,7 @@ export default function QuizGame({
 		if (active) {
 			onFail({
 				score: 0,
-				message: "Looks like you are not a human",
+				message: get_generic_failure_taunt(),
 			});
 			set_active(false);
 		}
@@ -39,12 +40,12 @@ export default function QuizGame({
 		if (given === answer.toLocaleLowerCase()) {
 			onSuccess({
 				score: 1,
-				message: "How did you get that?",
+				message: get_success_taunt(),
 			});
 		} else {
 			onFail({
 				score: 0,
-				message: "Wasn't it obvious for a human??",
+				message: get_generic_failure_taunt(),
 			});
 		}
 		set_active(false);

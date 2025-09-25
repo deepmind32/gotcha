@@ -3,6 +3,12 @@ import Timer from "../../../components/timer/timer";
 import styles from "./remember.module.css";
 import { range } from "../../../utils/python";
 import { get_random_samples } from "../../utils";
+import {
+	get_distraction,
+	get_generic_failure_taunt,
+	get_success_taunt,
+	get_time_taunts,
+} from "../../taunts";
 
 export default function RememberTheOrderGame({
 	width = 3,
@@ -25,7 +31,7 @@ export default function RememberTheOrderGame({
 			set_game((prev) => ({
 				...prev,
 				stage: 1,
-				instruction: "Do you know you cannot laugh while your nose are closed?",
+				instruction: get_distraction(),
 			}));
 		} else if (game.stage === 1) {
 			set_game((prev) => ({
@@ -43,7 +49,7 @@ export default function RememberTheOrderGame({
 				}));
 				onFail({
 					score: game.clicked.length,
-					message: "Better care about your time at next round",
+					message: get_time_taunts(),
 				});
 			}
 		}
@@ -64,7 +70,7 @@ export default function RememberTheOrderGame({
 				set_game((prev) => ({ ...prev, active: false }));
 				onSuccess({
 					score: 1,
-					message: "Didn't knew you were that sharp",
+					message: get_success_taunt(),
 				});
 				return;
 			}
@@ -73,7 +79,7 @@ export default function RememberTheOrderGame({
 			set_game((prev) => ({ ...prev, active: false }));
 			onFail({
 				score: game.clicked.length / numbers,
-				message: "Whoops! you may need to sharpen your brain",
+				message: get_generic_failure_taunt(),
 			});
 		}
 	};
@@ -115,7 +121,8 @@ export default function RememberTheOrderGame({
 										: ""
 								}
 							>
-								{order_matters && (game.clicked.includes(item) || game.stage !== 2) &&
+								{order_matters &&
+									(game.clicked.includes(item) || game.stage !== 2) &&
 									game.correct.includes(item) && (
 										<span>{game.correct.indexOf(item) + 1}</span>
 									)}

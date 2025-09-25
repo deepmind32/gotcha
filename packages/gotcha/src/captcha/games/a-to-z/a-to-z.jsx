@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./a-to-z.module.css";
+import {
+	get_red_light_taunt,
+	get_slow_typing_taunt,
+	get_success_taunt,
+	get_typo_taunt,
+} from "../../taunts";
 
 const ALPHABETS = [
 	"a",
@@ -71,7 +77,7 @@ export default function AToZGame({
 		if (game.active) {
 			onFail({
 				score: (game.index + 1) / 26,
-				message: "My brother could type it faster.",
+				message: get_slow_typing_taunt(),
 			});
 		}
 
@@ -87,7 +93,7 @@ export default function AToZGame({
 		if (game.glow) {
 			onFail({
 				score: (game.index + 1) / 26,
-				message: "Told you. Don't type while the light is glowing",
+				message: get_red_light_taunt(),
 			});
 
 			set_game((prev) => ({ ...prev, active: false }));
@@ -97,7 +103,7 @@ export default function AToZGame({
 			if (entered_key === alphabets.at(-1)) {
 				onSuccess({
 					score: 1,
-					message: "Didn't expect you to be that fast",
+					message: get_success_taunt(),
 				});
 				set_game((prev) => ({ ...prev, active: false }));
 			}
@@ -105,8 +111,9 @@ export default function AToZGame({
 		} else {
 			onFail({
 				score: (game.index + 1) / 26,
-				message: "You are the typo master",
+				message: get_typo_taunt(),
 			});
+			set_game((prev) => ({ ...prev, active: false }));
 		}
 	};
 

@@ -2,6 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./math-game.module.css";
 import Button from "../../../components/button/button";
+import {
+	get_last_minute_taunt,
+	get_math_taunt,
+	get_success_taunt,
+	get_time_taunts,
+} from "../../taunts";
 
 const names = {
 	easy: "normal",
@@ -32,12 +38,12 @@ export default function MathGame({
 		if (answered_value === answer) {
 			onFail({
 				score: 0.5,
-				message: "You were right but hey, time and tide waits for none.",
+				message: get_last_minute_taunt(),
 			});
 		} else {
 			onFail({
-				score: 0.5,
-				message: "My two year brother solves the question faster than you.",
+				score: 0,
+				message: get_time_taunts(),
 			});
 		}
 		set_game((prev) => ({ ...prev, active: false }));
@@ -56,13 +62,12 @@ export default function MathGame({
 		if (answered_value === answer) {
 			onSuccess({
 				score: 1,
-				message: "Didn't expect you to win. Wait for another challenge.",
+				message: get_success_taunt(),
 			});
 		} else {
 			onFail({
 				score: 0,
-				message:
-					"I have not encountered any human who couldn't solve this simple math.",
+				message: get_math_taunt(),
 			});
 		}
 		set_game((prev) => ({ ...prev, active: false }));

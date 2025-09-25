@@ -4,6 +4,11 @@ import Pin from "../../../components/pin/pin";
 import Timer from "../../../components/timer/timer";
 import styles from "./pin.module.css";
 import Button from "../../../components/button/button";
+import {
+	get_generic_failure_taunt,
+	get_success_taunt,
+	get_time_taunts,
+} from "../../taunts";
 
 export default function PinGame({
 	digit = 4,
@@ -22,7 +27,7 @@ export default function PinGame({
 		if (!is_game_finished_ref.current) {
 			onFail({
 				score: 0,
-				message: "A turtle is faster than you",
+				message: get_time_taunts(),
 			});
 		}
 	};
@@ -58,12 +63,12 @@ export default function PinGame({
 		if (pin === +entered_pin) {
 			onSuccess({
 				score: 1,
-				message: "Looks like you need something little harder",
+				message: get_success_taunt(),
 			});
 		} else {
 			onFail({
 				score: 0,
-				message: "Looks like you are not human enough",
+				message: get_generic_failure_taunt(),
 			});
 		}
 	};
