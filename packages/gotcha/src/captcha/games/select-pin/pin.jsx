@@ -13,7 +13,7 @@ export default function PinGame({
 }) {
 	const [pin, set_pin] = useState(undefined);
 	const [stage, set_stage] = useState("enter-pin");
-	const [entered_pin, set_entered_pin] = useState("0000");
+	const [entered_pin, set_entered_pin] = useState(null);
 
 	// ref is used here instead of state because the state change cannot be captured inside the closure in handle_time_finished
 	const is_game_finished_ref = useRef(false);
@@ -38,7 +38,11 @@ export default function PinGame({
 			set_stage("verify-pin");
 
 			// start with entered pin that is longest from either side
-			set_entered_pin(+pin < Math.pow(10, digit) / 2 ? "9999" : "0000");
+			set_entered_pin(
+				+pin < Math.pow(10, digit) / 2
+					? Array(digit).fill("9").join("")
+					: Array(digit).fill("0").join("")
+			);
 		}
 	};
 
@@ -51,7 +55,7 @@ export default function PinGame({
 
 	const handle_verify_pin = () => {
 		is_game_finished_ref.current = true;
-		if (pin === entered_pin) {
+		if (pin === +entered_pin) {
 			onSuccess({
 				score: 1,
 				message: "Looks like you need something little harder",

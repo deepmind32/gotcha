@@ -19,13 +19,13 @@ export default function Pin({ digits = 4, onChange }) {
 	const handle_pin_change = (position, event) => {
 		const value = event.target.value;
 
-		if (position <= 2 && value.length === 1) {
+		if (position < digits - 1 && value.length === 1) {
 			pin_refs.current[position + 1].focus();
 		}
 
 		const current_pin = is_all_pin_entered(pin_refs, digits);
 		if (current_pin) {
-			onChange(current_pin);
+			onChange(+current_pin);
 		} else {
 			onChange(undefined);
 		}
@@ -66,7 +66,7 @@ export default function Pin({ digits = 4, onChange }) {
 
 	return (
 		<div className={styles["form__pin"]}>
-			{[0, 1, 2, 3].map((index) => (
+			{range(digits).map((index) => (
 				<input
 					key={index}
 					type="number"

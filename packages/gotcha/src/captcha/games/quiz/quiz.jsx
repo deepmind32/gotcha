@@ -16,7 +16,9 @@ export default function QuizGame({
 
 	useEffect(() => {
 		input_ref && input_ref.current.focus();
-	}, [])
+	}, []);
+
+	const [active, set_active] = useState(true);
 
 	const handle_time_finished = () => {
 		if (active) {
@@ -24,9 +26,9 @@ export default function QuizGame({
 				score: 0,
 				message: "Looks like you are not a human",
 			});
+			set_active(false);
 		}
 	};
-	const [active, set_active] = useState(true);
 
 	const handle_submit = () => {
 		if (!input_ref.current || !active) {
@@ -49,7 +51,7 @@ export default function QuizGame({
 	};
 
 	const handle_key_down = (event) => {
-		if (event.key === "Enter") {
+		if (event.key === "Enter" && active) {
 			handle_submit();
 		}
 	};
