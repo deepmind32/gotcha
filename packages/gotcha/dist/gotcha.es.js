@@ -3355,8 +3355,14 @@ function pr({
         /* @__PURE__ */ t.jsx("p", { children: l.message }),
         l.option === "retry" && /* @__PURE__ */ t.jsx("button", { style: { marginTop: 16 }, onClick: R, children: /* @__PURE__ */ t.jsx(ut, { size: "32px" }) }),
         l.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: T.buttons, children: [
-          /* @__PURE__ */ t.jsx("button", { onClick: v, children: /* @__PURE__ */ t.jsx(ot, { size: "32px" }) }),
-          c && /* @__PURE__ */ t.jsx("button", { onClick: x, children: /* @__PURE__ */ t.jsx(dt, { size: "32px", color: "var(--color-red)" }) })
+          c && /* @__PURE__ */ t.jsx("button", { onClick: x, children: /* @__PURE__ */ t.jsx(dt, { size: "26px", color: "var(--color-red)" }) }),
+          /* @__PURE__ */ t.jsx("button", { onClick: v, children: /* @__PURE__ */ t.jsx(
+            ot,
+            {
+              size: "32px",
+              color: "var(--color-green)"
+            }
+          ) })
         ] })
       ] }) })
     ] })

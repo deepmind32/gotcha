@@ -314,14 +314,17 @@ export function Captcha({
 								)}
 								{message.option === "next" && (
 									<div className={styles["buttons"]}>
-										<button onClick={handle_next_game}>
-											<BiSkipNextCircle size="32px" />
-										</button>
 										{show_cancel && (
 											<button onClick={handle_stop_game}>
-												<GiStopSign size="32px" color="var(--color-red)" />
+												<GiStopSign size="26px" color="var(--color-red)" />
 											</button>
 										)}
+										<button onClick={handle_next_game}>
+											<BiSkipNextCircle
+												size="32px"
+												color="var(--color-green)"
+											/>
+										</button>
 									</div>
 								)}
 							</div>
