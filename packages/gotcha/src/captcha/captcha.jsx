@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RiCheckboxLine, RiErrorWarningFill } from "react-icons/ri";
 import {
 	BiSolidError,
@@ -42,6 +42,14 @@ const GameComponent = ({ index, difficulty, onFail, onSuccess }) => {
 	return <Game {...props} onSuccess={onSuccess} onFail={onFail} />;
 };
 
+const dummy_record = {
+	total_games: 0,
+	total_retries: 0,
+	total_fail: 0,
+	total_success: 0,
+	total_one_shot_success: 0,
+};
+
 // questions = -1 means infinity and any positive number means there will be n number of questions
 // for each question there will be t tries
 // difficuly = random, ladder
@@ -52,24 +60,25 @@ export function Captcha({
 	show_cancel = true,
 	onComplete,
 }) {
-	// initial, progress, success, error
-	const [captcha, set_captcha] = useState({
+	const dummy_captcha = {
 		state: "initial",
 		questions,
 		try: tries,
 		index: undefined,
 		difficulty: undefined,
 		score: 0,
-	});
+	};
+
+	// initial, progress, success, error
+	const [captcha, set_captcha] = useState(dummy_captcha);
 	const [message, set_message] = useState(null);
 	const key_ref = useRef(1);
-	const record_ref = useRef({
-		total_games: 0,
-		total_retries: 0,
-		total_fail: 0,
-		total_success: 0,
-		total_one_shot_success: 0,
-	});
+	const record_ref = useRef(dummy_record);
+
+	useEffect(() => {
+		set_captcha(dummy_captcha);
+		record_ref.current = dummy_record;
+	}, [difficulty, tries]);
 
 	const handle_captcha_clicked = () => {
 		if (captcha.state !== "initial") {

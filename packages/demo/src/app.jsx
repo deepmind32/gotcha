@@ -5,8 +5,15 @@ import { GiCardRandom } from "react-icons/gi";
 
 import styles from "./app.module.css";
 import ModernSelect from "./modern-select/modern-select";
+import { useState } from "react";
 
 function App() {
+	const [difficulty, set_difficuly] = useState("ladder");
+
+	const handle_option_change = (option) => {
+		set_difficuly(option);
+	};
+
 	const on_captcha_complete = ({ score, record = null }) => {
 		console.log(score, record);
 	};
@@ -33,12 +40,17 @@ function App() {
 							},
 						}}
 						initial_option={"ladder"}
+						on_option_change={handle_option_change}
 					/>
 				</div>
 			</header>
 
 			<main className={styles["app__main"]}>
-				<Captcha onComplete={on_captcha_complete} />
+				<Captcha
+					difficulty={difficulty}
+					onComplete={on_captcha_complete}
+					tries={2}
+				/>
 				<div className={styles["app__header__links"]}>
 					<a href="">
 						<FaNpm size="2rem" />
