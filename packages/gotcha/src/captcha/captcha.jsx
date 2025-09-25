@@ -6,6 +6,7 @@ import {
 	BiSkipNextCircle,
 } from "react-icons/bi";
 import { IoRefreshCircleOutline } from "react-icons/io5";
+import { GiStopSign } from "react-icons/gi";
 
 import styles from "./captcha.module.css";
 import LoadingIcon from "../components/loading/loading";
@@ -45,9 +46,10 @@ const GameComponent = ({ index, difficulty, onFail, onSuccess }) => {
 // for each question there will be t tries
 // difficuly = random, ladder
 export function Captcha({
-	difficulty = "ladder",
+	difficulty = "random",
 	questions = -1,
-	tries = 1,
+	tries = 2,
+	show_cancel = true,
 	on_complete,
 }) {
 	// initial, progress, success, error
@@ -170,6 +172,13 @@ export function Captcha({
 		});
 	};
 
+	const handle_stop_game = () => {
+		set_captcha((prev) => ({
+			...prev,
+			state: "success",
+		}));
+	};
+
 	return (
 		<div className={styles["captcha__wrapper"]}>
 			<button
@@ -227,9 +236,16 @@ export function Captcha({
 									</button>
 								)}
 								{message.option === "next" && (
-									<button style={{ marginTop: 16 }} onClick={handle_next_game}>
-										<BiSkipNextCircle size="32px" />
-									</button>
+									<div className={styles["buttons"]}>
+										<button onClick={handle_next_game}>
+											<BiSkipNextCircle size="32px" />
+										</button>
+										{show_cancel && (
+											<button onClick={handle_stop_game}>
+												<GiStopSign size="32px" color="var(--color-red)" />
+											</button>
+										)}
+									</div>
 								)}
 							</div>
 						</div>

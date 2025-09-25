@@ -27,6 +27,14 @@ button {
 	transition: all 0.5s ease-out;
 }
 
+.buttons {
+	margin-top: 16px;
+	gap: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .captcha__wrapper button:hover {
 	transform: scale(1.1);
 	cursor: pointer;
