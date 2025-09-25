@@ -1,4 +1,4 @@
-import M, { useState as C, useEffect as A, useRef as L } from "react";
+import A, { useState as C, useEffect as L, useRef as T } from "react";
 import './index.css';var H = { exports: {} }, W = {};
 /**
  * @license React
@@ -13,23 +13,23 @@ var ye;
 function De() {
   if (ye) return W;
   ye = 1;
-  var e = Symbol.for("react.transitional.element"), n = Symbol.for("react.fragment");
-  function r(o, c, i) {
-    var s = null;
-    if (i !== void 0 && (s = "" + i), c.key !== void 0 && (s = "" + c.key), "key" in c) {
-      i = {};
-      for (var d in c)
-        d !== "key" && (i[d] = c[d]);
-    } else i = c;
-    return c = i.ref, {
+  var e = Symbol.for("react.transitional.element"), s = Symbol.for("react.fragment");
+  function n(c, o, r) {
+    var i = null;
+    if (r !== void 0 && (i = "" + r), o.key !== void 0 && (i = "" + o.key), "key" in o) {
+      r = {};
+      for (var d in o)
+        d !== "key" && (r[d] = o[d]);
+    } else r = o;
+    return o = r.ref, {
       $$typeof: e,
-      type: o,
-      key: s,
-      ref: c !== void 0 ? c : null,
-      props: i
+      type: c,
+      key: i,
+      ref: o !== void 0 ? o : null,
+      props: r
     };
   }
-  return W.Fragment = n, W.jsx = r, W.jsxs = r, W;
+  return W.Fragment = s, W.jsx = n, W.jsxs = n, W;
 }
 var V = {};
 /**
@@ -50,7 +50,7 @@ function Ze() {
         return a.$$typeof === $e ? null : a.displayName || a.name || null;
       if (typeof a == "string") return a;
       switch (a) {
-        case w:
+        case g:
           return "Fragment";
         case _:
           return "Profiler";
@@ -87,12 +87,12 @@ function Ze() {
         }
       return null;
     }
-    function n(a) {
+    function s(a) {
       return "" + a;
     }
-    function r(a) {
+    function n(a) {
       try {
-        n(a);
+        s(a);
         var m = !1;
       } catch {
         m = !0;
@@ -104,11 +104,11 @@ function Ze() {
           m,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           j
-        ), n(a);
+        ), s(a);
       }
     }
-    function o(a) {
-      if (a === w) return "<>";
+    function c(a) {
+      if (a === g) return "<>";
       if (typeof a == "object" && a !== null && a.$$typeof === _e)
         return "<...>";
       try {
@@ -118,14 +118,14 @@ function Ze() {
         return "<...>";
       }
     }
-    function c() {
+    function o() {
       var a = te.A;
       return a === null ? null : a.getOwner();
     }
-    function i() {
+    function r() {
       return Error("react-stack-top-frame");
     }
-    function s(a) {
+    function i(a) {
       if (me.call(a, "key")) {
         var m = Object.getOwnPropertyDescriptor(a, "key").get;
         if (m && m.isReactWarning) return !1;
@@ -144,22 +144,22 @@ function Ze() {
         configurable: !0
       });
     }
-    function l() {
+    function u() {
       var a = e(this.type);
       return fe[a] || (fe[a] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), a = this.props.ref, a !== void 0 ? a : null;
     }
-    function g(a, m, v, j, T, O, ne, se) {
+    function w(a, m, v, j, M, O, ne, se) {
       return v = O.ref, a = {
         $$typeof: x,
         type: a,
         key: m,
         props: O,
-        _owner: T
+        _owner: M
       }, (v !== void 0 ? v : null) !== null ? Object.defineProperty(a, "ref", {
         enumerable: !1,
-        get: l
+        get: u
       }) : Object.defineProperty(a, "ref", { enumerable: !1, value: null }), a._store = {}, Object.defineProperty(a._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -182,7 +182,7 @@ function Ze() {
         value: se
       }), Object.freeze && (Object.freeze(a.props), Object.freeze(a)), a;
     }
-    function u(a, m, v, j, T, O, ne, se) {
+    function l(a, m, v, j, M, O, ne, se) {
       var k = m.children;
       if (k !== void 0)
         if (j)
@@ -213,7 +213,7 @@ React keys must be passed directly to JSX without using spread:
           k
         ), we[k + j] = !0);
       }
-      if (k = null, v !== void 0 && (r(v), k = "" + v), s(m) && (r(m.key), k = "" + m.key), "key" in m) {
+      if (k = null, v !== void 0 && (n(v), k = "" + v), i(m) && (n(m.key), k = "" + m.key), "key" in m) {
         v = {};
         for (var ae in m)
           ae !== "key" && (v[ae] = m[ae]);
@@ -221,12 +221,12 @@ React keys must be passed directly to JSX without using spread:
       return k && d(
         v,
         typeof a == "function" ? a.displayName || a.name || "Unknown" : a
-      ), g(
+      ), w(
         a,
         k,
         O,
-        T,
-        c(),
+        M,
+        o(),
         v,
         ne,
         se
@@ -235,7 +235,7 @@ React keys must be passed directly to JSX without using spread:
     function f(a) {
       typeof a == "object" && a !== null && a.$$typeof === x && a._store && (a._store.validated = 1);
     }
-    var p = M, x = Symbol.for("react.transitional.element"), N = Symbol.for("react.portal"), w = Symbol.for("react.fragment"), y = Symbol.for("react.strict_mode"), _ = Symbol.for("react.profiler"), b = Symbol.for("react.consumer"), h = Symbol.for("react.context"), D = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Ae = Symbol.for("react.suspense_list"), Le = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), ze = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, qe = Array.isArray, re = console.createTask ? console.createTask : function() {
+    var p = A, x = Symbol.for("react.transitional.element"), N = Symbol.for("react.portal"), g = Symbol.for("react.fragment"), y = Symbol.for("react.strict_mode"), _ = Symbol.for("react.profiler"), b = Symbol.for("react.consumer"), h = Symbol.for("react.context"), D = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Ae = Symbol.for("react.suspense_list"), Le = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), ze = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, qe = Array.isArray, re = console.createTask ? console.createTask : function() {
       return null;
     };
     p = {
@@ -245,31 +245,31 @@ React keys must be passed directly to JSX without using spread:
     };
     var he, fe = {}, pe = p.react_stack_bottom_frame.bind(
       p,
-      i
-    )(), ge = re(o(i)), we = {};
-    V.Fragment = w, V.jsx = function(a, m, v, j, T) {
+      r
+    )(), ge = re(c(r)), we = {};
+    V.Fragment = g, V.jsx = function(a, m, v, j, M) {
       var O = 1e4 > te.recentlyCreatedOwnerStacks++;
-      return u(
+      return l(
         a,
         m,
         v,
         !1,
         j,
-        T,
+        M,
         O ? Error("react-stack-top-frame") : pe,
-        O ? re(o(a)) : ge
+        O ? re(c(a)) : ge
       );
-    }, V.jsxs = function(a, m, v, j, T) {
+    }, V.jsxs = function(a, m, v, j, M) {
       var O = 1e4 > te.recentlyCreatedOwnerStacks++;
-      return u(
+      return l(
         a,
         m,
         v,
         !0,
         j,
-        T,
+        M,
         O ? Error("react-stack-top-frame") : pe,
-        O ? re(o(a)) : ge
+        O ? re(c(a)) : ge
       );
     };
   })()), V;
@@ -284,107 +284,107 @@ var t = We(), Se = {
   className: void 0,
   style: void 0,
   attr: void 0
-}, be = M.createContext && /* @__PURE__ */ M.createContext(Se), Ve = ["attr", "size", "title"];
-function Be(e, n) {
+}, be = A.createContext && /* @__PURE__ */ A.createContext(Se), Ve = ["attr", "size", "title"];
+function Be(e, s) {
   if (e == null) return {};
-  var r = He(e, n), o, c;
+  var n = He(e, s), c, o;
   if (Object.getOwnPropertySymbols) {
-    var i = Object.getOwnPropertySymbols(e);
-    for (c = 0; c < i.length; c++)
-      o = i[c], !(n.indexOf(o) >= 0) && Object.prototype.propertyIsEnumerable.call(e, o) && (r[o] = e[o]);
+    var r = Object.getOwnPropertySymbols(e);
+    for (o = 0; o < r.length; o++)
+      c = r[o], !(s.indexOf(c) >= 0) && Object.prototype.propertyIsEnumerable.call(e, c) && (n[c] = e[c]);
   }
-  return r;
+  return n;
 }
-function He(e, n) {
+function He(e, s) {
   if (e == null) return {};
-  var r = {};
-  for (var o in e)
-    if (Object.prototype.hasOwnProperty.call(e, o)) {
-      if (n.indexOf(o) >= 0) continue;
-      r[o] = e[o];
+  var n = {};
+  for (var c in e)
+    if (Object.prototype.hasOwnProperty.call(e, c)) {
+      if (s.indexOf(c) >= 0) continue;
+      n[c] = e[c];
     }
-  return r;
+  return n;
 }
 function X() {
   return X = Object.assign ? Object.assign.bind() : function(e) {
-    for (var n = 1; n < arguments.length; n++) {
-      var r = arguments[n];
-      for (var o in r)
-        Object.prototype.hasOwnProperty.call(r, o) && (e[o] = r[o]);
+    for (var s = 1; s < arguments.length; s++) {
+      var n = arguments[s];
+      for (var c in n)
+        Object.prototype.hasOwnProperty.call(n, c) && (e[c] = n[c]);
     }
     return e;
   }, X.apply(this, arguments);
 }
-function je(e, n) {
-  var r = Object.keys(e);
+function je(e, s) {
+  var n = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e);
-    n && (o = o.filter(function(c) {
-      return Object.getOwnPropertyDescriptor(e, c).enumerable;
-    })), r.push.apply(r, o);
+    var c = Object.getOwnPropertySymbols(e);
+    s && (c = c.filter(function(o) {
+      return Object.getOwnPropertyDescriptor(e, o).enumerable;
+    })), n.push.apply(n, c);
   }
-  return r;
+  return n;
 }
 function ee(e) {
-  for (var n = 1; n < arguments.length; n++) {
-    var r = arguments[n] != null ? arguments[n] : {};
-    n % 2 ? je(Object(r), !0).forEach(function(o) {
-      Ye(e, o, r[o]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : je(Object(r)).forEach(function(o) {
-      Object.defineProperty(e, o, Object.getOwnPropertyDescriptor(r, o));
+  for (var s = 1; s < arguments.length; s++) {
+    var n = arguments[s] != null ? arguments[s] : {};
+    s % 2 ? je(Object(n), !0).forEach(function(c) {
+      Ye(e, c, n[c]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : je(Object(n)).forEach(function(c) {
+      Object.defineProperty(e, c, Object.getOwnPropertyDescriptor(n, c));
     });
   }
   return e;
 }
-function Ye(e, n, r) {
-  return n = Ge(n), n in e ? Object.defineProperty(e, n, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = r, e;
+function Ye(e, s, n) {
+  return s = Ge(s), s in e ? Object.defineProperty(e, s, { value: n, enumerable: !0, configurable: !0, writable: !0 }) : e[s] = n, e;
 }
 function Ge(e) {
-  var n = Fe(e, "string");
-  return typeof n == "symbol" ? n : n + "";
+  var s = Fe(e, "string");
+  return typeof s == "symbol" ? s : s + "";
 }
-function Fe(e, n) {
+function Fe(e, s) {
   if (typeof e != "object" || !e) return e;
-  var r = e[Symbol.toPrimitive];
-  if (r !== void 0) {
-    var o = r.call(e, n);
-    if (typeof o != "object") return o;
+  var n = e[Symbol.toPrimitive];
+  if (n !== void 0) {
+    var c = n.call(e, s);
+    if (typeof c != "object") return c;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (n === "string" ? String : Number)(e);
+  return (s === "string" ? String : Number)(e);
 }
 function Te(e) {
-  return e && e.map((n, r) => /* @__PURE__ */ M.createElement(n.tag, ee({
-    key: r
-  }, n.attr), Te(n.child)));
+  return e && e.map((s, n) => /* @__PURE__ */ A.createElement(s.tag, ee({
+    key: n
+  }, s.attr), Te(s.child)));
 }
 function E(e) {
-  return (n) => /* @__PURE__ */ M.createElement(Ue, X({
+  return (s) => /* @__PURE__ */ A.createElement(Ue, X({
     attr: ee({}, e.attr)
-  }, n), Te(e.child));
+  }, s), Te(e.child));
 }
 function Ue(e) {
-  var n = (r) => {
+  var s = (n) => {
     var {
-      attr: o,
-      size: c,
-      title: i
-    } = e, s = Be(e, Ve), d = c || r.size || "1em", l;
-    return r.className && (l = r.className), e.className && (l = (l ? l + " " : "") + e.className), /* @__PURE__ */ M.createElement("svg", X({
+      attr: c,
+      size: o,
+      title: r
+    } = e, i = Be(e, Ve), d = o || n.size || "1em", u;
+    return n.className && (u = n.className), e.className && (u = (u ? u + " " : "") + e.className), /* @__PURE__ */ A.createElement("svg", X({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
-    }, r.attr, o, s, {
-      className: l,
+    }, n.attr, c, i, {
+      className: u,
       style: ee(ee({
-        color: e.color || r.color
-      }, r.style), e.style),
+        color: e.color || n.color
+      }, n.style), e.style),
       height: d,
       width: d,
       xmlns: "http://www.w3.org/2000/svg"
-    }), i && /* @__PURE__ */ M.createElement("title", null, i), e.children);
+    }), r && /* @__PURE__ */ A.createElement("title", null, r), e.children);
   };
-  return be !== void 0 ? /* @__PURE__ */ M.createElement(be.Consumer, null, (r) => n(r)) : n(Se);
+  return be !== void 0 ? /* @__PURE__ */ A.createElement(be.Consumer, null, (n) => s(n)) : s(Se);
 }
 function Je(e) {
   return E({ attr: { viewBox: "0 0 24 24", fill: "currentColor" }, child: [{ tag: "path", attr: { d: "M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z" }, child: [] }] })(e);
@@ -452,17 +452,17 @@ const dt = "_captcha__wrapper_4k6ae_5", _t = "_buttons_4k6ae_59", mt = "_captcha
   at
 ];
 function vt() {
-  const [e, n] = C(7);
-  A(() => {
-    const o = setInterval(() => {
-      n((c) => (c + 1) % ke.length);
+  const [e, s] = C(7);
+  L(() => {
+    const c = setInterval(() => {
+      s((o) => (o + 1) % ke.length);
     }, 100);
     return () => {
-      clearInterval(o);
+      clearInterval(c);
     };
   }, []);
-  const r = ke[e];
-  return /* @__PURE__ */ t.jsx(r, { style: { margin: -8 }, size: 46 });
+  const n = ke[e];
+  return /* @__PURE__ */ t.jsx(n, { style: { margin: -8 }, size: 46 });
 }
 const xt = "_timer__wrapper_17tk4_1", ie = {
   timer__wrapper: xt,
@@ -471,24 +471,24 @@ const xt = "_timer__wrapper_17tk4_1", ie = {
 function bt(e) {
   return e < 10;
 }
-function z({ start: e = 60, on_time_finished: n, on_change: r }) {
-  const [o, c] = C(e), i = L(e);
-  return A(() => {
-    if (o <= 0) {
-      n?.();
+function z({ start: e = 60, on_time_finished: s, on_change: n }) {
+  const [c, o] = C(e), r = T(e);
+  return L(() => {
+    if (c <= 0) {
+      s?.();
       return;
     }
-    const s = setTimeout(() => {
-      c((d) => d - 1), i.current -= 1, r?.(i.current);
+    const i = setTimeout(() => {
+      o((d) => d - 1), r.current -= 1, n?.(r.current);
     }, 1e3);
-    return () => clearTimeout(s);
-  }, [o]), A(() => {
-    c(e);
+    return () => clearTimeout(i);
+  }, [c]), L(() => {
+    o(e);
   }, [e]), /* @__PURE__ */ t.jsx(
     "div",
     {
-      className: `${ie.timer__wrapper} ${bt(o) ? ie["timer--last"] : ie["timer--normal"]}`,
-      children: /* @__PURE__ */ t.jsx("span", { children: o })
+      className: `${ie.timer__wrapper} ${bt(c) ? ie["timer--last"] : ie["timer--normal"]}`,
+      children: /* @__PURE__ */ t.jsx("span", { children: c })
     }
   );
 }
@@ -497,33 +497,33 @@ const jt = "_main_1ex2e_1", kt = {
 }, Ct = "_button_u3ipf_1", Et = {
   button: Ct
 };
-function q({ children: e, className: n, ...r }) {
-  return /* @__PURE__ */ t.jsx("button", { className: `${Et.button} ${n ?? ""}`, ...r, children: e });
+function q({ children: e, className: s, ...n }) {
+  return /* @__PURE__ */ t.jsx("button", { className: `${Et.button} ${s ?? ""}`, ...n, children: e });
 }
 function Y({
   question: e,
-  answer: n,
-  time: r = 100,
-  onSuccess: o,
-  onFail: c
+  answer: s,
+  time: n = 100,
+  onSuccess: c,
+  onFail: o
 }) {
-  const i = L(null), s = () => {
-    d && c({
+  const r = T(null), i = () => {
+    d && o({
       score: 0,
       message: "Looks like you are not a human"
     });
-  }, [d, l] = C(!0), g = () => {
-    if (!i.current || !d)
+  }, [d, u] = C(!0), w = () => {
+    if (!r.current || !d)
       return;
-    i.current.value.toLocaleLowerCase() === n.toLocaleLowerCase() ? o({
+    r.current.value.toLocaleLowerCase() === s.toLocaleLowerCase() ? c({
       score: 1,
       message: "How did you get that?"
-    }) : c({
+    }) : o({
       score: 0,
       message: "Wasn't it obvious for a human??"
-    }), l(!1);
-  }, u = (f) => {
-    f.key === "Enter" && g();
+    }), u(!1);
+  }, l = (f) => {
+    f.key === "Enter" && w();
   };
   return /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
@@ -531,7 +531,7 @@ function Y({
         /* @__PURE__ */ t.jsx("h3", { children: "Quiz..." }),
         /* @__PURE__ */ t.jsx("p", { children: "Can you answer??" })
       ] }),
-      /* @__PURE__ */ t.jsx(z, { start: r, on_time_finished: s })
+      /* @__PURE__ */ t.jsx(z, { start: n, on_time_finished: i })
     ] }),
     /* @__PURE__ */ t.jsxs("main", { className: kt.main, children: [
       /* @__PURE__ */ t.jsxs("p", { children: [
@@ -543,13 +543,13 @@ function Y({
         "input",
         {
           type: "text",
-          ref: i,
+          ref: r,
           placeholder: "Answer",
           autoComplete: "false",
-          onKeyDown: u
+          onKeyDown: l
         }
       ),
-      /* @__PURE__ */ t.jsx(q, { onClick: g, children: "Submit" })
+      /* @__PURE__ */ t.jsx(q, { onClick: w, children: "Submit" })
     ] })
   ] });
 }
@@ -588,96 +588,96 @@ const Nt = "_alphabet_showcase_e7eh5_1", Rt = "_alphabet_input_e7eh5_41", Ot = "
 ];
 function oe({
   reverse: e = !1,
-  time: n = 26,
-  total_light_glows: r = 3,
-  onSuccess: o,
-  onFail: c
+  time: s = 26,
+  total_light_glows: n = 3,
+  onSuccess: c,
+  onFail: o
 }) {
-  const [i, s] = C({
+  const [r, i] = C({
     active: !0,
     index: -1,
     light_glow: !1,
     lights: null,
     glow: !1
-  }), [d, l] = C(n), g = L(null);
-  let u = Ce;
-  e && (u = [...Ce].reverse()), A(() => {
-    g.current.focus();
-    const w = Array(r).fill(null).map((y) => ({
-      time: Math.floor(Math.random() * (n - 1)),
-      duration: Math.floor(Math.random() * n * 100)
+  }), [d, u] = C(s), w = T(null);
+  let l = Ce;
+  e && (l = [...Ce].reverse()), L(() => {
+    w.current.focus();
+    const g = Array(n).fill(null).map((y) => ({
+      time: Math.floor(Math.random() * (s - 1)),
+      duration: Math.floor(Math.random() * s * 100)
     }));
-    s((y) => ({ ...y, lights: w }));
+    i((y) => ({ ...y, lights: g }));
   }, []);
   const f = () => {
-    i.active && c({
-      score: (i.index + 1) / 26,
+    r.active && o({
+      score: (r.index + 1) / 26,
       message: "My brother could type it faster."
-    }), s((w) => ({ ...w, active: !1 }));
-  }, p = (w) => {
-    if (!i.active)
+    }), i((g) => ({ ...g, active: !1 }));
+  }, p = (g) => {
+    if (!r.active)
       return;
-    const y = w.key;
-    i.glow && (c({
-      score: (i.index + 1) / 26,
+    const y = g.key;
+    r.glow && (o({
+      score: (r.index + 1) / 26,
       message: "Told you. Don't type while the light is glowing"
-    }), s((_) => ({ ..._, active: !1 }))), y === u[i.index + 1] ? (y === u.at(-1) && (o({
+    }), i((_) => ({ ..._, active: !1 }))), y === l[r.index + 1] ? (y === l.at(-1) && (c({
       score: 1,
       message: "Didn't expect you to be that fast"
-    }), s((_) => ({ ..._, active: !1 }))), s((_) => ({ ..._, index: _.index + 1 }))) : c({
-      score: (i.index + 1) / 26,
+    }), i((_) => ({ ..._, active: !1 }))), i((_) => ({ ..._, index: _.index + 1 }))) : o({
+      score: (r.index + 1) / 26,
       message: "You are the typo master"
     });
   }, x = () => {
-    g.current.value = "";
-  }, N = (w) => {
-    l(w);
+    w.current.value = "";
+  }, N = (g) => {
+    u(g);
   };
-  return A(() => {
-    let w;
-    if (i.lights) {
-      const y = i.lights.map((h) => h.time), _ = i.lights.map((h) => h.duration), b = y.indexOf(d);
-      b !== -1 && (s((h) => ({ ...h, glow: !0 })), w = setTimeout(() => {
-        s((h) => ({ ...h, glow: !1 }));
+  return L(() => {
+    let g;
+    if (r.lights) {
+      const y = r.lights.map((h) => h.time), _ = r.lights.map((h) => h.duration), b = y.indexOf(d);
+      b !== -1 && (i((h) => ({ ...h, glow: !0 })), g = setTimeout(() => {
+        i((h) => ({ ...h, glow: !1 }));
       }, _[b]));
     }
-    return () => w && clearTimeout(w);
+    return () => g && clearTimeout(g);
   }, [d]), /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
       /* @__PURE__ */ t.jsxs("div", { children: [
         /* @__PURE__ */ t.jsx("h3", { children: "Type to win" }),
         /* @__PURE__ */ t.jsxs("p", { children: [
           "Write ",
-          u[0],
+          l[0],
           " to ",
-          u.at(-1),
+          l.at(-1),
           " in given time. No backspaces. Only lowercase allowed.",
           " ",
-          r >= 1 && /* @__PURE__ */ t.jsx("span", { children: "Don't write when the light is glowing" })
+          n >= 1 && /* @__PURE__ */ t.jsx("span", { children: "Don't write when the light is glowing" })
         ] })
       ] }),
       /* @__PURE__ */ t.jsx(
         z,
         {
-          start: n,
+          start: s,
           on_time_finished: f,
           on_change: N
         }
       )
     ] }),
     /* @__PURE__ */ t.jsxs("main", { children: [
-      r >= 1 && /* @__PURE__ */ t.jsx(
+      n >= 1 && /* @__PURE__ */ t.jsx(
         "div",
         {
-          className: `${G.light} ${i.glow ? G["light--active"] : ""}`
+          className: `${G.light} ${r.glow ? G["light--active"] : ""}`
         }
       ),
-      /* @__PURE__ */ t.jsx("div", { className: G.alphabet_showcase, children: i.index >= 0 && u.slice(0, i.index + 1).map((w) => /* @__PURE__ */ t.jsx("span", { children: w }, w)) }),
+      /* @__PURE__ */ t.jsx("div", { className: G.alphabet_showcase, children: r.index >= 0 && l.slice(0, r.index + 1).map((g) => /* @__PURE__ */ t.jsx("span", { children: g }, g)) }),
       /* @__PURE__ */ t.jsx(
         "input",
         {
           type: "text",
-          ref: g,
+          ref: w,
           onKeyDown: p,
           onKeyUp: x,
           className: G.alphabet_input
@@ -686,23 +686,23 @@ function oe({
     ] })
   ] });
 }
-function I(e, n, r = 1) {
-  const c = e, i = [];
-  let s = 0;
-  for (; s < c; )
-    i.push(s), s += r;
-  return i;
+function I(e, s, n = 1) {
+  const o = e, r = [];
+  let i = 0;
+  for (; i < o; )
+    r.push(i), i += n;
+  return r;
 }
 function Me(e) {
-  const n = [...e];
-  for (let r = n.length - 1; r > 0; r--) {
-    const o = Math.floor(Math.random() * (r + 1));
-    [n[r], n[o]] = [n[o], n[r]];
+  const s = [...e];
+  for (let n = s.length - 1; n > 0; n--) {
+    const c = Math.floor(Math.random() * (n + 1));
+    [s[n], s[c]] = [s[c], s[n]];
   }
-  return n;
+  return s;
 }
-function Q(e, n) {
-  return Me(e).slice(0, n);
+function Q(e, s) {
+  return Me(e).slice(0, s);
 }
 const Pt = "_main_wz9d7_1", St = "_instruction_wz9d7_9", Tt = "_emoji_display_wz9d7_27", F = {
   main: Pt,
@@ -2145,11 +2145,11 @@ const Pt = "_main_wz9d7_1", St = "_instruction_wz9d7_9", Tt = "_emoji_display_wz
 ];
 function ce({
   width: e = 3,
-  time: n = [5, 3, 10],
-  onSuccess: r,
-  onFail: o
+  time: s = [5, 3, 10],
+  onSuccess: n,
+  onFail: c
 }) {
-  const [c, i] = C({
+  const [o, r] = C({
     width: e,
     stage: 0,
     correct_indexes: [],
@@ -2157,63 +2157,63 @@ function ce({
     score: 0,
     user_clicked: [],
     active: !0
-  }), [s, d] = C(
+  }), [i, d] = C(
     Q(I(U.length), e)
-  ), l = () => {
-    if (c.stage === 0)
-      i((u) => ({
-        ...u,
-        correct_indexes: s,
+  ), u = () => {
+    if (o.stage === 0)
+      r((l) => ({
+        ...l,
+        correct_indexes: i,
         stage: 1,
         instruction: "Do you know you can't lick your elbow?"
       }));
-    else if (c.stage === 1) {
-      i((p) => ({
+    else if (o.stage === 1) {
+      r((p) => ({
         ...p,
         stage: 2,
         instruction: "Click on the old emojis"
       }));
-      let u = Q(
+      let l = Q(
         I(U.length),
         e * (e - 1)
       );
-      for (; u.some((p) => c.correct_indexes.includes(p)); )
-        u = Q(
+      for (; l.some((p) => o.correct_indexes.includes(p)); )
+        l = Q(
           I(U.length),
           e * (e - 1)
         );
-      const f = Me([...s, ...u]);
+      const f = Me([...i, ...l]);
       d(f);
-    } else c.stage == 2 && c.active && (o({
-      score: c.score / e,
+    } else o.stage == 2 && o.active && (c({
+      score: o.score / e,
       message: "Time and tides waits for none"
-    }), i((u) => ({ ...u, active: !1 })));
-  }, g = (u) => {
-    if (!(c.stage !== 2 || !c.active))
-      if (c.correct_indexes.includes(u)) {
-        if (c.score === e - 1) {
-          r({
+    }), r((l) => ({ ...l, active: !1 })));
+  }, w = (l) => {
+    if (!(o.stage !== 2 || !o.active))
+      if (o.correct_indexes.includes(l)) {
+        if (o.score === e - 1) {
+          n({
             score: 1,
             message: "Are you a memory king?"
-          }), i((f) => ({
+          }), r((f) => ({
             ...f,
             active: !1,
-            user_clicked: [...f.user_clicked, u]
+            user_clicked: [...f.user_clicked, l]
           }));
           return;
         }
-        i((f) => ({
+        r((f) => ({
           ...f,
           score: f.score + 1,
-          user_clicked: [...f.user_clicked, u]
+          user_clicked: [...f.user_clicked, l]
         }));
       } else
-        i((f) => ({
+        r((f) => ({
           ...f,
-          user_clicked: [...f.user_clicked, u],
+          user_clicked: [...f.user_clicked, l],
           active: !1
-        })), o({
-          score: c.score / e,
+        })), c({
+          score: o.score / e,
           message: "Oops! I just arrived here"
         });
   };
@@ -2224,7 +2224,7 @@ function ce({
         /* @__PURE__ */ t.jsxs("p", { children: [
           "Look at all the emojis carefully for ",
           /* @__PURE__ */ t.jsxs("u", { children: [
-            n[0],
+            s[0],
             " seconds"
           ] })
         ] })
@@ -2232,24 +2232,24 @@ function ce({
       /* @__PURE__ */ t.jsx(
         z,
         {
-          start: n[c?.stage ?? 0],
-          on_time_finished: l
+          start: s[o?.stage ?? 0],
+          on_time_finished: u
         }
       )
     ] }),
     /* @__PURE__ */ t.jsxs("main", { className: F.main, children: [
-      /* @__PURE__ */ t.jsx("p", { className: F.instruction, children: c.instruction }),
-      c.stage !== 1 && /* @__PURE__ */ t.jsx(
+      /* @__PURE__ */ t.jsx("p", { className: F.instruction, children: o.instruction }),
+      o.stage !== 1 && /* @__PURE__ */ t.jsx(
         "div",
         {
           className: F.emoji_display,
           style: { gridTemplateColumns: `repeat(${e}, auto)` },
-          children: s.map((u, f) => /* @__PURE__ */ t.jsx(
+          children: i.map((l, f) => /* @__PURE__ */ t.jsx(
             "button",
             {
-              onClick: g.bind(null, u),
-              className: c.user_clicked.includes(u) ? F["button--correct"] : "",
-              children: /* @__PURE__ */ t.jsx("span", { children: U[u] })
+              onClick: w.bind(null, l),
+              className: o.user_clicked.includes(l) ? F["button--correct"] : "",
+              children: /* @__PURE__ */ t.jsx("span", { children: U[l] })
             },
             f
           ))
@@ -2273,19 +2273,19 @@ const Mt = "_question_2wb7v_1", At = "_horizontal_flipped_2wb7v_15", Lt = "_vert
 };
 function le({
   difficulty: e = "easy",
-  time: n = 10,
-  question: r,
-  answer: o,
-  onFail: c,
-  onSuccess: i
+  time: s = 10,
+  question: n,
+  answer: c,
+  onFail: o,
+  onSuccess: r
 }) {
-  const [s, d] = C({
+  const [i, d] = C({
     active: !0
-  }), l = L(null), g = () => {
-    if (!s.active)
+  }), u = T(null), w = () => {
+    if (!i.active)
       return;
-    const p = +l.current.value;
-    c(p === o ? {
+    const p = +u.current.value;
+    o(p === c ? {
       score: 0.5,
       message: "You were right but hey, time and tide waits for none."
     } : {
@@ -2293,21 +2293,21 @@ function le({
       message: "My two year brother solves the question faster than you."
     }), d((x) => ({ ...x, active: !1 }));
   };
-  A(() => {
-    l.current && l.current.focus();
+  L(() => {
+    u.current && u.current.focus();
   }, [e]);
-  const u = () => {
-    if (!s.active)
+  const l = () => {
+    if (!i.active)
       return;
-    +l.current.value === o ? i({
+    +u.current.value === c ? r({
       score: 1,
       message: "Didn't expect you to win. Wait for another challenge."
-    }) : c({
+    }) : o({
       score: 0,
       message: "I have not encountered any human who couldn't solve this simple math."
     }), d((x) => ({ ...x, active: !1 }));
   }, f = (p) => {
-    p.key === "Enter" && u();
+    p.key === "Enter" && l();
   };
   return /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
@@ -2315,22 +2315,22 @@ function le({
         /* @__PURE__ */ t.jsx("h3", { children: "Solve this simple maths" }),
         /* @__PURE__ */ t.jsx("p", { children: "Watch out for the time." })
       ] }),
-      /* @__PURE__ */ t.jsx(z, { start: n, on_time_finished: g })
+      /* @__PURE__ */ t.jsx(z, { start: s, on_time_finished: w })
     ] }),
     /* @__PURE__ */ t.jsxs("main", { children: [
-      /* @__PURE__ */ t.jsx("p", { className: `${J.question} ${J[It[e]]}`, children: r }),
+      /* @__PURE__ */ t.jsx("p", { className: `${J.question} ${J[It[e]]}`, children: n }),
       /* @__PURE__ */ t.jsxs("div", { className: J.input__wrapper, children: [
         /* @__PURE__ */ t.jsx(
           "input",
           {
             type: "number",
-            ref: l,
+            ref: u,
             onKeyDown: f,
             className: J.input,
             placeholder: "Eg. 4"
           }
         ),
-        /* @__PURE__ */ t.jsx(q, { onClick: u, children: "Submit" })
+        /* @__PURE__ */ t.jsx(q, { onClick: l, children: "Submit" })
       ] })
     ] })
   ] });
@@ -2343,50 +2343,50 @@ const Dt = "_main_1kxxm_1", Zt = "_instruction_1kxxm_9", Wt = "_pattern_grid_1kx
 };
 function ue({
   width: e = 3,
-  numbers: n = 4,
-  order_matters: r = !0,
-  time: o = [5, 3, 15],
-  onSuccess: c,
-  onFail: i
+  numbers: s = 4,
+  order_matters: n = !0,
+  time: c = [5, 3, 15],
+  onSuccess: o,
+  onFail: r
 }) {
-  const [s, d] = C({
+  const [i, d] = C({
     active: !0,
     stage: 0,
     instruction: "Memorize the patterns",
-    correct: Q(I(e * e), n),
+    correct: Q(I(e * e), s),
     clicked: []
-  }), l = () => {
-    s.stage === 0 ? d((u) => ({
-      ...u,
+  }), u = () => {
+    i.stage === 0 ? d((l) => ({
+      ...l,
       stage: 1,
       instruction: "Do you know you cannot laugh while your nose are closed?"
-    })) : s.stage === 1 ? d((u) => ({
-      ...u,
+    })) : i.stage === 1 ? d((l) => ({
+      ...l,
       stage: 2,
-      instruction: r ? "Click the boxes in correct order." : "Click the earlier highlighted boxes."
-    })) : s.stage === 2 && s.active && (d((u) => ({
-      ...u,
+      instruction: n ? "Click the boxes in correct order." : "Click the earlier highlighted boxes."
+    })) : i.stage === 2 && i.active && (d((l) => ({
+      ...l,
       active: !1
-    })), i({
-      score: s.clicked.length,
+    })), r({
+      score: i.clicked.length,
       message: "Better care about your time at next round"
     }));
-  }, g = (u) => {
-    if (!s.active || s.stage !== 2)
+  }, w = (l) => {
+    if (!i.active || i.stage !== 2)
       return;
-    const f = Math.max(0, s.clicked.length);
-    if (s.correct[f] === u || !r && s.correct.includes(u)) {
-      if (s.clicked.length === n - 1) {
-        d((p) => ({ ...p, active: !1 })), c({
+    const f = Math.max(0, i.clicked.length);
+    if (i.correct[f] === l || !n && i.correct.includes(l)) {
+      if (i.clicked.length === s - 1) {
+        d((p) => ({ ...p, active: !1 })), o({
           score: 1,
           message: "Didn't knew you were that sharp"
         });
         return;
       }
-      d((p) => ({ ...p, clicked: [...p.clicked, u] }));
+      d((p) => ({ ...p, clicked: [...p.clicked, l] }));
     } else
-      d((p) => ({ ...p, active: !1 })), i({
-        score: s.clicked.length / n,
+      d((p) => ({ ...p, active: !1 })), r({
+        score: i.clicked.length / s,
         message: "Whoops! you may need to sharpen your brain"
       });
   };
@@ -2394,32 +2394,32 @@ function ue({
     /* @__PURE__ */ t.jsxs("header", { children: [
       /* @__PURE__ */ t.jsxs("div", { children: [
         /* @__PURE__ */ t.jsx("h3", { children: "Test your brain" }),
-        r && /* @__PURE__ */ t.jsx("p", { children: "Remember the number patterns and click as per the pattern later" }),
-        !r && /* @__PURE__ */ t.jsx("p", { children: "Remember the number patterns and click the pattern later" })
+        n && /* @__PURE__ */ t.jsx("p", { children: "Remember the number patterns and click as per the pattern later" }),
+        !n && /* @__PURE__ */ t.jsx("p", { children: "Remember the number patterns and click the pattern later" })
       ] }),
       /* @__PURE__ */ t.jsx(
         z,
         {
-          start: o[s?.stage ?? 0],
-          on_time_finished: l
+          start: c[i?.stage ?? 0],
+          on_time_finished: u
         }
       )
     ] }),
     /* @__PURE__ */ t.jsxs("main", { className: K.main, children: [
-      /* @__PURE__ */ t.jsx("p", { className: K.instruction, children: s.instruction }),
-      s.stage !== 1 && /* @__PURE__ */ t.jsx(
+      /* @__PURE__ */ t.jsx("p", { className: K.instruction, children: i.instruction }),
+      i.stage !== 1 && /* @__PURE__ */ t.jsx(
         "div",
         {
           className: K.pattern_grid,
           style: { gridTemplateColumns: `repeat(${e}, auto)` },
-          children: I(e * e).map((u) => /* @__PURE__ */ t.jsx(
+          children: I(e * e).map((l) => /* @__PURE__ */ t.jsx(
             "button",
             {
-              onClick: g.bind(null, u),
-              className: (s.clicked.includes(u) || s.stage !== 2) && s.correct.includes(u) ? K["button--correct"] : "",
-              children: r && (s.clicked.includes(u) || s.stage !== 2) && s.correct.includes(u) && /* @__PURE__ */ t.jsx("span", { children: s.correct.indexOf(u) + 1 })
+              onClick: w.bind(null, l),
+              className: (i.clicked.includes(l) || i.stage !== 2) && i.correct.includes(l) ? K["button--correct"] : "",
+              children: n && (i.clicked.includes(l) || i.stage !== 2) && i.correct.includes(l) && /* @__PURE__ */ t.jsx("span", { children: i.correct.indexOf(l) + 1 })
             },
-            u
+            l
           ))
         }
       )
@@ -2429,30 +2429,30 @@ function ue({
 const Vt = "_form__pin_1kyyk_1", Bt = {
   form__pin: Vt
 };
-function Ee(e, n) {
-  const r = I(n).map((o) => e.current[o].value);
-  return r.map((o) => o.length > 0).every(Boolean) ? r.reduce((o, c) => `${o}${c}`) : !1;
+function Ee(e, s) {
+  const n = I(s).map((c) => e.current[c].value);
+  return n.map((c) => c.length > 0).every(Boolean) ? n.reduce((c, o) => `${c}${o}`) : !1;
 }
-function Ht({ digits: e = 4, onChange: n }) {
-  const r = L([]), o = (i, s) => {
-    const d = s.target.value;
-    i <= 2 && d.length === 1 && r.current[i + 1].focus();
-    const l = Ee(r, e);
-    n(l || void 0);
-  }, c = (i, s) => {
-    const d = s.target.value;
-    d.length > 0 && s.key === "Backspace" ? (r.current[i].value = null, Ee(r, e) || n(void 0)) : i !== 0 && (s.key === "Backspace" || s.key === "ArrowLeft") ? r.current[i - 1].focus() : i !== e - 1 && s.key === "ArrowRight" ? r.current[i + 1].focus() : d.length === 1 && s.key.length == 1 && !s.ctrlKey && !s.metaKey && (r.current[i].value = String(s.key), s.preventDefault(), i < e - 1 && r.current[i + 1].focus());
+function Ht({ digits: e = 4, onChange: s }) {
+  const n = T([]), c = (r, i) => {
+    const d = i.target.value;
+    r <= 2 && d.length === 1 && n.current[r + 1].focus();
+    const u = Ee(n, e);
+    s(u || void 0);
+  }, o = (r, i) => {
+    const d = i.target.value;
+    d.length > 0 && i.key === "Backspace" ? (n.current[r].value = null, Ee(n, e) || s(void 0)) : r !== 0 && (i.key === "Backspace" || i.key === "ArrowLeft") ? n.current[r - 1].focus() : r !== e - 1 && i.key === "ArrowRight" ? n.current[r + 1].focus() : d.length === 1 && i.key.length == 1 && !i.ctrlKey && !i.metaKey && (n.current[r].value = String(i.key), i.preventDefault(), r < e - 1 && n.current[r + 1].focus());
   };
-  return /* @__PURE__ */ t.jsx("div", { className: Bt.form__pin, children: [0, 1, 2, 3].map((i) => /* @__PURE__ */ t.jsx(
+  return /* @__PURE__ */ t.jsx("div", { className: Bt.form__pin, children: [0, 1, 2, 3].map((r) => /* @__PURE__ */ t.jsx(
     "input",
     {
       type: "number",
       placeholder: "x",
-      onInput: o.bind(null, i),
-      onKeyDown: c.bind(null, i),
-      ref: (s) => r.current[i] = s
+      onInput: c.bind(null, r),
+      onKeyDown: o.bind(null, r),
+      ref: (i) => n.current[r] = i
     },
-    i
+    r
   )) });
 }
 const Yt = "_form__pin__wrapper_r131o_1", Gt = "_form__btn__wrapper_r131o_13", Ft = "_enter_pin_r131o_29", S = {
@@ -2462,27 +2462,27 @@ const Yt = "_form__pin__wrapper_r131o_1", Gt = "_form__btn__wrapper_r131o_13", F
 };
 function Ne({
   digit: e = 4,
-  time: n = [10, 30],
-  onFail: r,
-  onSuccess: o
+  time: s = [10, 30],
+  onFail: n,
+  onSuccess: c
 }) {
-  const [c, i] = C(void 0), [s, d] = C("enter-pin"), [l, g] = C("0000"), u = L(!1), f = () => {
-    u.current || r({
+  const [o, r] = C(void 0), [i, d] = C("enter-pin"), [u, w] = C("0000"), l = T(!1), f = () => {
+    l.current || n({
       score: 0,
       message: "A turtle is faster than you"
     });
   }, p = (y) => {
-    i(y);
+    r(y);
   }, x = (y) => {
-    y.preventDefault(), c && (d("verify-pin"), g(+c < Math.pow(10, e) / 2 ? "9999" : "0000"));
+    y.preventDefault(), o && (d("verify-pin"), w(+o < Math.pow(10, e) / 2 ? "9999" : "0000"));
   }, N = (y) => {
-    const _ = +l + y;
-    _ >= 0 && _ <= Math.pow(10, e) - 1 && g(String(_));
-  }, w = () => {
-    u.current = !0, c === l ? o({
+    const _ = +u + y;
+    _ >= 0 && _ <= Math.pow(10, e) - 1 && w(String(_));
+  }, g = () => {
+    l.current = !0, o === u ? c({
       score: 1,
       message: "Looks like you need something little harder"
-    }) : r({
+    }) : n({
       score: 0,
       message: "Looks like you are not human enough"
     });
@@ -2491,29 +2491,29 @@ function Ne({
     /* @__PURE__ */ t.jsxs("header", { className: S.header, children: [
       /* @__PURE__ */ t.jsxs("div", { className: S.header__info, children: [
         /* @__PURE__ */ t.jsx("h3", { children: "PIN Challenge" }),
-        s === "enter-pin" && /* @__PURE__ */ t.jsx("p", { children: "Prove yourself a human by creating a random pin" }),
-        s === "verify-pin" && /* @__PURE__ */ t.jsx("p", { children: "Human can remember their earlier PIN" })
+        i === "enter-pin" && /* @__PURE__ */ t.jsx("p", { children: "Prove yourself a human by creating a random pin" }),
+        i === "verify-pin" && /* @__PURE__ */ t.jsx("p", { children: "Human can remember their earlier PIN" })
       ] }),
       /* @__PURE__ */ t.jsx(
         z,
         {
-          start: s === "enter-pin" ? n[0] : n[1],
+          start: i === "enter-pin" ? s[0] : s[1],
           on_time_finished: f
         }
       )
     ] }),
     /* @__PURE__ */ t.jsxs("main", { className: S.main, children: [
-      s === "enter-pin" && /* @__PURE__ */ t.jsxs("form", { className: S.form, onSubmit: x, children: [
+      i === "enter-pin" && /* @__PURE__ */ t.jsxs("form", { className: S.form, onSubmit: x, children: [
         /* @__PURE__ */ t.jsx("div", { className: S.form__pin__wrapper, children: /* @__PURE__ */ t.jsx(Ht, { digits: e, onChange: p }) }),
-        /* @__PURE__ */ t.jsx("div", { className: S.form__btn__wrapper, children: /* @__PURE__ */ t.jsx(q, { type: "submit", disabled: !c, children: "Submit PIN" }) })
+        /* @__PURE__ */ t.jsx("div", { className: S.form__btn__wrapper, children: /* @__PURE__ */ t.jsx(q, { type: "submit", disabled: !o, children: "Submit PIN" }) })
       ] }),
-      s === "verify-pin" && /* @__PURE__ */ t.jsx("div", { className: S.form, children: /* @__PURE__ */ t.jsxs("div", { className: S.form__btn__wrapper, children: [
+      i === "verify-pin" && /* @__PURE__ */ t.jsx("div", { className: S.form, children: /* @__PURE__ */ t.jsxs("div", { className: S.form__btn__wrapper, children: [
         /* @__PURE__ */ t.jsxs("div", { className: S.enter_pin, children: [
           /* @__PURE__ */ t.jsx(q, { onClick: N.bind(null, -1), children: "-" }),
-          /* @__PURE__ */ t.jsx("span", { children: l }),
+          /* @__PURE__ */ t.jsx("span", { children: u }),
           /* @__PURE__ */ t.jsx(q, { onClick: N.bind(null, 1), children: "+" })
         ] }),
-        /* @__PURE__ */ t.jsx(q, { onClick: w, children: "Verify PIN" })
+        /* @__PURE__ */ t.jsx(q, { onClick: g, children: "Verify PIN" })
       ] }) })
     ] })
   ] });
@@ -2541,32 +2541,32 @@ function cr(e) {
 }
 function lr({
   streak: e,
-  max_streak: n = void 0,
-  target: r = "♾"
+  max_streak: s = void 0,
+  target: n = "♾"
 }) {
   return /* @__PURE__ */ t.jsxs("div", { className: Re.streak_meter, children: [
     /* @__PURE__ */ t.jsxs("p", { className: Re[cr(e)], children: [
       or(e),
       "/",
-      r
-    ] }),
-    typeof n < "u" && /* @__PURE__ */ t.jsxs("p", { children: [
-      "Max Streak: ",
       n
+    ] }),
+    typeof s < "u" && /* @__PURE__ */ t.jsxs("p", { children: [
+      "Max Streak: ",
+      s
     ] })
   ] });
 }
-function ur(e, n, r) {
-  return e ? n === r ? "correct" : "wrong" : "normal";
+function ur(e, s, n) {
+  return e ? s === n ? "correct" : "wrong" : "normal";
 }
 function dr(e) {
-  const n = ["w", "a", "s", "d"];
-  let r = "";
-  for (let o = 0; o < e; o++) {
-    const c = Math.floor(Math.random() * n.length);
-    r += n[c];
+  const s = ["w", "a", "s", "d"];
+  let n = "";
+  for (let c = 0; c < e; c++) {
+    const o = Math.floor(Math.random() * s.length);
+    n += s[o];
   }
-  return r;
+  return n;
 }
 const Oe = {
   w: ["w", "W", "ArrowUp"],
@@ -2575,21 +2575,21 @@ const Oe = {
   d: ["d", "D", "ArrowRight"]
 };
 function _r(e) {
-  return Object.keys(Oe).find((n) => Oe[n].includes(e));
+  return Object.keys(Oe).find((s) => Oe[s].includes(e));
 }
 function de({
   target: e = 5,
-  times: n = [6, 30],
-  speed_factor: r = 1,
-  onSuccess: o,
-  onFail: c
+  times: s = [6, 30],
+  speed_factor: n = 1,
+  onSuccess: c,
+  onFail: o
 }) {
-  const [i, s] = C({
+  const [r, i] = C({
     w: "normal",
     a: "normal",
     s: "normal",
     d: "normal"
-  }), d = dr(100), l = L({
+  }), d = dr(100), u = T({
     active: !1,
     first_stage_done: !1,
     word: d,
@@ -2597,55 +2597,55 @@ function de({
     index: 0,
     streak: 0,
     max_streak: 0
-  }), [g, u] = C(n[0]), f = () => {
-    l.current.active = !0, l.current.first_stage_done = !0, u(n[1]);
+  }), [w, l] = C(s[0]), f = () => {
+    u.current.active = !0, u.current.first_stage_done = !0, l(s[1]);
   }, p = () => {
-    l.current.max_streak >= e ? o({
-      score: l.current.max_streak / e,
+    u.current.max_streak >= e ? c({
+      score: u.current.max_streak / e,
       message: "As quick as a Crane."
-    }) : c({
-      score: l.current.max_streak / e,
+    }) : o({
+      score: u.current.max_streak / e,
       message: "Didn't knew you were such a loser."
     });
   };
-  return A(() => {
+  return L(() => {
     const x = setInterval(() => {
-      if (!l.current.active) return;
-      if (l.current.index >= l.current.word.length) {
-        l.current.active = !1, clearInterval(x);
+      if (!u.current.active) return;
+      if (u.current.index >= u.current.word.length) {
+        u.current.active = !1, clearInterval(x);
         return;
       }
-      const N = l.current.word[l.current.index];
-      l.current.index += 1, s({
+      const N = u.current.word[u.current.index];
+      u.current.index += 1, i({
         w: "normal",
         a: "normal",
         s: "normal",
         d: "normal",
         [N]: "active"
       });
-    }, 600 * r);
+    }, 600 * n);
     return () => clearInterval(x);
-  }, [r]), A(() => {
+  }, [n]), L(() => {
     const x = /* @__PURE__ */ new Set(), N = (y) => {
       const _ = _r(y.key);
       if (!_ || x.has(y.key)) return;
       x.add(y.key);
-      const b = l.current.index - 1, h = l.current.word[b], D = ur(
-        l.current.active,
+      const b = u.current.index - 1, h = u.current.word[b], D = ur(
+        u.current.active,
         _,
         h
       );
-      typeof l.current.corrects[b] > "u" && (D === "correct" ? (l.current.corrects[b] = !0, l.current.streak++, l.current.max_streak = Math.max(
-        l.current.max_streak,
-        l.current.streak
-      )) : D === "wrong" && (l.current.corrects[b] = !1, l.current.streak = 0)), s((Z) => ({ ...Z, [_]: D })), setTimeout(() => {
-        s((Z) => ({ ...Z, [_]: "normal" }));
+      typeof u.current.corrects[b] > "u" && (D === "correct" ? (u.current.corrects[b] = !0, u.current.streak++, u.current.max_streak = Math.max(
+        u.current.max_streak,
+        u.current.streak
+      )) : D === "wrong" && (u.current.corrects[b] = !1, u.current.streak = 0)), i((Z) => ({ ...Z, [_]: D })), setTimeout(() => {
+        i((Z) => ({ ...Z, [_]: "normal" }));
       }, 150);
-    }, w = (y) => {
+    }, g = (y) => {
       x.delete(y.key);
     };
-    return window.addEventListener("keydown", N), window.addEventListener("keyup", w), () => {
-      window.removeEventListener("keydown", N), window.removeEventListener("keyup", w);
+    return window.addEventListener("keydown", N), window.addEventListener("keyup", g), () => {
+      window.removeEventListener("keydown", N), window.removeEventListener("keyup", g);
     };
   }, []), /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
@@ -2656,9 +2656,9 @@ function de({
       /* @__PURE__ */ t.jsx(
         z,
         {
-          start: g,
+          start: w,
           on_time_finished: () => {
-            l.current.first_stage_done ? p() : f();
+            u.current.first_stage_done ? p() : f();
           }
         }
       )
@@ -2667,8 +2667,8 @@ function de({
       /* @__PURE__ */ t.jsx("div", { className: R.streaks, children: /* @__PURE__ */ t.jsx(
         lr,
         {
-          max_streak: l.current.max_streak,
-          streak: l.current.streak,
+          max_streak: u.current.max_streak,
+          streak: u.current.streak,
           target: e
         }
       ) }),
@@ -2676,7 +2676,7 @@ function de({
         /* @__PURE__ */ t.jsx("div", { className: R.wasd__display__row, children: /* @__PURE__ */ t.jsx(
           "div",
           {
-            className: `${R.wasd__key} ${R[i.w]}`,
+            className: `${R.wasd__key} ${R[r.w]}`,
             children: "W"
           }
         ) }),
@@ -2684,21 +2684,21 @@ function de({
           /* @__PURE__ */ t.jsx(
             "div",
             {
-              className: `${R.wasd__key} ${R[i.a]}`,
+              className: `${R.wasd__key} ${R[r.a]}`,
               children: "A"
             }
           ),
           /* @__PURE__ */ t.jsx(
             "div",
             {
-              className: `${R.wasd__key} ${R[i.s]}`,
+              className: `${R.wasd__key} ${R[r.s]}`,
               children: "S"
             }
           ),
           /* @__PURE__ */ t.jsx(
             "div",
             {
-              className: `${R.wasd__key} ${R[i.d]}`,
+              className: `${R.wasd__key} ${R[r.d]}`,
               children: "D"
             }
           )
@@ -3153,70 +3153,83 @@ const B = [
       }
     ]
   }
-].slice(6, 7);
-function Pe(e, n, r) {
-  const o = B.length;
-  let [c, i] = [void 0, void 0];
-  return r === "random" ? (c = Math.floor(Math.random() * o), i = Math.floor(Math.random() * 3)) : r === "ladder" && (typeof n > "u" || typeof e > "u" ? [c, i] = [0, 0] : (i = n == 2 ? 0 : n + 1, c = n == 2 ? e + 1 : e)), [c, i];
+];
+function Pe(e, s, n) {
+  const c = B.length;
+  let [o, r] = [void 0, void 0];
+  return n === "random" ? (o = Math.floor(Math.random() * c), r = Math.floor(Math.random() * 3)) : n === "ladder" && (typeof s > "u" || typeof e > "u" ? [o, r] = [0, 0] : (r = s == 2 ? 0 : s + 1, o = s == 2 ? e + 1 : e)), [o, r];
 }
-const mr = ({ index: e, difficulty: n, onFail: r, onSuccess: o }) => {
-  const c = B[e].component, i = B[e].props[n];
-  return /* @__PURE__ */ t.jsx(c, { ...i, onSuccess: o, onFail: r });
+const mr = ({ index: e, difficulty: s, onFail: n, onSuccess: c }) => {
+  const o = B[e].component, r = B[e].props[s];
+  return /* @__PURE__ */ t.jsx(o, { ...r, onSuccess: c, onFail: n });
 };
 function fr({
   difficulty: e = "random",
-  questions: n = -1,
-  tries: r = 1,
-  show_cancel: o = !0,
-  record: c = !0,
-  onComplete: i
+  questions: s = -1,
+  tries: n = 1,
+  show_cancel: c = !0,
+  onComplete: o
 }) {
-  const [s, d] = C({
+  const [r, i] = C({
     state: "initial",
-    questions: n,
-    try: r,
+    questions: s,
+    try: n,
     index: void 0,
     difficulty: void 0,
     score: 0
-  }), [l, g] = C(null), u = L(1), f = () => {
-    if (s.state !== "initial")
+  }), [d, u] = C(null), w = T(1), l = T({
+    total_games: 0,
+    total_retries: 0,
+    total_fail: 0,
+    total_success: 0,
+    total_one_shot_success: 0
+  }), f = () => {
+    if (r.state !== "initial")
       return;
     let [_, b] = Pe(
-      s.index,
-      s.difficulty,
+      r.index,
+      r.difficulty,
       e
     );
-    d((h) => ({
+    i((h) => ({
       ...h,
       state: h.state === "initial" ? "progress" : h,
       questions: h.questions - 1,
       try: h.try - 1,
       index: _,
       difficulty: b
-    }));
+    })), l.current = {
+      ...l.current,
+      total_games: 1
+    };
   }, p = ({ score: _, message: b }) => {
-    if (e === "ladder" && s.index === B.length - 1 && s.difficulty === 2 && s.try == 0) {
-      d((h) => ({
+    if (l.current = {
+      ...l.current,
+      total_fail: l.current.total_fail + 1
+    }, e === "ladder" && r.index === B.length - 1 && r.difficulty === 2 && r.try == 0) {
+      i((h) => ({
         ...h,
         state: "error",
         score: h.score + _
-      })), i({
-        score: s.score + _
+      })), o({
+        score: r.score + _,
+        record: l.current
       });
       return;
     }
-    if (s.questions === 0 && s.try === 0) {
-      d((h) => ({
+    if (r.questions === 0 && r.try === 0) {
+      i((h) => ({
         ...h,
         state: "error",
         score: h.score + _
-      })), i({
-        score: s.score + _
+      })), o({
+        score: r.score + _,
+        record: l.current
       });
       return;
     }
-    if (s.try === 0) {
-      d((h) => ({ ...h, score: h.score + _ })), g({
+    if (r.try === 0) {
+      i((h) => ({ ...h, score: h.score + _ })), u({
         score: _,
         message: b,
         type: "failure",
@@ -3224,54 +3237,67 @@ function fr({
       });
       return;
     }
-    d((h) => ({ ...h, score: h.score + _ })), g({
+    i((h) => ({ ...h, score: h.score + _ })), u({
       score: _,
       message: b,
       type: "failure",
       option: "retry"
     });
   }, x = () => {
-    d((_) => ({
+    l.current = {
+      ...l.current,
+      total_retries: l.current.total_retries + 1
+    }, i((_) => ({
       ..._,
       try: _.try - 1
-    })), u.current = Date.now(), g(null);
+    })), w.current = Date.now(), u(null);
   }, N = () => {
+    l.current = {
+      ...l.current,
+      total_games: l.current.total_games + 1
+    };
     const [_, b] = Pe(
-      s.index,
-      s.difficulty,
+      r.index,
+      r.difficulty,
       e
     );
-    d((h) => ({
+    i((h) => ({
       ...h,
-      try: r - 1,
+      try: n - 1,
       index: _,
       questions: h.questions - 1,
       difficulty: b
-    })), g(null), u.current += 1;
-  }, w = ({ score: _, message: b }) => {
-    if (e === "ladder" && s.index === B.length - 1 && s.difficulty === 2) {
-      i?.({
-        score: s.score + _,
-        message: "You completed all the challenge."
-      }), d((h) => ({
+    })), u(null), w.current += 1;
+  }, g = ({ score: _, message: b }) => {
+    if (l.current = {
+      ...l.current,
+      total_success: l.current.total_success + 1,
+      total_one_shot_success: r.try === n - 1 ? l.current.total_one_shot_success + 1 : l.current.total_one_shot_success
+    }, e === "ladder" && r.index === B.length - 1 && r.difficulty === 2) {
+      o?.({
+        score: r.score + _,
+        message: "You completed all the challenge.",
+        record: l.current
+      }), i((h) => ({
         ...h,
         state: "success",
         score: h.score + _
       }));
       return;
     }
-    d((h) => ({ ...h, score: s.score + _ })), g({
+    i((h) => ({ ...h, score: r.score + _ })), u({
       score: _,
       message: b,
       type: "success",
       option: "next"
     });
   }, y = () => {
-    d((_) => ({
+    i((_) => ({
       ..._,
       state: "success"
-    })), i({
-      score: s.score
+    })), o({
+      score: r.score,
+      record: l.current
     });
   };
   return /* @__PURE__ */ t.jsxs("div", { className: P.captcha__wrapper, children: [
@@ -3282,9 +3308,9 @@ function fr({
         onClick: f,
         children: [
           /* @__PURE__ */ t.jsxs("div", { className: P.captcha__btn__main, children: [
-            s.state === "initial" && /* @__PURE__ */ t.jsx("div", { className: P.captcha__unchecked }),
-            s.state === "success" && /* @__PURE__ */ t.jsx(Je, { style: { margin: -8 }, size: 46, color: "#41A818" }),
-            s.state === "error" && /* @__PURE__ */ t.jsx(
+            r.state === "initial" && /* @__PURE__ */ t.jsx("div", { className: P.captcha__unchecked }),
+            r.state === "success" && /* @__PURE__ */ t.jsx(Je, { style: { margin: -8 }, size: 46, color: "#41A818" }),
+            r.state === "error" && /* @__PURE__ */ t.jsx(
               Ke,
               {
                 style: { margin: -8 },
@@ -3292,7 +3318,7 @@ function fr({
                 color: "#A81818"
               }
             ),
-            s.state === "progress" && /* @__PURE__ */ t.jsx(vt, {}),
+            r.state === "progress" && /* @__PURE__ */ t.jsx(vt, {}),
             /* @__PURE__ */ t.jsx("p", { children: "Are you a human?" })
           ] }),
           /* @__PURE__ */ t.jsx("div", { className: P.captcha__btn__footer, children: /* @__PURE__ */ t.jsxs("p", { children: [
@@ -3303,24 +3329,24 @@ function fr({
         ]
       }
     ),
-    s.state === "progress" && /* @__PURE__ */ t.jsxs("div", { className: P.captcha__content, children: [
+    r.state === "progress" && /* @__PURE__ */ t.jsxs("div", { className: P.captcha__content, children: [
       /* @__PURE__ */ t.jsx(
         mr,
         {
-          index: s.index,
-          difficulty: s.difficulty,
+          index: r.index,
+          difficulty: r.difficulty,
           onFail: p,
-          onSuccess: w
+          onSuccess: g
         },
-        u.current
+        w.current
       ),
-      l && /* @__PURE__ */ t.jsx("div", { className: P.captcha__failed, children: /* @__PURE__ */ t.jsxs("div", { className: P.captcha__failed__content, children: [
-        l.type === "failure" ? /* @__PURE__ */ t.jsx(ot, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ t.jsx(ct, { color: "#b0b0b0", size: "32px" }),
-        /* @__PURE__ */ t.jsx("p", { children: l.message }),
-        l.option === "retry" && /* @__PURE__ */ t.jsx("button", { style: { marginTop: 16 }, onClick: x, children: /* @__PURE__ */ t.jsx(lt, { size: "32px" }) }),
-        l.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: P.buttons, children: [
+      d && /* @__PURE__ */ t.jsx("div", { className: P.captcha__failed, children: /* @__PURE__ */ t.jsxs("div", { className: P.captcha__failed__content, children: [
+        d.type === "failure" ? /* @__PURE__ */ t.jsx(ot, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ t.jsx(ct, { color: "#b0b0b0", size: "32px" }),
+        /* @__PURE__ */ t.jsx("p", { children: d.message }),
+        d.option === "retry" && /* @__PURE__ */ t.jsx("button", { style: { marginTop: 16 }, onClick: x, children: /* @__PURE__ */ t.jsx(lt, { size: "32px" }) }),
+        d.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: P.buttons, children: [
           /* @__PURE__ */ t.jsx("button", { onClick: N, children: /* @__PURE__ */ t.jsx(it, { size: "32px" }) }),
-          o && /* @__PURE__ */ t.jsx("button", { onClick: y, children: /* @__PURE__ */ t.jsx(ut, { size: "32px", color: "var(--color-red)" }) })
+          c && /* @__PURE__ */ t.jsx("button", { onClick: y, children: /* @__PURE__ */ t.jsx(ut, { size: "32px", color: "var(--color-red)" }) })
         ] })
       ] }) })
     ] })

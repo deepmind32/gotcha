@@ -50,7 +50,6 @@ export function Captcha({
 	questions = -1,
 	tries = 1,
 	show_cancel = true,
-	record = true,
 	onComplete,
 }) {
 	// initial, progress, success, error
@@ -64,6 +63,13 @@ export function Captcha({
 	});
 	const [message, set_message] = useState(null);
 	const key_ref = useRef(1);
+	const record_ref = useRef({
+		total_games: 0,
+		total_retries: 0,
+		total_fail: 0,
+		total_success: 0,
+		total_one_shot_success: 0,
+	});
 
 	const handle_captcha_clicked = () => {
 		if (captcha.state !== "initial") {
@@ -84,9 +90,18 @@ export function Captcha({
 			index: game_index,
 			difficulty: game_difficulty,
 		}));
+		record_ref.current = {
+			...record_ref.current,
+			total_games: 1,
+		};
 	};
 
 	const handle_challenge_failed = ({ score, message }) => {
+		record_ref.current = {
+			...record_ref.current,
+			total_fail: record_ref.current.total_fail + 1,
+		};
+
 		// if last question and last try do complete failed
 		if (
 			difficulty === "ladder" &&
@@ -101,10 +116,12 @@ export function Captcha({
 			}));
 			onComplete({
 				score: captcha.score + score,
+				record: record_ref.current,
 			});
 			return;
 		}
 
+		// no more questions or tires left
 		if (captcha.questions === 0 && captcha.try === 0) {
 			set_captcha((prev) => ({
 				...prev,
@@ -113,6 +130,7 @@ export function Captcha({
 			}));
 			onComplete({
 				score: captcha.score + score,
+				record: record_ref.current,
 			});
 			return;
 		}
@@ -140,6 +158,11 @@ export function Captcha({
 	};
 
 	const handle_game_retry = () => {
+		record_ref.current = {
+			...record_ref.current,
+			total_retries: record_ref.current.total_retries + 1,
+		};
+
 		set_captcha((prev) => ({
 			...prev,
 			try: prev.try - 1,
@@ -149,6 +172,11 @@ export function Captcha({
 	};
 
 	const handle_next_game = () => {
+		record_ref.current = {
+			...record_ref.current,
+			total_games: record_ref.current.total_games + 1,
+		};
+
 		const [new_index, new_difficulty] = get_game(
 			captcha.index,
 			captcha.difficulty,
@@ -167,8 +195,16 @@ export function Captcha({
 	};
 
 	const handle_challenge_success = ({ score, message }) => {
+		record_ref.current = {
+			...record_ref.current,
+			total_success: record_ref.current.total_success + 1,
+			total_one_shot_success:
+				captcha.try === tries - 1
+					? record_ref.current.total_one_shot_success + 1
+					: record_ref.current.total_one_shot_success,
+		};
+
 		// check if all the questions and the difficulty has been completed
-		// TODO add data like what was done in the game history using game_ref
 		if (
 			difficulty === "ladder" &&
 			captcha.index === ALL_GAMES.length - 1 &&
@@ -177,6 +213,7 @@ export function Captcha({
 			onComplete?.({
 				score: captcha.score + score,
 				message: "You completed all the challenge.",
+				record: record_ref.current,
 			});
 			set_captcha((prev) => ({
 				...prev,
@@ -203,6 +240,7 @@ export function Captcha({
 		}));
 		onComplete({
 			score: captcha.score,
+			record: record_ref.current,
 		});
 	};
 

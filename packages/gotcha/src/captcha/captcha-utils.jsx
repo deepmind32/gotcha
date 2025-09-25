@@ -456,5 +456,5 @@ export const ALL_GAMES = [
 				speed_factor: 1.1,
 			},
 		],
-	},  
-].slice(6, 7);
+	},
+];

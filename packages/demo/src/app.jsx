@@ -3,12 +3,12 @@ import { Captcha } from "@thebrownguy/gotcha";
 import "./app.css";
 
 function App() {
-	const on_captcha_complete = ({score, total_games=0, recording=null}) => {
-		console.log(score)
-	}
+	const on_captcha_complete = ({ score, record = null }) => {
+		console.log(record);
+	};
 	return (
 		<>
-			<Captcha onComplete={on_captcha_complete}/>
+			<Captcha onComplete={on_captcha_complete} />
 		</>
 	);
 }
