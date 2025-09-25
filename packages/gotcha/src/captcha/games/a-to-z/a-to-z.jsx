@@ -32,7 +32,7 @@ const ALPHABETS = [
 ];
 
 export default function AToZGame({
-	difficulty = "easy",
+	reverse = false,
 	time = 26,
 	total_light_glows = 3,
 	onSuccess,
@@ -49,7 +49,7 @@ export default function AToZGame({
 	const input_ref = useRef(null);
 	let alphabets = ALPHABETS;
 
-	if (difficulty === "medium" || difficulty === "very hard") {
+	if (reverse) {
 		alphabets = [...ALPHABETS].reverse();
 	}
 
@@ -145,7 +145,7 @@ export default function AToZGame({
 					<p>
 						Write {alphabets[0]} to {alphabets.at(-1)} in given time. No
 						backspaces. Only lowercase allowed.{" "}
-						{(difficulty === "hard" || difficulty === "very hard") && (
+						{total_light_glows >= 1 && (
 							<span>Don't write when the light is glowing</span>
 						)}
 					</p>
@@ -158,7 +158,7 @@ export default function AToZGame({
 				/>
 			</header>
 			<main>
-				{(difficulty === "hard" || difficulty === "very hard") && (
+				{total_light_glows >= 1 && (
 					<div
 						className={`${styles["light"]} ${
 							game.glow ? styles["light--active"] : ""

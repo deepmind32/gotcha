@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./quiz.module.css";
 import Button from "../../../components/button/button";
@@ -14,14 +14,17 @@ export default function QuizGame({
 }) {
 	const input_ref = useRef(null);
 	const handle_time_finished = () => {
-		onFail({
-			score: 0,
-			message: "Looks like you are not a human",
-		});
+		if (active) {
+			onFail({
+				score: 0,
+				message: "Looks like you are not a human",
+			});
+		}
 	};
+	const [active, set_active] = useState(true);
 
 	const handle_submit = () => {
-		if (!input_ref.current) {
+		if (!input_ref.current || !active) {
 			return;
 		}
 
@@ -37,6 +40,7 @@ export default function QuizGame({
 				message: "Wasn't it obvious for a human??",
 			});
 		}
+		set_active(false);
 	};
 	return (
 		<>
@@ -51,7 +55,12 @@ export default function QuizGame({
 				<p>
 					<span>Q:</span> {question}
 				</p>
-				<input type="text" ref={input_ref} placeholder="Answer" autoComplete="false"/>
+				<input
+					type="text"
+					ref={input_ref}
+					placeholder="Answer"
+					autoComplete="false"
+				/>
 				<Button onClick={handle_submit}>Submit</Button>
 			</main>
 		</>

@@ -1,53 +1,172 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { RiCheckboxLine, RiErrorWarningFill } from "react-icons/ri";
-import { BiSolidError, BiSolidFlagCheckered } from "react-icons/bi";
+import {
+	BiSolidError,
+	BiSolidFlagCheckered,
+	BiSkipNextCircle,
+} from "react-icons/bi";
 import { IoRefreshCircleOutline } from "react-icons/io5";
 
 import styles from "./captcha.module.css";
 import LoadingIcon from "../components/loading/loading";
-import PinGame from "./games/select-pin/pin";
-import WASDReflexGame from "./games/wasd-reflex/wasd-reflex";
-import MathGame from "./games/math-game/math-game";
-import AToZGame from "./games/a-to-z/a-to-z";
-import ImposterEmojiGame from "./games/imposter-emoji/imposter-emoji";
-import RememberTheOrderGame from "./games/remember-the-order/remember";
-import QuizGame from "./games/quiz/quiz";
+import { ALL_GAMES } from "./captcha-utils";
 
+function get_game(previous_index, previous_difficulty, type) {
+	const total_games = ALL_GAMES.length;
+
+	let [game_index, game_difficulty] = [undefined, undefined];
+	if (type === "random") {
+		game_index = Math.floor(Math.random() * total_games);
+		game_difficulty = Math.floor(Math.random() * 3);
+	} else if (type === "ladder") {
+		if (
+			typeof previous_difficulty === "undefined" ||
+			typeof previous_index === "undefined"
+		) {
+			[game_index, game_difficulty] = [0, 0];
+		} else {
+			game_difficulty = previous_difficulty == 2 ? 0 : previous_difficulty + 1;
+			game_index =
+				previous_difficulty == 2 ? previous_index + 1 : previous_index;
+		}
+	}
+
+	return [game_index, game_difficulty];
+}
+
+const GameComponent = ({ index, difficulty, onFail, onSuccess }) => {
+	const Game = ALL_GAMES[index]["component"];
+	const props = ALL_GAMES[index]["props"][difficulty];
+
+	return <Game {...props} onSuccess={onSuccess} onFail={onFail} />;
+};
+
+// questions = -1 means infinity and any positive number means there will be n number of questions
+// for each question there will be t tries
+// difficuly = random, ladder
 export function Captcha({
-	difficulty,
+	difficulty = "ladder",
+	questions = -1,
 	tries = 1,
-	shuffle_on_retry = false,
 	on_complete,
 }) {
 	// initial, progress, success, error
-	const [captcha_state, set_captcha_state] = useState(
-		process.env.NODE_ENV === "development" ? "progress" : "initial"
-	);
+	const [captcha, set_captcha] = useState({
+		state: "initial",
+		questions,
+		try: tries,
+		index: undefined,
+		difficulty: undefined,
+	});
 	const [message, set_message] = useState(null);
+	const key_ref = useRef(1);
 
 	const handle_captcha_clicked = () => {
-		set_captcha_state((prev) => {
-			if (prev === "initial") {
-				return "progress";
-			} else {
-				return prev;
-			}
-		});
+		if (captcha.state !== "initial") {
+			return;
+		}
+
+		let [game_index, game_difficulty] = get_game(
+			captcha.index,
+			captcha.difficulty,
+			difficulty
+		);
+
+		set_captcha((prev) => ({
+			...prev,
+			state: prev["state"] === "initial" ? "progress" : prev,
+			questions: prev.questions - 1,
+			try: prev.try - 1,
+			index: game_index,
+			difficulty: game_difficulty,
+		}));
 	};
 
 	const handle_challenge_failed = ({ score, message }) => {
+		// if last question and last try do complete failed
+		if (
+			difficulty === "ladder" &&
+			captcha.index === ALL_GAMES.length - 1 &&
+			captcha.difficulty === 2 &&
+			captcha.try == 0
+		) {
+			set_captcha((prev) => ({
+				...prev,
+				state: "error",
+			}));
+		}
+
+		if (captcha.questions === 0 && captcha.try === 0) {
+			set_captcha((prev) => ({
+				...prev,
+				state: "error",
+			}));
+			return;
+		}
+
+		// if last try then, do next question
+		if (captcha.try === 0) {
+			set_message({
+				score,
+				message,
+				type: "failure",
+				option: "next",
+			});
+			return;
+		}
+
 		set_message({
 			score,
 			message,
 			type: "failure",
+			option: "retry",
 		});
 	};
 
+	const handle_game_retry = () => {
+		set_captcha((prev) => ({
+			...prev,
+			try: prev.try - 1,
+		}));
+		key_ref.current = Date.now();
+		set_message(null);
+	};
+
+	const handle_next_game = () => {
+		const [new_index, new_difficulty] = get_game(
+			captcha.index,
+			captcha.difficulty,
+			difficulty
+		);
+		set_captcha((prev) => ({
+			...prev,
+			try: tries - 1,
+			index: new_index,
+			questions: prev.questions - 1,
+			difficulty: new_difficulty,
+		}));
+
+		set_message(null);
+		key_ref.current += 1;
+	};
+
 	const handle_challenge_success = ({ score, message }) => {
+		// check if all the questions and the difficulty has been completed
+		// TODO add data like what was done in the game history using game_ref
+		if (captcha.index === ALL_GAMES.length - 1 && captcha.difficulty === 2) {
+			on_complete?.({
+				score: captcha.score,
+				message: "You completed all the challenge.",
+			});
+			set_captcha((prev) => ({ ...prev, state: "success" }));
+			return;
+		}
+
 		set_message({
 			score,
 			message,
 			type: "success",
+			option: "next",
 		});
 	};
 
@@ -58,20 +177,20 @@ export function Captcha({
 				onClick={handle_captcha_clicked}
 			>
 				<div className={styles["captcha__btn__main"]}>
-					{captcha_state === "initial" && (
+					{captcha.state === "initial" && (
 						<div className={styles["captcha__unchecked"]} />
 					)}
-					{captcha_state === "success" && (
+					{captcha.state === "success" && (
 						<RiCheckboxLine style={{ margin: -8 }} size={46} color="#41A818" />
 					)}
-					{captcha_state === "error" && (
+					{captcha.state === "error" && (
 						<RiErrorWarningFill
 							style={{ margin: -8 }}
 							size={46}
 							color="#A81818"
 						/>
 					)}
-					{captcha_state === "progress" && <LoadingIcon />}
+					{captcha.state === "progress" && <LoadingIcon />}
 					<p>Are you a human?</p>
 				</div>
 				<div className={styles["captcha__btn__footer"]}>
@@ -83,41 +202,12 @@ export function Captcha({
 					</p>
 				</div>
 			</button>
-			{captcha_state === "progress" && (
+			{captcha.state === "progress" && (
 				<div className={styles["captcha__content"]}>
-					{/* <PinGame
-						onFail={handle_challenge_failed}
-						onSuccess={handle_challenge_success}
-					/> */}
-					{/* <WASDReflexGame
-						onFail={handle_challenge_failed}
-						onSuccess={handle_challenge_success}
-					/> */}
-					{/* <MathGame
-						difficulty="hard"
-						question="2+3"
-						answer={5}
-						time={400}
-						onFail={handle_challenge_failed}
-						onSuccess={handle_challenge_success}
-					/> */}
-					{/* <AToZGame
-						difficulty="hard"
-						time={10}
-						onFail={handle_challenge_failed}
-						onSuccess={handle_challenge_success}
-					/> */}
-					{/* <ImposterEmojiGame
-						onFail={handle_challenge_failed}
-						onSuccess={handle_challenge_success}
-					/> */}
-					{/* <RememberTheOrderGame
-						onFail={handle_challenge_failed}
-						onSuccess={handle_challenge_success}
-					/> */}
-					<QuizGame
-						question="What is the capital city of Nepal?"
-						answer="Kathmandu"
+					<GameComponent
+						key={key_ref.current}
+						index={captcha.index}
+						difficulty={captcha.difficulty}
 						onFail={handle_challenge_failed}
 						onSuccess={handle_challenge_success}
 					/>
@@ -131,9 +221,16 @@ export function Captcha({
 									<BiSolidFlagCheckered color="#b0b0b0" size="32px" />
 								)}
 								<p>{message["message"]}</p>
-								<button style={{ marginTop: 16 }}>
-									<IoRefreshCircleOutline size="32px" />
-								</button>
+								{message.option === "retry" && (
+									<button style={{ marginTop: 16 }} onClick={handle_game_retry}>
+										<IoRefreshCircleOutline size="32px" />
+									</button>
+								)}
+								{message.option === "next" && (
+									<button style={{ marginTop: 16 }} onClick={handle_next_game}>
+										<BiSkipNextCircle size="32px" />
+									</button>
+								)}
 							</div>
 						</div>
 					)}

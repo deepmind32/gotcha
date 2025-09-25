@@ -15,7 +15,6 @@ export default function MathGame({
 	time = 10,
 	question,
 	answer,
-	level = "easy",
 	onFail,
 	onSuccess,
 }) {
@@ -46,7 +45,7 @@ export default function MathGame({
 
 	useEffect(() => {
 		input_ref.current && input_ref.current.focus();
-	}, [level]);
+	}, [difficulty]);
 
 	const handle_on_answered = () => {
 		if (!game.active) {
