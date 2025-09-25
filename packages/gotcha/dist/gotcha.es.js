@@ -47,7 +47,7 @@ function We() {
     function e(a) {
       if (a == null) return null;
       if (typeof a == "function")
-        return a.$$typeof === qe ? null : a.displayName || a.name || null;
+        return a.$$typeof === $e ? null : a.displayName || a.name || null;
       if (typeof a == "string") return a;
       switch (a) {
         case y:
@@ -60,7 +60,7 @@ function We() {
           return "Suspense";
         case Le:
           return "SuspenseList";
-        case $e:
+        case qe:
           return "Activity";
       }
       if (typeof a == "object")
@@ -235,7 +235,7 @@ React keys must be passed directly to JSX without using spread:
     function d(a) {
       typeof a == "object" && a !== null && a.$$typeof === j && a._store && (a._store.validated = 1);
     }
-    var p = z, j = Symbol.for("react.transitional.element"), R = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), x = Symbol.for("react.profiler"), h = Symbol.for("react.consumer"), b = Symbol.for("react.context"), f = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Le = Symbol.for("react.suspense_list"), ze = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), $e = Symbol.for("react.activity"), qe = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, Ie = Array.isArray, re = console.createTask ? console.createTask : function() {
+    var p = z, j = Symbol.for("react.transitional.element"), R = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), x = Symbol.for("react.profiler"), h = Symbol.for("react.consumer"), b = Symbol.for("react.context"), f = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Le = Symbol.for("react.suspense_list"), ze = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), qe = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, Ie = Array.isArray, re = console.createTask ? console.createTask : function() {
       return null;
     };
     p = {
@@ -431,7 +431,7 @@ function ut(e) {
 function dt(e) {
   return N({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { d: "M352.7 21.04l-194.4.41L21.04 159.3l.41 194.4L159.3 491l194.4-.4L491 352.7l-.4-194.4L352.7 21.04zm-8 19.66l126.2 125.7.4 178.3-123.1 123.6-2.6 2.6-178.3.4L41.08 345.6l-.38-178.3L166.4 41.08l178.3-.38zm-7.5 18.01l-163.3.34L58.71 174.8l.34 163.3L174.8 453.3l163.3-.3 115.2-115.8-.3-163.3L337.2 58.71zM108.4 210.4c5.3 0 10.8.5 16.4 1.3 5.7.8 11.5 2 17.5 3.6v20.5c-5.3-2.4-10.5-4.2-15.6-5.4-5.1-1.2-9.9-1.8-14.4-1.8-6 0-10.4.8-13.25 2.5-2.87 1.6-4.3 4.2-4.3 7.7 0 2.6.96 4.6 2.87 6.1 1.95 1.4 5.48 2.7 10.58 3.7l10.6 2.1c10.8 2.2 18.5 5.5 23.1 9.9 4.5 4.5 6.8 10.8 6.8 18.9 0 10.7-3.2 18.7-9.5 24-6.4 5.2-16.1 7.8-29.2 7.8-6.1 0-12.3-.6-18.51-1.8-6.2-1.1-12.41-2.9-18.61-5.2v-21.1c6.2 3.3 12.19 5.8 17.96 7.5 5.82 1.6 11.46 2.4 16.76 2.4 5.5 0 9.7-.9 12.6-2.7 2.9-1.8 4.4-4.4 4.4-7.8 0-3.1-1-5.4-3-7.1-2-1.6-5.9-3.1-11.8-4.4l-9.7-2.1c-9.73-2.1-16.85-5.4-21.37-10-4.47-4.5-6.7-10.7-6.7-18.4 0-9.7 3.12-17.1 9.37-22.3 6.25-5.3 15.24-7.9 27-7.9zm187.7 0c15.6 0 27.8 4.5 36.7 13.5 8.9 8.9 13.3 21.2 13.3 37 0 15.7-4.4 28-13.3 37-8.9 8.9-21.1 13.4-36.7 13.4-15.6 0-27.8-4.5-36.7-13.4-8.9-9-13.3-21.3-13.3-37 0-15.8 4.4-28.1 13.3-37 8.9-9 21.1-13.5 36.7-13.5zm-141.9 1.8h89.6v18.9h-32.2v78.3h-25.1v-78.3h-32.3v-18.9zm205.8 0h41.6c12.3 0 21.8 2.8 28.4 8.3 6.7 5.4 10 13.2 10 23.4s-3.3 18.1-10 23.6c-6.6 5.4-16.1 8.2-28.4 8.2H385v33.7h-25v-97.2zm-63.9 16.4c-7.7 0-13.6 2.8-17.8 8.5-4.2 5.6-6.3 13.6-6.3 23.8 0 10.2 2.1 18.1 6.3 23.8 4.2 5.6 10.1 8.4 17.8 8.4 7.7 0 13.6-2.8 17.8-8.4 4.2-5.7 6.3-13.6 6.3-23.8 0-10.2-2.1-18.2-6.3-23.8-4.2-5.7-10.1-8.5-17.8-8.5zm88.9 1.8v27.1h13.9c4.9 0 8.6-1.2 11.3-3.5 2.6-2.4 3.9-5.8 3.9-10.1s-1.3-7.7-3.9-10c-2.7-2.4-6.4-3.5-11.3-3.5H385z" }, child: [] }] })(e);
 }
-const _t = "_captcha__wrapper_a2j9d_5", mt = "_buttons_a2j9d_59", ht = "_captcha__failed_a2j9d_109", ft = "_captcha__failed__content_a2j9d_139", pt = "_captcha__btn_a2j9d_167", gt = "_captcha__btn__main_a2j9d_199", yt = "_captcha__btn__footer_a2j9d_223", wt = "_captcha__unchecked_a2j9d_233", vt = "_captcha__content_a2j9d_249", T = {
+const _t = "_captcha__wrapper_69j60_5", mt = "_buttons_69j60_59", ht = "_captcha__failed_69j60_109", ft = "_captcha__failed__content_69j60_139", pt = "_captcha__btn_69j60_167", gt = "_captcha__btn__main_69j60_199", yt = "_captcha__btn__footer_69j60_223", wt = "_captcha__unchecked_69j60_233", vt = "_captcha__content_69j60_249", T = {
   captcha__wrapper: _t,
   buttons: mt,
   captcha__failed: ht,
@@ -471,7 +471,7 @@ const bt = "_timer__wrapper_17tk4_1", ie = {
 function jt(e) {
   return e < 10;
 }
-function q({ start: e = 60, on_time_finished: s, on_change: r }) {
+function $({ start: e = 60, on_time_finished: s, on_change: r }) {
   const [c, o] = E(e), i = A(e);
   return S(() => {
     if (c <= 0) {
@@ -535,7 +535,7 @@ function Y({
         /* @__PURE__ */ t.jsx("h3", { children: "Quiz..." }),
         /* @__PURE__ */ t.jsx("p", { children: "Can you answer??" })
       ] }),
-      /* @__PURE__ */ t.jsx(q, { start: r, on_time_finished: l })
+      /* @__PURE__ */ t.jsx($, { start: r, on_time_finished: l })
     ] }),
     /* @__PURE__ */ t.jsxs("main", { className: Ct.main, children: [
       /* @__PURE__ */ t.jsxs("p", { children: [
@@ -661,7 +661,7 @@ function oe({
         ] })
       ] }),
       /* @__PURE__ */ t.jsx(
-        q,
+        $,
         {
           start: s,
           on_time_finished: d,
@@ -690,7 +690,7 @@ function oe({
     ] })
   ] });
 }
-function $(e, s, r = 1) {
+function q(e, s, r = 1) {
   const o = e, i = [];
   let n = 0;
   for (; n < o; )
@@ -2162,7 +2162,7 @@ function ce({
     user_clicked: [],
     active: !0
   }), [n, _] = E(
-    Q($(U.length), e)
+    Q(q(U.length), e)
   ), l = () => {
     if (o.stage === 0)
       i((u) => ({
@@ -2178,12 +2178,12 @@ function ce({
         instruction: "Click on the old emojis"
       }));
       let u = Q(
-        $(U.length),
+        q(U.length),
         e * (e - 1)
       );
       for (; u.some((p) => o.correct_indexes.includes(p)); )
         u = Q(
-          $(U.length),
+          q(U.length),
           e * (e - 1)
         );
       const d = Ae([...n, ...u]);
@@ -2234,7 +2234,7 @@ function ce({
         ] })
       ] }),
       /* @__PURE__ */ t.jsx(
-        q,
+        $,
         {
           start: s[o?.stage ?? 0],
           on_time_finished: l
@@ -2262,12 +2262,12 @@ function ce({
     ] })
   ] });
 }
-const At = "_question_2wb7v_1", Lt = "_horizontal_flipped_2wb7v_15", zt = "_vertical_flipped_2wb7v_23", $t = "_both_flipped_2wb7v_31", qt = "_input__wrapper_2wb7v_39", It = "_input_2wb7v_39", J = {
+const At = "_question_2wb7v_1", Lt = "_horizontal_flipped_2wb7v_15", zt = "_vertical_flipped_2wb7v_23", qt = "_both_flipped_2wb7v_31", $t = "_input__wrapper_2wb7v_39", It = "_input_2wb7v_39", J = {
   question: At,
   horizontal_flipped: Lt,
   vertical_flipped: zt,
-  both_flipped: $t,
-  input__wrapper: qt,
+  both_flipped: qt,
+  input__wrapper: $t,
   input: It
 }, Dt = {
   easy: "normal",
@@ -2319,7 +2319,7 @@ function le({
         /* @__PURE__ */ t.jsx("h3", { children: "Solve this simple maths" }),
         /* @__PURE__ */ t.jsx("p", { children: "Watch out for the time." })
       ] }),
-      /* @__PURE__ */ t.jsx(q, { start: s, on_time_finished: g })
+      /* @__PURE__ */ t.jsx($, { start: s, on_time_finished: g })
     ] }),
     /* @__PURE__ */ t.jsxs("main", { children: [
       /* @__PURE__ */ t.jsx("p", { className: `${J.question} ${J[Dt[e]]}`, children: r }),
@@ -2339,11 +2339,11 @@ function le({
     ] })
   ] });
 }
-const Zt = "_main_1kxxm_1", Wt = "_instruction_1kxxm_9", Vt = "_pattern_grid_1kxxm_23", K = {
+const Zt = "_main_2gc3q_1", Wt = "_instruction_2gc3q_9", Vt = "_pattern_grid_2gc3q_23", K = {
   main: Zt,
   instruction: Wt,
   pattern_grid: Vt,
-  "button--correct": "_button--correct_1kxxm_57"
+  "button--correct": "_button--correct_2gc3q_59"
 };
 function ue({
   width: e = 3,
@@ -2357,7 +2357,7 @@ function ue({
     active: !0,
     stage: 0,
     instruction: "Memorize the patterns",
-    correct: Q($(e * e), s),
+    correct: Q(q(e * e), s),
     clicked: []
   }), l = () => {
     n.stage === 0 ? _((u) => ({
@@ -2402,7 +2402,7 @@ function ue({
         !r && /* @__PURE__ */ t.jsx("p", { children: "Remember the number patterns and click the pattern later" })
       ] }),
       /* @__PURE__ */ t.jsx(
-        q,
+        $,
         {
           start: c[n?.stage ?? 0],
           on_time_finished: l
@@ -2416,7 +2416,7 @@ function ue({
         {
           className: K.pattern_grid,
           style: { gridTemplateColumns: `repeat(${e}, auto)` },
-          children: $(e * e).map((u) => /* @__PURE__ */ t.jsx(
+          children: q(e * e).map((u) => /* @__PURE__ */ t.jsx(
             "button",
             {
               onClick: g.bind(null, u),
@@ -2434,7 +2434,7 @@ const Bt = "_form__pin_1kyyk_1", Ht = {
   form__pin: Bt
 };
 function Ee(e, s) {
-  const r = $(s).map((c) => e.current[c].value);
+  const r = q(s).map((c) => e.current[c].value);
   return r.map((c) => c.length > 0).every(Boolean) ? r.reduce((c, o) => `${c}${o}`) : !1;
 }
 function Yt({ digits: e = 4, onChange: s }) {
@@ -2447,7 +2447,7 @@ function Yt({ digits: e = 4, onChange: s }) {
     const _ = n.target.value;
     _.length > 0 && n.key === "Backspace" ? (r.current[i].value = null, Ee(r, e) || s(void 0)) : i !== 0 && (n.key === "Backspace" || n.key === "ArrowLeft") ? r.current[i - 1].focus() : i !== e - 1 && n.key === "ArrowRight" ? r.current[i + 1].focus() : _.length === 1 && n.key.length == 1 && !n.ctrlKey && !n.metaKey && (r.current[i].value = String(n.key), n.preventDefault(), i < e - 1 && r.current[i + 1].focus());
   };
-  return /* @__PURE__ */ t.jsx("div", { className: Ht.form__pin, children: $(e).map((i) => /* @__PURE__ */ t.jsx(
+  return /* @__PURE__ */ t.jsx("div", { className: Ht.form__pin, children: q(e).map((i) => /* @__PURE__ */ t.jsx(
     "input",
     {
       type: "number",
@@ -2501,7 +2501,7 @@ function Ne({
         n === "verify-pin" && /* @__PURE__ */ t.jsx("p", { children: "Human can remember their earlier PIN" })
       ] }),
       /* @__PURE__ */ t.jsx(
-        q,
+        $,
         {
           start: n === "enter-pin" ? s[0] : s[1],
           on_time_finished: d
@@ -2660,7 +2660,7 @@ function de({
         /* @__PURE__ */ t.jsx("p", { children: "Use WASD or arrow keys to hit the glowing key (yellow)." })
       ] }),
       /* @__PURE__ */ t.jsx(
-        q,
+        $,
         {
           start: g,
           on_time_finished: () => {
@@ -3159,7 +3159,7 @@ const B = [
       }
     ]
   }
-];
+].slice(2, 3);
 function Pe(e, s, r) {
   const c = B.length;
   let [o, i] = [void 0, void 0];

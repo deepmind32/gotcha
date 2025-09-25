@@ -24,8 +24,10 @@
 	border: 2px solid var(--color-dark-grey);
 	font-size: 20px;
 	font-weight: 600;
+	transition: all 100ms ease-out !important;
 }
 
 .button--correct {
 	background-color: var(--color-grey);
+	transition: all 100ms ease-in !important;
 }
