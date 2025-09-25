@@ -9,10 +9,10 @@ import './index.css';var H = { exports: {} }, W = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var ye;
+var we;
 function De() {
-  if (ye) return W;
-  ye = 1;
+  if (we) return W;
+  we = 1;
   var e = Symbol.for("react.transitional.element"), s = Symbol.for("react.fragment");
   function n(c, o, r) {
     var i = null;
@@ -54,7 +54,7 @@ function Ze() {
           return "Fragment";
         case _:
           return "Profiler";
-        case y:
+        case w:
           return "StrictMode";
         case Z:
           return "Suspense";
@@ -150,7 +150,7 @@ function Ze() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), a = this.props.ref, a !== void 0 ? a : null;
     }
-    function w(a, m, v, j, M, O, ne, se) {
+    function y(a, m, v, j, M, O, ne, se) {
       return v = O.ref, a = {
         $$typeof: x,
         type: a,
@@ -200,7 +200,7 @@ function Ze() {
         var $ = Object.keys(m).filter(function(Ie) {
           return Ie !== "key";
         });
-        j = 0 < $.length ? "{key: someKey, " + $.join(": ..., ") + ": ...}" : "{key: someKey}", we[k + j] || ($ = 0 < $.length ? "{" + $.join(": ..., ") + ": ...}" : "{}", console.error(
+        j = 0 < $.length ? "{key: someKey, " + $.join(": ..., ") + ": ...}" : "{key: someKey}", ye[k + j] || ($ = 0 < $.length ? "{" + $.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -211,7 +211,7 @@ React keys must be passed directly to JSX without using spread:
           k,
           $,
           k
-        ), we[k + j] = !0);
+        ), ye[k + j] = !0);
       }
       if (k = null, v !== void 0 && (n(v), k = "" + v), i(m) && (n(m.key), k = "" + m.key), "key" in m) {
         v = {};
@@ -221,7 +221,7 @@ React keys must be passed directly to JSX without using spread:
       return k && d(
         v,
         typeof a == "function" ? a.displayName || a.name || "Unknown" : a
-      ), w(
+      ), y(
         a,
         k,
         O,
@@ -235,7 +235,7 @@ React keys must be passed directly to JSX without using spread:
     function f(a) {
       typeof a == "object" && a !== null && a.$$typeof === x && a._store && (a._store.validated = 1);
     }
-    var p = A, x = Symbol.for("react.transitional.element"), N = Symbol.for("react.portal"), g = Symbol.for("react.fragment"), y = Symbol.for("react.strict_mode"), _ = Symbol.for("react.profiler"), b = Symbol.for("react.consumer"), h = Symbol.for("react.context"), D = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Ae = Symbol.for("react.suspense_list"), Le = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), ze = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, qe = Array.isArray, re = console.createTask ? console.createTask : function() {
+    var p = A, x = Symbol.for("react.transitional.element"), N = Symbol.for("react.portal"), g = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), _ = Symbol.for("react.profiler"), b = Symbol.for("react.consumer"), h = Symbol.for("react.context"), D = Symbol.for("react.forward_ref"), Z = Symbol.for("react.suspense"), Ae = Symbol.for("react.suspense_list"), Le = Symbol.for("react.memo"), _e = Symbol.for("react.lazy"), ze = Symbol.for("react.activity"), $e = Symbol.for("react.client.reference"), te = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, me = Object.prototype.hasOwnProperty, qe = Array.isArray, re = console.createTask ? console.createTask : function() {
       return null;
     };
     p = {
@@ -246,7 +246,7 @@ React keys must be passed directly to JSX without using spread:
     var he, fe = {}, pe = p.react_stack_bottom_frame.bind(
       p,
       r
-    )(), ge = re(c(r)), we = {};
+    )(), ge = re(c(r)), ye = {};
     V.Fragment = g, V.jsx = function(a, m, v, j, M) {
       var O = 1e4 > te.recentlyCreatedOwnerStacks++;
       return l(
@@ -431,7 +431,7 @@ function lt(e) {
 function ut(e) {
   return E({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { d: "M352.7 21.04l-194.4.41L21.04 159.3l.41 194.4L159.3 491l194.4-.4L491 352.7l-.4-194.4L352.7 21.04zm-8 19.66l126.2 125.7.4 178.3-123.1 123.6-2.6 2.6-178.3.4L41.08 345.6l-.38-178.3L166.4 41.08l178.3-.38zm-7.5 18.01l-163.3.34L58.71 174.8l.34 163.3L174.8 453.3l163.3-.3 115.2-115.8-.3-163.3L337.2 58.71zM108.4 210.4c5.3 0 10.8.5 16.4 1.3 5.7.8 11.5 2 17.5 3.6v20.5c-5.3-2.4-10.5-4.2-15.6-5.4-5.1-1.2-9.9-1.8-14.4-1.8-6 0-10.4.8-13.25 2.5-2.87 1.6-4.3 4.2-4.3 7.7 0 2.6.96 4.6 2.87 6.1 1.95 1.4 5.48 2.7 10.58 3.7l10.6 2.1c10.8 2.2 18.5 5.5 23.1 9.9 4.5 4.5 6.8 10.8 6.8 18.9 0 10.7-3.2 18.7-9.5 24-6.4 5.2-16.1 7.8-29.2 7.8-6.1 0-12.3-.6-18.51-1.8-6.2-1.1-12.41-2.9-18.61-5.2v-21.1c6.2 3.3 12.19 5.8 17.96 7.5 5.82 1.6 11.46 2.4 16.76 2.4 5.5 0 9.7-.9 12.6-2.7 2.9-1.8 4.4-4.4 4.4-7.8 0-3.1-1-5.4-3-7.1-2-1.6-5.9-3.1-11.8-4.4l-9.7-2.1c-9.73-2.1-16.85-5.4-21.37-10-4.47-4.5-6.7-10.7-6.7-18.4 0-9.7 3.12-17.1 9.37-22.3 6.25-5.3 15.24-7.9 27-7.9zm187.7 0c15.6 0 27.8 4.5 36.7 13.5 8.9 8.9 13.3 21.2 13.3 37 0 15.7-4.4 28-13.3 37-8.9 8.9-21.1 13.4-36.7 13.4-15.6 0-27.8-4.5-36.7-13.4-8.9-9-13.3-21.3-13.3-37 0-15.8 4.4-28.1 13.3-37 8.9-9 21.1-13.5 36.7-13.5zm-141.9 1.8h89.6v18.9h-32.2v78.3h-25.1v-78.3h-32.3v-18.9zm205.8 0h41.6c12.3 0 21.8 2.8 28.4 8.3 6.7 5.4 10 13.2 10 23.4s-3.3 18.1-10 23.6c-6.6 5.4-16.1 8.2-28.4 8.2H385v33.7h-25v-97.2zm-63.9 16.4c-7.7 0-13.6 2.8-17.8 8.5-4.2 5.6-6.3 13.6-6.3 23.8 0 10.2 2.1 18.1 6.3 23.8 4.2 5.6 10.1 8.4 17.8 8.4 7.7 0 13.6-2.8 17.8-8.4 4.2-5.7 6.3-13.6 6.3-23.8 0-10.2-2.1-18.2-6.3-23.8-4.2-5.7-10.1-8.5-17.8-8.5zm88.9 1.8v27.1h13.9c4.9 0 8.6-1.2 11.3-3.5 2.6-2.4 3.9-5.8 3.9-10.1s-1.3-7.7-3.9-10c-2.7-2.4-6.4-3.5-11.3-3.5H385z" }, child: [] }] })(e);
 }
-const dt = "_captcha__wrapper_4k6ae_5", _t = "_buttons_4k6ae_59", mt = "_captcha__failed_4k6ae_109", ht = "_captcha__failed__content_4k6ae_139", ft = "_captcha__btn_4k6ae_167", pt = "_captcha__btn__main_4k6ae_199", gt = "_captcha__btn__footer_4k6ae_223", wt = "_captcha__unchecked_4k6ae_233", yt = "_captcha__content_4k6ae_249", P = {
+const dt = "_captcha__wrapper_4k6ae_5", _t = "_buttons_4k6ae_59", mt = "_captcha__failed_4k6ae_109", ht = "_captcha__failed__content_4k6ae_139", ft = "_captcha__btn_4k6ae_167", pt = "_captcha__btn__main_4k6ae_199", gt = "_captcha__btn__footer_4k6ae_223", yt = "_captcha__unchecked_4k6ae_233", wt = "_captcha__content_4k6ae_249", P = {
   captcha__wrapper: dt,
   buttons: _t,
   captcha__failed: mt,
@@ -439,8 +439,8 @@ const dt = "_captcha__wrapper_4k6ae_5", _t = "_buttons_4k6ae_59", mt = "_captcha
   captcha__btn: ft,
   captcha__btn__main: pt,
   captcha__btn__footer: gt,
-  captcha__unchecked: wt,
-  captcha__content: yt
+  captcha__unchecked: yt,
+  captcha__content: wt
 }, ke = [
   Qe,
   Xe,
@@ -512,7 +512,7 @@ function Y({
       score: 0,
       message: "Looks like you are not a human"
     });
-  }, [d, u] = C(!0), w = () => {
+  }, [d, u] = C(!0), y = () => {
     if (!r.current || !d)
       return;
     r.current.value.toLocaleLowerCase() === s.toLocaleLowerCase() ? c({
@@ -523,7 +523,7 @@ function Y({
       message: "Wasn't it obvious for a human??"
     }), u(!1);
   }, l = (f) => {
-    f.key === "Enter" && w();
+    f.key === "Enter" && y();
   };
   return /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
     /* @__PURE__ */ t.jsxs("header", { children: [
@@ -549,7 +549,7 @@ function Y({
           onKeyDown: l
         }
       ),
-      /* @__PURE__ */ t.jsx(q, { onClick: w, children: "Submit" })
+      /* @__PURE__ */ t.jsx(q, { onClick: y, children: "Submit" })
     ] })
   ] });
 }
@@ -599,15 +599,15 @@ function oe({
     light_glow: !1,
     lights: null,
     glow: !1
-  }), [d, u] = C(s), w = T(null);
+  }), [d, u] = C(s), y = T(null);
   let l = Ce;
   e && (l = [...Ce].reverse()), L(() => {
-    w.current.focus();
-    const g = Array(n).fill(null).map((y) => ({
+    y.current.focus();
+    const g = Array(n).fill(null).map((w) => ({
       time: Math.floor(Math.random() * (s - 1)),
       duration: Math.floor(Math.random() * s * 100)
     }));
-    i((y) => ({ ...y, lights: g }));
+    i((w) => ({ ...w, lights: g }));
   }, []);
   const f = () => {
     r.active && o({
@@ -617,11 +617,11 @@ function oe({
   }, p = (g) => {
     if (!r.active)
       return;
-    const y = g.key;
+    const w = g.key;
     r.glow && (o({
       score: (r.index + 1) / 26,
       message: "Told you. Don't type while the light is glowing"
-    }), i((_) => ({ ..._, active: !1 }))), y === l[r.index + 1] ? (y === l.at(-1) && (c({
+    }), i((_) => ({ ..._, active: !1 }))), w === l[r.index + 1] ? (w === l.at(-1) && (c({
       score: 1,
       message: "Didn't expect you to be that fast"
     }), i((_) => ({ ..._, active: !1 }))), i((_) => ({ ..._, index: _.index + 1 }))) : o({
@@ -629,14 +629,14 @@ function oe({
       message: "You are the typo master"
     });
   }, x = () => {
-    w.current.value = "";
+    y.current.value = "";
   }, N = (g) => {
     u(g);
   };
   return L(() => {
     let g;
     if (r.lights) {
-      const y = r.lights.map((h) => h.time), _ = r.lights.map((h) => h.duration), b = y.indexOf(d);
+      const w = r.lights.map((h) => h.time), _ = r.lights.map((h) => h.duration), b = w.indexOf(d);
       b !== -1 && (i((h) => ({ ...h, glow: !0 })), g = setTimeout(() => {
         i((h) => ({ ...h, glow: !1 }));
       }, _[b]));
@@ -677,7 +677,7 @@ function oe({
         "input",
         {
           type: "text",
-          ref: w,
+          ref: y,
           onKeyDown: p,
           onKeyUp: x,
           className: G.alphabet_input
@@ -2188,7 +2188,7 @@ function ce({
       score: o.score / e,
       message: "Time and tides waits for none"
     }), r((l) => ({ ...l, active: !1 })));
-  }, w = (l) => {
+  }, y = (l) => {
     if (!(o.stage !== 2 || !o.active))
       if (o.correct_indexes.includes(l)) {
         if (o.score === e - 1) {
@@ -2247,7 +2247,7 @@ function ce({
           children: i.map((l, f) => /* @__PURE__ */ t.jsx(
             "button",
             {
-              onClick: w.bind(null, l),
+              onClick: y.bind(null, l),
               className: o.user_clicked.includes(l) ? F["button--correct"] : "",
               children: /* @__PURE__ */ t.jsx("span", { children: U[l] })
             },
@@ -2281,7 +2281,7 @@ function le({
 }) {
   const [i, d] = C({
     active: !0
-  }), u = T(null), w = () => {
+  }), u = T(null), y = () => {
     if (!i.active)
       return;
     const p = +u.current.value;
@@ -2315,7 +2315,7 @@ function le({
         /* @__PURE__ */ t.jsx("h3", { children: "Solve this simple maths" }),
         /* @__PURE__ */ t.jsx("p", { children: "Watch out for the time." })
       ] }),
-      /* @__PURE__ */ t.jsx(z, { start: s, on_time_finished: w })
+      /* @__PURE__ */ t.jsx(z, { start: s, on_time_finished: y })
     ] }),
     /* @__PURE__ */ t.jsxs("main", { children: [
       /* @__PURE__ */ t.jsx("p", { className: `${J.question} ${J[It[e]]}`, children: n }),
@@ -2371,7 +2371,7 @@ function ue({
       score: i.clicked.length,
       message: "Better care about your time at next round"
     }));
-  }, w = (l) => {
+  }, y = (l) => {
     if (!i.active || i.stage !== 2)
       return;
     const f = Math.max(0, i.clicked.length);
@@ -2415,7 +2415,7 @@ function ue({
           children: I(e * e).map((l) => /* @__PURE__ */ t.jsx(
             "button",
             {
-              onClick: w.bind(null, l),
+              onClick: y.bind(null, l),
               className: (i.clicked.includes(l) || i.stage !== 2) && i.correct.includes(l) ? K["button--correct"] : "",
               children: n && (i.clicked.includes(l) || i.stage !== 2) && i.correct.includes(l) && /* @__PURE__ */ t.jsx("span", { children: i.correct.indexOf(l) + 1 })
             },
@@ -2466,18 +2466,18 @@ function Ne({
   onFail: n,
   onSuccess: c
 }) {
-  const [o, r] = C(void 0), [i, d] = C("enter-pin"), [u, w] = C("0000"), l = T(!1), f = () => {
+  const [o, r] = C(void 0), [i, d] = C("enter-pin"), [u, y] = C("0000"), l = T(!1), f = () => {
     l.current || n({
       score: 0,
       message: "A turtle is faster than you"
     });
-  }, p = (y) => {
-    r(y);
-  }, x = (y) => {
-    y.preventDefault(), o && (d("verify-pin"), w(+o < Math.pow(10, e) / 2 ? "9999" : "0000"));
-  }, N = (y) => {
-    const _ = +u + y;
-    _ >= 0 && _ <= Math.pow(10, e) - 1 && w(String(_));
+  }, p = (w) => {
+    r(w);
+  }, x = (w) => {
+    w.preventDefault(), o && (d("verify-pin"), y(+o < Math.pow(10, e) / 2 ? "9999" : "0000"));
+  }, N = (w) => {
+    const _ = +u + w;
+    _ >= 0 && _ <= Math.pow(10, e) - 1 && y(String(_));
   }, g = () => {
     l.current = !0, o === u ? c({
       score: 1,
@@ -2597,7 +2597,7 @@ function de({
     index: 0,
     streak: 0,
     max_streak: 0
-  }), [w, l] = C(s[0]), f = () => {
+  }), [y, l] = C(s[0]), f = () => {
     u.current.active = !0, u.current.first_stage_done = !0, l(s[1]);
   }, p = () => {
     u.current.max_streak >= e ? c({
@@ -2626,10 +2626,10 @@ function de({
     }, 600 * n);
     return () => clearInterval(x);
   }, [n]), L(() => {
-    const x = /* @__PURE__ */ new Set(), N = (y) => {
-      const _ = _r(y.key);
-      if (!_ || x.has(y.key)) return;
-      x.add(y.key);
+    const x = /* @__PURE__ */ new Set(), N = (w) => {
+      const _ = _r(w.key);
+      if (!_ || x.has(w.key)) return;
+      x.add(w.key);
       const b = u.current.index - 1, h = u.current.word[b], D = ur(
         u.current.active,
         _,
@@ -2641,8 +2641,8 @@ function de({
       )) : D === "wrong" && (u.current.corrects[b] = !1, u.current.streak = 0)), i((Z) => ({ ...Z, [_]: D })), setTimeout(() => {
         i((Z) => ({ ...Z, [_]: "normal" }));
       }, 150);
-    }, g = (y) => {
-      x.delete(y.key);
+    }, g = (w) => {
+      x.delete(w.key);
     };
     return window.addEventListener("keydown", N), window.addEventListener("keyup", g), () => {
       window.removeEventListener("keydown", N), window.removeEventListener("keyup", g);
@@ -2656,7 +2656,7 @@ function de({
       /* @__PURE__ */ t.jsx(
         z,
         {
-          start: w,
+          start: y,
           on_time_finished: () => {
             u.current.first_stage_done ? p() : f();
           }
@@ -3164,9 +3164,9 @@ const mr = ({ index: e, difficulty: s, onFail: n, onSuccess: c }) => {
   return /* @__PURE__ */ t.jsx(o, { ...r, onSuccess: c, onFail: n });
 };
 function fr({
-  difficulty: e = "random",
+  difficulty: e = "ladder",
   questions: s = -1,
-  tries: n = 1,
+  tries: n = 2,
   show_cancel: c = !0,
   onComplete: o
 }) {
@@ -3177,7 +3177,7 @@ function fr({
     index: void 0,
     difficulty: void 0,
     score: 0
-  }), [d, u] = C(null), w = T(1), l = T({
+  }), [d, u] = C(null), y = T(1), l = T({
     total_games: 0,
     total_retries: 0,
     total_fail: 0,
@@ -3205,7 +3205,7 @@ function fr({
   }, p = ({ score: _, message: b }) => {
     if (l.current = {
       ...l.current,
-      total_fail: l.current.total_fail + 1
+      total_fail: r.try === 0 ? l.current.total_fail + 1 : l.current.total_fail
     }, e === "ladder" && r.index === B.length - 1 && r.difficulty === 2 && r.try == 0) {
       i((h) => ({
         ...h,
@@ -3250,7 +3250,7 @@ function fr({
     }, i((_) => ({
       ..._,
       try: _.try - 1
-    })), w.current = Date.now(), u(null);
+    })), y.current = Date.now(), u(null);
   }, N = () => {
     l.current = {
       ...l.current,
@@ -3267,7 +3267,7 @@ function fr({
       index: _,
       questions: h.questions - 1,
       difficulty: b
-    })), u(null), w.current += 1;
+    })), u(null), y.current += 1;
   }, g = ({ score: _, message: b }) => {
     if (l.current = {
       ...l.current,
@@ -3291,7 +3291,7 @@ function fr({
       type: "success",
       option: "next"
     });
-  }, y = () => {
+  }, w = () => {
     i((_) => ({
       ..._,
       state: "success"
@@ -3338,7 +3338,7 @@ function fr({
           onFail: p,
           onSuccess: g
         },
-        w.current
+        y.current
       ),
       d && /* @__PURE__ */ t.jsx("div", { className: P.captcha__failed, children: /* @__PURE__ */ t.jsxs("div", { className: P.captcha__failed__content, children: [
         d.type === "failure" ? /* @__PURE__ */ t.jsx(ot, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ t.jsx(ct, { color: "#b0b0b0", size: "32px" }),
@@ -3346,7 +3346,7 @@ function fr({
         d.option === "retry" && /* @__PURE__ */ t.jsx("button", { style: { marginTop: 16 }, onClick: x, children: /* @__PURE__ */ t.jsx(lt, { size: "32px" }) }),
         d.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: P.buttons, children: [
           /* @__PURE__ */ t.jsx("button", { onClick: N, children: /* @__PURE__ */ t.jsx(it, { size: "32px" }) }),
-          c && /* @__PURE__ */ t.jsx("button", { onClick: y, children: /* @__PURE__ */ t.jsx(ut, { size: "32px", color: "var(--color-red)" }) })
+          c && /* @__PURE__ */ t.jsx("button", { onClick: w, children: /* @__PURE__ */ t.jsx(ut, { size: "32px", color: "var(--color-red)" }) })
         ] })
       ] }) })
     ] })

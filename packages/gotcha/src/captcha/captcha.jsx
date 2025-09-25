@@ -46,9 +46,9 @@ const GameComponent = ({ index, difficulty, onFail, onSuccess }) => {
 // for each question there will be t tries
 // difficuly = random, ladder
 export function Captcha({
-	difficulty = "random",
+	difficulty = "ladder",
 	questions = -1,
-	tries = 1,
+	tries = 2,
 	show_cancel = true,
 	onComplete,
 }) {
@@ -99,7 +99,10 @@ export function Captcha({
 	const handle_challenge_failed = ({ score, message }) => {
 		record_ref.current = {
 			...record_ref.current,
-			total_fail: record_ref.current.total_fail + 1,
+			total_fail:
+				captcha.try === 0
+					? record_ref.current.total_fail + 1
+					: record_ref.current.total_fail,
 		};
 
 		// if last question and last try do complete failed
