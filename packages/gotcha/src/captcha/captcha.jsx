@@ -48,9 +48,10 @@ const GameComponent = ({ index, difficulty, onFail, onSuccess }) => {
 export function Captcha({
 	difficulty = "random",
 	questions = -1,
-	tries = 2,
+	tries = 1,
 	show_cancel = true,
-	on_complete,
+	record = true,
+	onComplete,
 }) {
 	// initial, progress, success, error
 	const [captcha, set_captcha] = useState({
@@ -59,6 +60,7 @@ export function Captcha({
 		try: tries,
 		index: undefined,
 		difficulty: undefined,
+		score: 0,
 	});
 	const [message, set_message] = useState(null);
 	const key_ref = useRef(1);
@@ -95,19 +97,29 @@ export function Captcha({
 			set_captcha((prev) => ({
 				...prev,
 				state: "error",
+				score: prev.score + score,
 			}));
+			onComplete({
+				score: captcha.score + score,
+			});
+			return;
 		}
 
 		if (captcha.questions === 0 && captcha.try === 0) {
 			set_captcha((prev) => ({
 				...prev,
 				state: "error",
+				score: prev.score + score,
 			}));
+			onComplete({
+				score: captcha.score + score,
+			});
 			return;
 		}
 
 		// if last try then, do next question
 		if (captcha.try === 0) {
+			set_captcha((prev) => ({ ...prev, score: prev.score + score }));
 			set_message({
 				score,
 				message,
@@ -116,6 +128,8 @@ export function Captcha({
 			});
 			return;
 		}
+
+		set_captcha((prev) => ({ ...prev, score: prev.score + score }));
 
 		set_message({
 			score,
@@ -155,14 +169,24 @@ export function Captcha({
 	const handle_challenge_success = ({ score, message }) => {
 		// check if all the questions and the difficulty has been completed
 		// TODO add data like what was done in the game history using game_ref
-		if (captcha.index === ALL_GAMES.length - 1 && captcha.difficulty === 2) {
-			on_complete?.({
-				score: captcha.score,
+		if (
+			difficulty === "ladder" &&
+			captcha.index === ALL_GAMES.length - 1 &&
+			captcha.difficulty === 2
+		) {
+			onComplete?.({
+				score: captcha.score + score,
 				message: "You completed all the challenge.",
 			});
-			set_captcha((prev) => ({ ...prev, state: "success" }));
+			set_captcha((prev) => ({
+				...prev,
+				state: "success",
+				score: prev.score + score,
+			}));
 			return;
 		}
+
+		set_captcha((prev) => ({ ...prev, score: captcha.score + score }));
 
 		set_message({
 			score,
@@ -177,6 +201,9 @@ export function Captcha({
 			...prev,
 			state: "success",
 		}));
+		onComplete({
+			score: captcha.score,
+		});
 	};
 
 	return (

@@ -71,7 +71,7 @@ export default function WASDReflexGame({
 			});
 		} else {
 			onFail({
-				score: 0,
+				score: game_ref.current.max_streak / target,
 				message: "Didn't knew you were such a loser.",
 			});
 		}

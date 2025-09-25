@@ -70,7 +70,7 @@ export default function AToZGame({
 	const handle_time_finished = () => {
 		if (game.active) {
 			onFail({
-				score: 0,
+				score: (game.index + 1) / 26,
 				message: "My brother could type it faster.",
 			});
 		}
@@ -85,8 +85,8 @@ export default function AToZGame({
 		const entered_key = event.key;
 
 		if (game.glow) {
-			onSuccess({
-				score: 0,
+			onFail({
+				score: (game.index + 1) / 26,
 				message: "Told you. Don't type while the light is glowing",
 			});
 

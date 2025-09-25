@@ -457,4 +457,4 @@ export const ALL_GAMES = [
 			},
 		],
 	},  
-].slice(0, 1);
+].slice(6, 7);

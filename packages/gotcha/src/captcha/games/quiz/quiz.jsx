@@ -42,6 +42,13 @@ export default function QuizGame({
 		}
 		set_active(false);
 	};
+
+	const handle_key_down = (event) => {
+		if (event.key === "Enter") {
+			handle_submit();
+		}
+	};
+	
 	return (
 		<>
 			<header>
@@ -60,6 +67,7 @@ export default function QuizGame({
 					ref={input_ref}
 					placeholder="Answer"
 					autoComplete="false"
+					onKeyDown={handle_key_down}
 				/>
 				<Button onClick={handle_submit}>Submit</Button>
 			</main>
