@@ -1,6 +1,6 @@
 {
   "name": "@thebrownguy/gotcha",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/gotcha.umd.cjs",
   "module": "dist/gotcha.es.js",
   "files": [
