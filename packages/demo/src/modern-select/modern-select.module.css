@@ -7,6 +7,10 @@
 	font-weight: 500;
 }
 
+.option_picker button:focus {
+	outline: none;
+}
+
 @media screen and (max-width: 700px) {
 	.option_picker {
 		padding: 0.4rem;

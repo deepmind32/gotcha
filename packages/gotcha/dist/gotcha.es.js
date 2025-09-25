@@ -1,4 +1,4 @@
-import z, { useState as E, useEffect as M, useRef as A } from "react";
+import z, { useState as E, useEffect as S, useRef as A } from "react";
 import './index.css';var H = { exports: {} }, W = {};
 /**
  * @license React
@@ -431,7 +431,7 @@ function ut(e) {
 function dt(e) {
   return N({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { d: "M352.7 21.04l-194.4.41L21.04 159.3l.41 194.4L159.3 491l194.4-.4L491 352.7l-.4-194.4L352.7 21.04zm-8 19.66l126.2 125.7.4 178.3-123.1 123.6-2.6 2.6-178.3.4L41.08 345.6l-.38-178.3L166.4 41.08l178.3-.38zm-7.5 18.01l-163.3.34L58.71 174.8l.34 163.3L174.8 453.3l163.3-.3 115.2-115.8-.3-163.3L337.2 58.71zM108.4 210.4c5.3 0 10.8.5 16.4 1.3 5.7.8 11.5 2 17.5 3.6v20.5c-5.3-2.4-10.5-4.2-15.6-5.4-5.1-1.2-9.9-1.8-14.4-1.8-6 0-10.4.8-13.25 2.5-2.87 1.6-4.3 4.2-4.3 7.7 0 2.6.96 4.6 2.87 6.1 1.95 1.4 5.48 2.7 10.58 3.7l10.6 2.1c10.8 2.2 18.5 5.5 23.1 9.9 4.5 4.5 6.8 10.8 6.8 18.9 0 10.7-3.2 18.7-9.5 24-6.4 5.2-16.1 7.8-29.2 7.8-6.1 0-12.3-.6-18.51-1.8-6.2-1.1-12.41-2.9-18.61-5.2v-21.1c6.2 3.3 12.19 5.8 17.96 7.5 5.82 1.6 11.46 2.4 16.76 2.4 5.5 0 9.7-.9 12.6-2.7 2.9-1.8 4.4-4.4 4.4-7.8 0-3.1-1-5.4-3-7.1-2-1.6-5.9-3.1-11.8-4.4l-9.7-2.1c-9.73-2.1-16.85-5.4-21.37-10-4.47-4.5-6.7-10.7-6.7-18.4 0-9.7 3.12-17.1 9.37-22.3 6.25-5.3 15.24-7.9 27-7.9zm187.7 0c15.6 0 27.8 4.5 36.7 13.5 8.9 8.9 13.3 21.2 13.3 37 0 15.7-4.4 28-13.3 37-8.9 8.9-21.1 13.4-36.7 13.4-15.6 0-27.8-4.5-36.7-13.4-8.9-9-13.3-21.3-13.3-37 0-15.8 4.4-28.1 13.3-37 8.9-9 21.1-13.5 36.7-13.5zm-141.9 1.8h89.6v18.9h-32.2v78.3h-25.1v-78.3h-32.3v-18.9zm205.8 0h41.6c12.3 0 21.8 2.8 28.4 8.3 6.7 5.4 10 13.2 10 23.4s-3.3 18.1-10 23.6c-6.6 5.4-16.1 8.2-28.4 8.2H385v33.7h-25v-97.2zm-63.9 16.4c-7.7 0-13.6 2.8-17.8 8.5-4.2 5.6-6.3 13.6-6.3 23.8 0 10.2 2.1 18.1 6.3 23.8 4.2 5.6 10.1 8.4 17.8 8.4 7.7 0 13.6-2.8 17.8-8.4 4.2-5.7 6.3-13.6 6.3-23.8 0-10.2-2.1-18.2-6.3-23.8-4.2-5.7-10.1-8.5-17.8-8.5zm88.9 1.8v27.1h13.9c4.9 0 8.6-1.2 11.3-3.5 2.6-2.4 3.9-5.8 3.9-10.1s-1.3-7.7-3.9-10c-2.7-2.4-6.4-3.5-11.3-3.5H385z" }, child: [] }] })(e);
 }
-const _t = "_captcha__wrapper_a2j9d_5", mt = "_buttons_a2j9d_59", ht = "_captcha__failed_a2j9d_109", ft = "_captcha__failed__content_a2j9d_139", pt = "_captcha__btn_a2j9d_167", gt = "_captcha__btn__main_a2j9d_199", yt = "_captcha__btn__footer_a2j9d_223", wt = "_captcha__unchecked_a2j9d_233", vt = "_captcha__content_a2j9d_249", S = {
+const _t = "_captcha__wrapper_a2j9d_5", mt = "_buttons_a2j9d_59", ht = "_captcha__failed_a2j9d_109", ft = "_captcha__failed__content_a2j9d_139", pt = "_captcha__btn_a2j9d_167", gt = "_captcha__btn__main_a2j9d_199", yt = "_captcha__btn__footer_a2j9d_223", wt = "_captcha__unchecked_a2j9d_233", vt = "_captcha__content_a2j9d_249", T = {
   captcha__wrapper: _t,
   buttons: mt,
   captcha__failed: ht,
@@ -453,7 +453,7 @@ const _t = "_captcha__wrapper_a2j9d_5", mt = "_buttons_a2j9d_59", ht = "_captcha
 ];
 function xt() {
   const [e, n] = E(7);
-  M(() => {
+  S(() => {
     const c = setInterval(() => {
       n((o) => (o + 1) % ke.length);
     }, 100);
@@ -473,7 +473,7 @@ function jt(e) {
 }
 function $({ start: e = 60, on_time_finished: n, on_change: r }) {
   const [c, o] = E(e), i = A(e);
-  return M(() => {
+  return S(() => {
     if (c <= 0) {
       n?.();
       return;
@@ -482,7 +482,7 @@ function $({ start: e = 60, on_time_finished: n, on_change: r }) {
       o((_) => _ - 1), i.current -= 1, r?.(i.current);
     }, 1e3);
     return () => clearTimeout(s);
-  }, [c]), M(() => {
+  }, [c]), S(() => {
     o(e);
   }, [e]), /* @__PURE__ */ t.jsx(
     "div",
@@ -507,7 +507,11 @@ function Y({
   onSuccess: c,
   onFail: o
 }) {
-  const i = A(null), s = () => {
+  const i = A(null);
+  S(() => {
+    i && i.current.focus();
+  }, []);
+  const s = () => {
     _ && o({
       score: 0,
       message: "Looks like you are not a human"
@@ -601,7 +605,7 @@ function oe({
     glow: !1
   }), [_, l] = E(n), g = A(null);
   let u = Ce;
-  e && (u = [...Ce].reverse()), M(() => {
+  e && (u = [...Ce].reverse()), S(() => {
     g.current.focus();
     const y = Array(r).fill(null).map((w) => ({
       time: Math.floor(Math.random() * (n - 1)),
@@ -633,7 +637,7 @@ function oe({
   }, R = (y) => {
     l(y);
   };
-  return M(() => {
+  return S(() => {
     let y;
     if (i.lights) {
       const w = i.lights.map((b) => b.time), x = i.lights.map((b) => b.duration), h = w.indexOf(_);
@@ -2293,7 +2297,7 @@ function le({
       message: "My two year brother solves the question faster than you."
     }), _((j) => ({ ...j, active: !1 }));
   };
-  M(() => {
+  S(() => {
     l.current && l.current.focus();
   }, [e]);
   const u = () => {
@@ -2455,7 +2459,7 @@ function Yt({ digits: e = 4, onChange: n }) {
     i
   )) });
 }
-const Gt = "_form__pin__wrapper_r131o_1", Ft = "_form__btn__wrapper_r131o_13", Ut = "_enter_pin_r131o_29", T = {
+const Gt = "_form__pin__wrapper_r131o_1", Ft = "_form__btn__wrapper_r131o_13", Ut = "_enter_pin_r131o_29", M = {
   form__pin__wrapper: Gt,
   form__btn__wrapper: Ft,
   enter_pin: Ut
@@ -2488,8 +2492,8 @@ function Ne({
     });
   };
   return /* @__PURE__ */ t.jsxs(t.Fragment, { children: [
-    /* @__PURE__ */ t.jsxs("header", { className: T.header, children: [
-      /* @__PURE__ */ t.jsxs("div", { className: T.header__info, children: [
+    /* @__PURE__ */ t.jsxs("header", { className: M.header, children: [
+      /* @__PURE__ */ t.jsxs("div", { className: M.header__info, children: [
         /* @__PURE__ */ t.jsx("h3", { children: "PIN Challenge" }),
         s === "enter-pin" && /* @__PURE__ */ t.jsx("p", { children: "Prove yourself a human by creating a random pin" }),
         s === "verify-pin" && /* @__PURE__ */ t.jsx("p", { children: "Human can remember their earlier PIN" })
@@ -2502,13 +2506,13 @@ function Ne({
         }
       )
     ] }),
-    /* @__PURE__ */ t.jsxs("main", { className: T.main, children: [
-      s === "enter-pin" && /* @__PURE__ */ t.jsxs("form", { className: T.form, onSubmit: j, children: [
-        /* @__PURE__ */ t.jsx("div", { className: T.form__pin__wrapper, children: /* @__PURE__ */ t.jsx(Yt, { digits: e, onChange: p }) }),
-        /* @__PURE__ */ t.jsx("div", { className: T.form__btn__wrapper, children: /* @__PURE__ */ t.jsx(I, { type: "submit", disabled: !o, children: "Submit PIN" }) })
+    /* @__PURE__ */ t.jsxs("main", { className: M.main, children: [
+      s === "enter-pin" && /* @__PURE__ */ t.jsxs("form", { className: M.form, onSubmit: j, children: [
+        /* @__PURE__ */ t.jsx("div", { className: M.form__pin__wrapper, children: /* @__PURE__ */ t.jsx(Yt, { digits: e, onChange: p }) }),
+        /* @__PURE__ */ t.jsx("div", { className: M.form__btn__wrapper, children: /* @__PURE__ */ t.jsx(I, { type: "submit", disabled: !o, children: "Submit PIN" }) })
       ] }),
-      s === "verify-pin" && /* @__PURE__ */ t.jsx("div", { className: T.form, children: /* @__PURE__ */ t.jsxs("div", { className: T.form__btn__wrapper, children: [
-        /* @__PURE__ */ t.jsxs("div", { className: T.enter_pin, children: [
+      s === "verify-pin" && /* @__PURE__ */ t.jsx("div", { className: M.form, children: /* @__PURE__ */ t.jsxs("div", { className: M.form__btn__wrapper, children: [
+        /* @__PURE__ */ t.jsxs("div", { className: M.enter_pin, children: [
           /* @__PURE__ */ t.jsx(I, { onClick: R.bind(null, -1), children: "-" }),
           /* @__PURE__ */ t.jsx("span", { children: l }),
           /* @__PURE__ */ t.jsx(I, { onClick: R.bind(null, 1), children: "+" })
@@ -2608,7 +2612,7 @@ function de({
       message: "Didn't knew you were such a loser."
     });
   };
-  return M(() => {
+  return S(() => {
     const j = setInterval(() => {
       if (!l.current.active) return;
       if (l.current.index >= l.current.word.length) {
@@ -2625,7 +2629,7 @@ function de({
       });
     }, 600 * r);
     return () => clearInterval(j);
-  }, [r]), M(() => {
+  }, [r]), S(() => {
     const j = /* @__PURE__ */ new Set(), R = (w) => {
       const x = mr(w.key);
       if (!x || j.has(w.key)) return;
@@ -3184,7 +3188,7 @@ function pr({
     difficulty: void 0,
     score: 0
   }, [s, _] = E(i), [l, g] = E(null), u = A(1), d = A(Se);
-  M(() => {
+  S(() => {
     _(i), d.current = Se;
   }, [e, r]);
   const p = () => {
@@ -3304,15 +3308,15 @@ function pr({
       record: d.current
     });
   };
-  return /* @__PURE__ */ t.jsxs("div", { className: S.captcha__wrapper, children: [
+  return /* @__PURE__ */ t.jsxs("div", { className: T.captcha__wrapper, children: [
     /* @__PURE__ */ t.jsxs(
       "button",
       {
-        className: S.captcha__btn,
+        className: T.captcha__btn,
         onClick: p,
         children: [
-          /* @__PURE__ */ t.jsxs("div", { className: S.captcha__btn__main, children: [
-            s.state === "initial" && /* @__PURE__ */ t.jsx("div", { className: S.captcha__unchecked }),
+          /* @__PURE__ */ t.jsxs("div", { className: T.captcha__btn__main, children: [
+            s.state === "initial" && /* @__PURE__ */ t.jsx("div", { className: T.captcha__unchecked }),
             s.state === "success" && /* @__PURE__ */ t.jsx(Ke, { style: { margin: -8 }, size: 46, color: "#41A818" }),
             s.state === "error" && /* @__PURE__ */ t.jsx(
               Qe,
@@ -3325,7 +3329,7 @@ function pr({
             s.state === "progress" && /* @__PURE__ */ t.jsx(xt, {}),
             /* @__PURE__ */ t.jsx("p", { children: "Are you a human?" })
           ] }),
-          /* @__PURE__ */ t.jsx("div", { className: S.captcha__btn__footer, children: /* @__PURE__ */ t.jsxs("p", { children: [
+          /* @__PURE__ */ t.jsx("div", { className: T.captcha__btn__footer, children: /* @__PURE__ */ t.jsxs("p", { children: [
             "Powered by",
             " ",
             /* @__PURE__ */ t.jsx("a", { href: "https://www.npmjs.com/package/@thebrownguy/gotcha", children: "Gotcha" })
@@ -3333,7 +3337,7 @@ function pr({
         ]
       }
     ),
-    s.state === "progress" && /* @__PURE__ */ t.jsxs("div", { className: S.captcha__content, children: [
+    s.state === "progress" && /* @__PURE__ */ t.jsxs("div", { className: T.captcha__content, children: [
       /* @__PURE__ */ t.jsx(
         hr,
         {
@@ -3344,11 +3348,11 @@ function pr({
         },
         u.current
       ),
-      l && /* @__PURE__ */ t.jsx("div", { className: S.captcha__failed, children: /* @__PURE__ */ t.jsxs("div", { className: S.captcha__failed__content, children: [
+      l && /* @__PURE__ */ t.jsx("div", { className: T.captcha__failed, children: /* @__PURE__ */ t.jsxs("div", { className: T.captcha__failed__content, children: [
         l.type === "failure" ? /* @__PURE__ */ t.jsx(ct, { color: "#b0b0b0", size: "32px" }) : /* @__PURE__ */ t.jsx(lt, { color: "#b0b0b0", size: "32px" }),
         /* @__PURE__ */ t.jsx("p", { children: l.message }),
         l.option === "retry" && /* @__PURE__ */ t.jsx("button", { style: { marginTop: 16 }, onClick: R, children: /* @__PURE__ */ t.jsx(ut, { size: "32px" }) }),
-        l.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: S.buttons, children: [
+        l.option === "next" && /* @__PURE__ */ t.jsxs("div", { className: T.buttons, children: [
           /* @__PURE__ */ t.jsx("button", { onClick: y, children: /* @__PURE__ */ t.jsx(ot, { size: "32px" }) }),
           c && /* @__PURE__ */ t.jsx("button", { onClick: x, children: /* @__PURE__ */ t.jsx(dt, { size: "32px", color: "var(--color-red)" }) })
         ] })

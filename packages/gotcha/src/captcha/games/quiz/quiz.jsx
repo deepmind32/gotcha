@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Timer from "../../../components/timer/timer";
 import styles from "./quiz.module.css";
 import Button from "../../../components/button/button";
@@ -13,6 +13,11 @@ export default function QuizGame({
 	onFail,
 }) {
 	const input_ref = useRef(null);
+
+	useEffect(() => {
+		input_ref && input_ref.current.focus();
+	}, [])
+
 	const handle_time_finished = () => {
 		if (active) {
 			onFail({
@@ -48,7 +53,7 @@ export default function QuizGame({
 			handle_submit();
 		}
 	};
-	
+
 	return (
 		<>
 			<header>
