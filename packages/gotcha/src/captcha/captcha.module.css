@@ -124,7 +124,8 @@ button {
 /*header color can be #578fdc*/
 .captcha__content {
 	position: absolute;
-	top: calc(100% + 8px);
+	left: 0;
+	top: 80px;
 	padding: 4px;
 	border-radius: 2px;
 	border: 1px solid #b0b0b0;

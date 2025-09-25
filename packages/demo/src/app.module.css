@@ -1,0 +1,85 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding: 40px 80px;
+	height: 100%;
+}
+
+.app__header {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.select__wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.logo {
+	font-family: "Barriecito", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5rem;
+	color: var(--color-cerulean)
+}
+
+.app__main {
+	/* position: relative; */
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.app__footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+.app__footer p{
+	font-weight: 500;
+}
+
+.app__footer span {
+	background-color: var(--color-cerulean);
+	padding: 0.25rem 0.5rem;
+	color: var(--color-honey-dew);
+	border-radius: 4px;
+}
+
+.app__header__links {
+	position: absolute;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	display: none;
+}
+
+@media  screen and (max-width: 780px) {
+	.app {
+		gap: 20px;
+	}
+	
+	.app__header {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+	.select__wrapper {
+		position: relative;
+	}
+
+	.app__footer p {
+		display: block;
+		text-align: center;
+	}
+	.app__footer span {
+		display: block;
+	}
+}

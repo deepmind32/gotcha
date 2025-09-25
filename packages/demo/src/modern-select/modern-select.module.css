@@ -1,0 +1,71 @@
+.option_picker {
+	background-color: var(--color-non-photo-blue);
+	color: var(--color-berkley-blue);
+	padding: 0.5rem;
+	width: 350px;
+	border-radius: 0.5rem;
+	font-weight: 500;
+}
+
+@media screen and (max-width: 700px) {
+	.option_picker {
+		padding: 0.4rem;
+	}
+}
+
+.option_picker__heading {
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+	transition: font-size 0.25s ease;
+}
+.option_picker:not(.option_picker--inactive) .option_picker__heading {
+	font-size: 1rem;
+	margin-bottom: 0;
+	transition: font-size 0.25s ease;
+	/* display: none; */
+}
+
+.option_picker__options li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 0.25rem;
+	border-radius: 0.5rem;
+}
+.option_picker.option_picker--inactive li button:last-child {
+	display: none;
+}
+.option_picker:not(.option_picker--inactive) li:not(.li--active) {
+	display: none;
+}
+
+.option_picker__options li:hover {
+	background-color: #9FD0CD;
+}
+.option_picker__options li.li--active:hover {
+	background-color: transparent;
+}
+
+.option_picker__options button {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	text-align: left;
+
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.option_picker__options__info p:first-child {
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+.option_picker__options__sample {
+	min-width: 2rem;
+	min-height: 2rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 1rem;
+}
